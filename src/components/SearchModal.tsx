@@ -96,11 +96,11 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                 }}
                 className="flex items-center gap-3 p-2.5 hover:bg-[#F2ECE2] rounded-xs cursor-pointer transition-colors group"
               >
-                <div className="w-12 h-12 bg-white rounded-xs p-1 flex items-center justify-center shrink-0 border border-[#E8E2D7]">
+                <div className="w-14 h-14 bg-white rounded-xs p-1.5 flex items-center justify-center shrink-0 border border-[#E8E2D7] shadow-xs">
                   <img
                     src={prod.image}
                     alt={prod.name}
-                    className="max-h-full max-w-full object-contain"
+                    className="max-h-full max-w-full object-contain filter drop-shadow-xs"
                     referrerPolicy="no-referrer"
                   />
                 </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Heart, ChevronLeft, ChevronRight, Eye, Plus, Check } from 'lucide-react';
+import { Heart, ChevronLeft, ChevronRight, Eye, Plus, Check, ShoppingBag } from 'lucide-react';
 import { BESTSELLER_PRODUCTS } from '../data/bathwareData';
 import { Product } from '../types';
 
@@ -28,7 +28,7 @@ export const CustomerFavourites: React.FC<CustomerFavouritesProps> = ({
     return true;
   });
 
-  const itemsPerPage = 5;
+  const itemsPerPage = 4;
   const maxPages = Math.ceil(filteredProducts.length / itemsPerPage);
   const displayedProducts = filteredProducts.slice(
     pageIndex * itemsPerPage,
@@ -47,19 +47,19 @@ export const CustomerFavourites: React.FC<CustomerFavouritesProps> = ({
     setAddedAnimation((prev) => ({ ...prev, [product.id]: true }));
     setTimeout(() => {
       setAddedAnimation((prev) => ({ ...prev, [product.id]: false }));
-    }, 1800);
+    }, 2000);
   };
 
   return (
-    <section id="bestsellers" className="w-full bg-[#F8F6F2] py-14 sm:py-20 px-4 sm:px-6 lg:px-10 border-b border-[#E7E0D3]">
+    <section id="bestsellers" className="w-full bg-[#F8F6F2] py-16 sm:py-24 px-4 sm:px-6 lg:px-10 border-b border-[#E7E0D3]">
       <div className="max-w-[1440px] mx-auto">
         {/* Header with Title and Tabs */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <span className="block text-[11px] uppercase tracking-[0.22em] text-[#786E64] font-medium mb-3">
+            <span className="block text-[11px] sm:text-[12px] uppercase tracking-[0.24em] text-[#584636] font-semibold mb-2.5">
               BESTSELLERS
             </span>
-            <h2 className="font-serif text-[34px] sm:text-[42px] text-[#221F1B] font-normal tracking-tight">
+            <h2 className="font-serif text-[36px] sm:text-[46px] text-[#1C1917] font-normal tracking-tight">
               Customer Favourites
             </h2>
           </div>
@@ -67,7 +67,7 @@ export const CustomerFavourites: React.FC<CustomerFavouritesProps> = ({
           {/* Right Navigation & Filter Tabs */}
           <div className="flex items-center space-x-6 sm:space-x-8">
             {/* Tabs */}
-            <div className="flex items-center space-x-6 text-[13px] tracking-wide">
+            <div className="flex items-center space-x-6 text-[13px] sm:text-[14px] tracking-wide font-medium">
               <button
                 onClick={() => {
                   setActiveTab('bestsellers');
@@ -75,13 +75,13 @@ export const CustomerFavourites: React.FC<CustomerFavouritesProps> = ({
                 }}
                 className={`pb-1 transition-colors relative cursor-pointer ${
                   activeTab === 'bestsellers'
-                    ? 'text-[#221F1B] font-medium'
-                    : 'text-stone-500 hover:text-stone-800'
+                    ? 'text-[#1C1917] font-semibold'
+                    : 'text-stone-500 hover:text-stone-900'
                 }`}
               >
                 Bestsellers
                 {activeTab === 'bestsellers' && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#221F1B]" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#1C1917]" />
                 )}
               </button>
 
@@ -92,13 +92,13 @@ export const CustomerFavourites: React.FC<CustomerFavouritesProps> = ({
                 }}
                 className={`pb-1 transition-colors relative cursor-pointer ${
                   activeTab === 'new'
-                    ? 'text-[#221F1B] font-medium'
-                    : 'text-stone-500 hover:text-stone-800'
+                    ? 'text-[#1C1917] font-semibold'
+                    : 'text-stone-500 hover:text-stone-900'
                 }`}
               >
                 New Arrivals
                 {activeTab === 'new' && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#221F1B]" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#1C1917]" />
                 )}
               </button>
 
@@ -109,13 +109,13 @@ export const CustomerFavourites: React.FC<CustomerFavouritesProps> = ({
                 }}
                 className={`pb-1 transition-colors relative cursor-pointer ${
                   activeTab === 'featured'
-                    ? 'text-[#221F1B] font-medium'
-                    : 'text-stone-500 hover:text-stone-800'
+                    ? 'text-[#1C1917] font-semibold'
+                    : 'text-stone-500 hover:text-stone-900'
                 }`}
               >
                 Featured
                 {activeTab === 'featured' && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#221F1B]" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#1C1917]" />
                 )}
               </button>
             </div>
@@ -126,23 +126,23 @@ export const CustomerFavourites: React.FC<CustomerFavouritesProps> = ({
                 onClick={() => setPageIndex((p) => Math.max(0, p - 1))}
                 disabled={pageIndex === 0}
                 aria-label="Previous products"
-                className="w-8 h-8 rounded-full border border-[#DDD5C8] flex items-center justify-center text-stone-700 hover:bg-[#EFEAE2] disabled:opacity-40 disabled:cursor-not-allowed transition-all cursor-pointer"
+                className="w-10 h-10 rounded-full border border-[#DDD5C8] bg-white flex items-center justify-center text-stone-800 hover:bg-[#EFEAE2] disabled:opacity-30 disabled:cursor-not-allowed transition-all cursor-pointer shadow-xs"
               >
-                <ChevronLeft className="w-3.5 h-3.5" />
+                <ChevronLeft className="w-4 h-4 stroke-[2]" />
               </button>
               <button
                 onClick={() => setPageIndex((p) => (p + 1 < maxPages ? p + 1 : 0))}
                 aria-label="Next products"
-                className="w-8 h-8 rounded-full border border-[#DDD5C8] flex items-center justify-center text-stone-700 hover:bg-[#EFEAE2] transition-all cursor-pointer"
+                className="w-10 h-10 rounded-full border border-[#DDD5C8] bg-white flex items-center justify-center text-stone-800 hover:bg-[#EFEAE2] transition-all cursor-pointer shadow-xs"
               >
-                <ChevronRight className="w-3.5 h-3.5" />
+                <ChevronRight className="w-4 h-4 stroke-[2]" />
               </button>
             </div>
           </div>
         </div>
 
-        {/* 5-Column Product Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+        {/* Spacious Product Cards Grid with BIG crystal-clear images and ALWAYS-VISIBLE buttons */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 lg:gap-8">
           {displayedProducts.map((prod) => {
             const activeFinish = selectedFinishes[prod.id] || prod.finishes[0]?.name || 'Standard';
             const wish = isWishlisted(prod.id);
@@ -152,15 +152,15 @@ export const CustomerFavourites: React.FC<CustomerFavouritesProps> = ({
               <div
                 key={prod.id}
                 onClick={() => onSelectProduct(prod)}
-                className="group cursor-pointer flex flex-col bg-[#FAF8F5] border border-[#E5DFD4] hover:border-[#725C48] rounded-[2px] p-4 transition-all hover:shadow-sm"
+                className="group cursor-pointer flex flex-col bg-[#FAF8F5] border border-[#E3DDD2] hover:border-[#725C48] rounded-[3px] p-5 sm:p-6 transition-all hover:shadow-xl hover:-translate-y-1"
               >
-                {/* Image & Wishlist Container */}
-                <div className="relative aspect-square w-full bg-[#F3EFE7] rounded-[2px] overflow-hidden flex items-center justify-center p-4 mb-4">
-                  {/* Product Image */}
+                {/* BIG Prominent HD Image Stage (320px - 380px tall) */}
+                <div className="relative w-full h-80 sm:h-88 lg:h-96 bg-[#F4EFEA] rounded-[2px] overflow-hidden flex items-center justify-center p-6 mb-5 border border-[#EAE4D9]">
+                  {/* Crystal-clear 1024x1024 Studio Image */}
                   <img
                     src={prod.image}
                     alt={prod.name}
-                    className="max-h-full max-w-full object-contain filter drop-shadow-xs transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-full object-contain filter drop-shadow-xl transition-transform duration-500 ease-out group-hover:scale-108"
                     referrerPolicy="no-referrer"
                     loading="lazy"
                   />
@@ -172,84 +172,94 @@ export const CustomerFavourites: React.FC<CustomerFavouritesProps> = ({
                       onToggleWishlist(prod);
                     }}
                     aria-label="Save to wishlist"
-                    className={`absolute top-2.5 right-2.5 w-7 h-7 rounded-full flex items-center justify-center transition-all cursor-pointer ${
+                    className={`absolute top-3.5 right-3.5 w-9 h-9 rounded-full flex items-center justify-center transition-all cursor-pointer shadow-md ${
                       wish
-                        ? 'bg-[#725C48] text-white shadow-xs'
-                        : 'bg-white/80 hover:bg-white text-stone-600 hover:text-[#725C48]'
+                        ? 'bg-[#725C48] text-white'
+                        : 'bg-white/95 hover:bg-white text-stone-700 hover:text-[#725C48]'
                     }`}
                   >
-                    <Heart className={`w-3.5 h-3.5 ${wish ? 'fill-white stroke-none' : 'stroke-[1.5]'}`} />
+                    <Heart className={`w-4 h-4 ${wish ? 'fill-white stroke-none' : 'stroke-[1.75]'}`} />
                   </button>
 
-                  {/* Quick Action Overlay on hover */}
-                  <div className="absolute inset-x-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
-                    <button
-                      onClick={(e) => handleAdd(prod, e)}
-                      className="flex-1 py-1.5 px-2 bg-[#221F1B] hover:bg-[#3A352F] text-white text-[11px] font-medium rounded-xs transition-colors flex items-center justify-center gap-1 shadow-xs"
-                    >
-                      {added ? (
-                        <>
-                          <Check className="w-3 h-3" />
-                          <span>Added</span>
-                        </>
-                      ) : (
-                        <>
-                          <Plus className="w-3 h-3" />
-                          <span>Add to Bag</span>
-                        </>
-                      )}
-                    </button>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onSelectProduct(prod);
-                      }}
-                      title="Quick View"
-                      className="w-7 h-7 bg-white/90 hover:bg-white text-stone-800 rounded-xs flex items-center justify-center transition-colors shadow-xs"
-                    >
-                      <Eye className="w-3.5 h-3.5" />
-                    </button>
+                  {/* Quick View Tag in Top Left */}
+                  <div className="absolute top-3.5 left-3.5 px-2.5 py-1 bg-white/90 backdrop-blur-xs rounded-full border border-[#DDD5C8] text-[10px] uppercase tracking-wider font-semibold text-stone-700 shadow-xs">
+                    Ultra HD
                   </div>
                 </div>
 
                 {/* Finish Swatches */}
-                <div className="flex items-center space-x-1.5 mb-2.5">
+                <div className="flex items-center space-x-2 mb-3">
                   {prod.finishes.map((f) => (
                     <button
                       key={f.code}
                       onClick={(e) => handleFinishChange(prod.id, f.name, e)}
                       title={f.name}
-                      className={`w-3.5 h-3.5 rounded-full transition-transform cursor-pointer border ${
+                      className={`w-4 h-4 rounded-full transition-transform cursor-pointer border ${
                         activeFinish === f.name
-                          ? 'ring-1 ring-offset-1 ring-[#725C48] scale-110 border-white'
-                          : 'border-black/20 hover:scale-105'
+                          ? 'ring-2 ring-offset-1 ring-[#725C48] scale-110 border-white'
+                          : 'border-black/25 hover:scale-105'
                       }`}
                       style={{ backgroundColor: f.hex }}
                     />
                   ))}
-                  <span className="text-[10px] text-stone-500 ml-1 truncate">
+                  <span className="text-[11px] text-stone-600 ml-1.5 font-medium truncate">
                     {activeFinish}
                   </span>
                 </div>
 
                 {/* Product Title */}
-                <h3 className="text-[13.5px] font-medium text-[#24211E] group-hover:text-[#725C48] transition-colors line-clamp-1 mb-1">
+                <h3 className="text-[16px] sm:text-[17px] font-medium text-[#1C1917] group-hover:text-[#725C48] transition-colors line-clamp-1 mb-1">
                   {prod.name}
                 </h3>
 
-                {/* Category / Material Note */}
-                <p className="text-[11px] text-stone-500 line-clamp-1 mb-3">
+                {/* Category / Collection Note */}
+                <p className="text-[12.5px] text-stone-600 line-clamp-1 mb-4 font-normal">
                   {prod.category} · {prod.collection}
                 </p>
 
                 {/* Price */}
-                <div className="mt-auto pt-2 border-t border-[#EAE4D9] flex items-center justify-between text-xs">
-                  <span className="font-mono font-medium text-[#221F1B] text-[13.5px]">
+                <div className="flex items-center justify-between mb-4 pt-3 border-t border-[#EAE4D9]">
+                  <span className="font-mono font-semibold text-[#1C1917] text-[17px]">
                     ${prod.price.toLocaleString()}
                   </span>
-                  <span className="text-[10px] text-stone-400 font-normal">
+                  <span className="text-[11px] text-stone-500 font-normal">
                     Tax included
                   </span>
+                </div>
+
+                {/* ALWAYS-VISIBLE Action Buttons: Add to Bag & Quick View */}
+                <div className="mt-auto grid grid-cols-5 gap-2 pt-1">
+                  <button
+                    onClick={(e) => handleAdd(prod, e)}
+                    className={`col-span-4 py-3 px-3 rounded-[2px] text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm active:scale-[0.99] ${
+                      added
+                        ? 'bg-emerald-800 text-white'
+                        : 'bg-[#725C48] hover:bg-[#584636] text-white hover:shadow'
+                    }`}
+                  >
+                    {added ? (
+                      <>
+                        <Check className="w-4 h-4 stroke-[2.5]" />
+                        <span>Added to Bag</span>
+                      </>
+                    ) : (
+                      <>
+                        <ShoppingBag className="w-3.5 h-3.5" />
+                        <span>Add to Bag</span>
+                      </>
+                    )}
+                  </button>
+
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onSelectProduct(prod);
+                    }}
+                    title="Quick View Details"
+                    className="col-span-1 py-3 bg-[#EFEAE2] hover:bg-[#E5DFD4] text-[#1C1917] border border-[#DDD5C8] rounded-[2px] flex items-center justify-center transition-colors cursor-pointer"
+                  >
+                    <Eye className="w-4 h-4" />
+                  </button>
                 </div>
               </div>
             );

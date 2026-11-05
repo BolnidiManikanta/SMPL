@@ -29,7 +29,7 @@ export const AnnouncementBar: React.FC = () => {
           <ChevronLeft className="w-3.5 h-3.5" />
         </button>
 
-        <p className="tracking-wide text-center font-light truncate px-4 transition-opacity duration-300">
+        <p className="tracking-wider text-center font-normal text-[#F0EBE3] truncate px-4 transition-opacity duration-300">
           {ANNOUNCEMENTS[currentIndex]}
         </p>
 

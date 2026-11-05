@@ -176,17 +176,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection, onOpenTrade }
                 </button>
               </li>
               <li>
-                <button onClick={() => alert('Opening BIM & Revit 3D Family Downloads...')} className="hover:text-white transition-colors cursor-pointer">
+                <button onClick={onOpenTrade} className="hover:text-white transition-colors cursor-pointer">
                   BIM / CAD Library (.DWG / .RFA)
                 </button>
               </li>
               <li>
-                <button onClick={() => alert('Opening Hospitality Project Pricing Schedule...')} className="hover:text-white transition-colors cursor-pointer">
+                <button onClick={onOpenTrade} className="hover:text-white transition-colors cursor-pointer">
                   Multi-Residential Specifications
                 </button>
               </li>
               <li>
-                <button onClick={() => alert('Certificate of Zero Lead & Green Building Compliance...')} className="hover:text-white transition-colors cursor-pointer">
+                <button onClick={onOpenTrade} className="hover:text-white transition-colors cursor-pointer">
                   LEED &amp; BREEAM Compliance
                 </button>
               </li>

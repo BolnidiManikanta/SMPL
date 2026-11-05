@@ -11,15 +11,29 @@
 }
 
 @layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
   body {
     font-family: var(--font-sans);
     background-color: #F8F6F2;
     color: #24211E;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  img {
+    image-rendering: -webkit-optimize-contrast;
   }
 
   h1, h2, h3, .font-serif-luxury {
     font-family: var(--font-serif);
+    font-feature-settings: "kern", "liga", "clig", "calt";
   }
 }
 

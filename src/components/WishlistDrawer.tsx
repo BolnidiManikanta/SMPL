@@ -54,11 +54,11 @@ export const WishlistDrawer: React.FC<WishlistDrawerProps> = ({
                   key={prod.id}
                   className="flex gap-3.5 p-3.5 bg-white border border-[#E8E2D7] rounded-[2px]"
                 >
-                  <div className="w-18 h-18 bg-[#F6F2EC] rounded-xs flex items-center justify-center p-2 shrink-0">
+                  <div className="w-20 h-20 bg-[#F6F2EC] rounded-xs flex items-center justify-center p-2 shrink-0 border border-[#E8E2D7]">
                     <img
                       src={prod.image}
                       alt={prod.name}
-                      className="max-h-full max-w-full object-contain"
+                      className="max-h-full max-w-full object-contain filter drop-shadow-xs"
                       referrerPolicy="no-referrer"
                     />
                   </div>
