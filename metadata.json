@@ -1,0 +1,6 @@
+{
+  "name": "SMPL | Architectural Bathware & Fittings",
+  "description": "Discover thoughtfully designed bathware, luxury faucets, shower systems, and architectural fittings for extraordinary spaces.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
