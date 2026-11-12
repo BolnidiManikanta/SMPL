@@ -28,12 +28,13 @@
   }
 
   img {
-    image-rendering: -webkit-optimize-contrast;
+    image-rendering: auto;
   }
 
   h1, h2, h3, .font-serif-luxury {
     font-family: var(--font-serif);
     font-feature-settings: "kern", "liga", "clig", "calt";
+    letter-spacing: -0.015em;
   }
 }
 

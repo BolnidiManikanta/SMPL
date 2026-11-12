@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const ANNOUNCEMENTS = [
-  'Discover refined bathware for extraordinary spaces.',
+  'Discover Premium Tiles & Bathware for Contemporary Spaces.',
   'Complimentary architectural sample kits for trade & design professionals.',
   'PVD Finishes guaranteed for 15 years against wear and tarnish.',
 ];

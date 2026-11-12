@@ -65,7 +65,7 @@ export const WishlistDrawer: React.FC<WishlistDrawerProps> = ({
 
                   <div className="flex-1 min-w-0">
                     <h4 className="text-xs font-medium text-[#24211E] truncate">{prod.name}</h4>
-                    <p className="text-[11px] text-stone-500 mt-0.5">{prod.material}</p>
+                    <p className="text-[11px] text-stone-500 mt-0.5">{prod.specs?.material || prod.category}</p>
                     <p className="text-xs font-mono font-medium text-[#24211E] mt-1">
                       ${prod.price.toLocaleString()}
                     </p>

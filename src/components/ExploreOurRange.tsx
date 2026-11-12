@@ -1,5 +1,4 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
 import { CATEGORIES_DATA } from '../data/bathwareData';
 import { ProductCategoryItem } from '../types';
 
@@ -9,63 +8,44 @@ interface ExploreOurRangeProps {
 
 export const ExploreOurRange: React.FC<ExploreOurRangeProps> = ({ onSelectCategory }) => {
   return (
-    <section id="explore-range" className="w-full bg-[#F8F6F2] py-16 sm:py-24 px-4 sm:px-6 lg:px-10 border-b border-[#E7E0D3]">
+    <section id="explore-range" className="w-full bg-[#F8F6F2] py-16 sm:py-20 px-4 sm:px-6 lg:px-10 border-b border-[#E7E0D3]">
       <div className="max-w-[1440px] mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
-          <div>
-            <span className="block text-[11px] sm:text-[12px] uppercase tracking-[0.24em] text-[#584636] font-semibold mb-2.5">
-              SHOP BY PRODUCT CATEGORY
-            </span>
-            <h2 className="font-serif text-[36px] sm:text-[46px] text-[#1C1917] font-normal tracking-tight">
-              Explore Our Range
-            </h2>
-          </div>
-          <p className="text-sm text-stone-600 max-w-md">
-            Architectural bathware and precision brass fittings crafted from forged solid brass, marine stainless steel, and monolithic stone.
-          </p>
+        <div className="mb-10 sm:mb-12">
+          <span className="block text-[11px] uppercase tracking-[0.22em] text-[#786E64] font-medium mb-3">
+            SHOP BY PRODUCT
+          </span>
+          <h2 className="font-serif text-[34px] sm:text-[42px] text-[#221F1B] font-normal tracking-tight">
+            Explore Our Range
+          </h2>
         </div>
 
-        {/* 8 Product Category Cards in Spacious 4-Column Grid with BIG HD images and Buttons */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
+        {/* 7 Product Category Icons Grid - BIG, CLEAR, HD */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-5 text-center">
           {CATEGORIES_DATA.map((cat) => (
             <div
               key={cat.id}
               onClick={() => onSelectCategory(cat)}
-              className="group cursor-pointer flex flex-col bg-[#FAF8F5] border border-[#E3DDD2] hover:border-[#725C48] p-5 sm:p-6 rounded-[3px] transition-all hover:shadow-xl hover:-translate-y-1"
+              className="group cursor-pointer flex flex-col items-center p-2.5 rounded-lg hover:bg-stone-200/40 transition-all duration-200"
             >
-              {/* BIG HD Category Showcase (280px tall) */}
-              <div className="w-full h-64 sm:h-72 flex items-center justify-center p-6 mb-4 bg-[#F4EFEA] rounded-[2px] border border-[#EAE4D9] overflow-hidden">
+              {/* Crisp studio product presentation */}
+              <div className="w-full aspect-square flex items-center justify-center mb-3 overflow-hidden rounded-md bg-[#FAF8F5] border border-[#E5DFD4] group-hover:border-[#8E7864] group-hover:shadow-md transition-all duration-300">
                 <img
                   src={cat.image}
                   alt={cat.title}
-                  className="w-full h-full object-contain filter drop-shadow-md transition-transform duration-500 ease-out group-hover:scale-108"
+                  className="w-full h-full object-contain p-2 group-hover:scale-106 transition-transform duration-300"
                   referrerPolicy="no-referrer"
                   loading="lazy"
                 />
               </div>
 
-              {/* Title & Count Label */}
-              <div className="flex items-baseline justify-between mb-3">
-                <h3 className="text-[17px] font-medium text-[#1C1917] group-hover:text-[#725C48] transition-colors leading-tight">
-                  {cat.title}
-                </h3>
-                <span className="text-[11px] text-stone-500 font-mono">
-                  {cat.count} items
-                </span>
-              </div>
-
-              {/* ALWAYS-VISIBLE Action Button */}
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onSelectCategory(cat);
-                }}
-                className="mt-auto w-full py-2.5 px-3 bg-[#EFEAE2] group-hover:bg-[#725C48] text-[#1C1917] group-hover:text-white border border-[#DDD5C8] group-hover:border-[#725C48] rounded-[2px] text-xs font-semibold tracking-wider uppercase flex items-center justify-center gap-2 transition-all cursor-pointer shadow-xs"
-              >
-                <span>View Range</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
+              {/* Title label */}
+              <h3 className="text-[13px] sm:text-[14px] font-medium text-[#24211E] group-hover:text-[#725C48] transition-colors leading-tight">
+                {cat.title}
+              </h3>
+              <span className="text-[11px] text-stone-500 font-normal mt-1">
+                {cat.count} models
+              </span>
             </div>
           ))}
         </div>

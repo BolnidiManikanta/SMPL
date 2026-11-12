@@ -2,46 +2,55 @@ import React, { useState } from 'react';
 import { AnnouncementBar } from './components/AnnouncementBar';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
+import { CuratedSpacesPreview } from './components/CuratedSpacesPreview';
+import { ExploreOurRange } from './components/ExploreOurRange';
 import { FindYourSpace } from './components/FindYourSpace';
 import { FindYourStyle } from './components/FindYourStyle';
-import { ExploreOurRange } from './components/ExploreOurRange';
 import { CuratedSpaces } from './components/CuratedSpaces';
 import { CustomerFavourites } from './components/CustomerFavourites';
-import { ProductListingPage } from './components/ProductListingPage';
-import { TrustAndFAQ } from './components/TrustAndFAQ';
+import { MaterialFinishStudio } from './components/MaterialFinishStudio';
+import { TilesPageView } from './components/TilesPageView';
+import { SanitarywarePageView } from './components/SanitarywarePageView';
+import { ShowersPageView } from './components/ShowersPageView';
+import { FaucetsPageView } from './components/FaucetsPageView';
+import { BathroomPageView } from './components/BathroomPageView';
+import { ProductCatalogView } from './components/ProductCatalogView';
+import { ProductComparisonModal } from './components/ProductComparisonModal';
 import { CartDrawer } from './components/CartDrawer';
 import { WishlistDrawer } from './components/WishlistDrawer';
 import { ProductModal } from './components/ProductModal';
 import { SearchModal } from './components/SearchModal';
 import { TradeModal } from './components/TradeModal';
-import { CheckoutModal } from './components/CheckoutModal';
 import { Footer } from './components/Footer';
 import { Product, CartItem, SpaceCategory, StyleCollection, ProductCategoryItem } from './types';
-import { BESTSELLER_PRODUCTS, ALL_PRODUCTS } from './data/bathwareData';
+import { ALL_PRODUCTS } from './data/bathwareData';
 import { Check, X } from 'lucide-react';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'catalogue'>('home');
-  const [selectedCategoryFilter, setSelectedCategoryFilter] = useState<string>('all');
+  const [currentView, setCurrentView] = useState<'home' | 'catalog' | 'tiles' | 'sanitaryware' | 'showers' | 'faucets' | 'bathroom'>('bathroom');
 
   const [cart, setCart] = useState<CartItem[]>([
     {
-      product: BESTSELLER_PRODUCTS[0],
+      product: ALL_PRODUCTS[0],
       selectedFinish: 'Brushed Brass',
       quantity: 1,
     },
   ]);
-  const [wishlist, setWishlist] = useState<Product[]>([BESTSELLER_PRODUCTS[1]]);
+  const [wishlist, setWishlist] = useState<Product[]>([ALL_PRODUCTS[4]]);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
+  // Catalog View state (when browsing full catalogue by department or filters)
+  const [catalogDepartment, setCatalogDepartment] = useState<string>('All');
+  const [catalogCategory, setCatalogCategory] = useState<string | null>(null);
+
+  // Comparison Modal state
+  const [comparingProducts, setComparingProducts] = useState<Product[]>([]);
+
+  // Drawers & Overlays
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isTradeOpen, setIsTradeOpen] = useState(false);
-  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
-
-  const [checkoutDiscount, setCheckoutDiscount] = useState(0);
-  const [checkoutDiscountCode, setCheckoutDiscountCode] = useState('');
 
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
@@ -67,20 +76,6 @@ export default function App() {
       return [...prev, { product, selectedFinish: finish, quantity: 1 }];
     });
     showToast(`Added "${product.name}" (${finish}) to bag.`);
-  };
-
-  const handleBuyNow = (product: Product, finish: string) => {
-    handleAddToCart(product, finish);
-    setSelectedProduct(null);
-    setIsCartOpen(false);
-    setIsCheckoutOpen(true);
-  };
-
-  const handleOpenCheckoutFromCart = (discountAmount: number, code: string) => {
-    setCheckoutDiscount(discountAmount);
-    setCheckoutDiscountCode(code);
-    setIsCartOpen(false);
-    setIsCheckoutOpen(true);
   };
 
   const handleAddEnsembleToCart = (products: Product[]) => {
@@ -133,176 +128,230 @@ export default function App() {
     return wishlist.some((p) => p.id === productId);
   };
 
-  // Navigations
-  const handleSelectCategoryFromNav = (catName: string) => {
-    setSelectedCategoryFilter(catName);
-    setCurrentView('catalogue');
+  const handleOpenDepartment = (dept: string, subcategory?: string) => {
+    if (dept === 'Tiles') {
+      setCurrentView('tiles');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    if (dept === 'Sanitaryware') {
+      setCurrentView('sanitaryware');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    if (dept === 'Showers') {
+      setCurrentView('showers');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    if (dept === 'Bathroom') {
+      setCurrentView('bathroom');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    if (dept === 'Faucets') {
+      setCurrentView('faucets');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    setCatalogDepartment(dept);
+    setCatalogCategory(subcategory || null);
+    setCurrentView('catalog');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleSelectSpace = (space: SpaceCategory) => {
-    showToast(`Filtering by space: ${space.title}`);
-    setSelectedCategoryFilter('all');
-    setCurrentView('catalogue');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    showToast(`Filtering catalogue by space: ${space.title}`);
+    setCatalogDepartment('All');
+    setCurrentView('catalog');
   };
 
   const handleSelectStyle = (style: StyleCollection) => {
-    showToast(`Selected collection: ${style.title} (${style.aesthetic})`);
-    setSelectedCategoryFilter('all');
-    setCurrentView('catalogue');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    showToast(`Selected collection: ${style.title}`);
+    setCatalogDepartment('All');
+    setCurrentView('catalog');
   };
 
   const handleSelectCategory = (category: ProductCategoryItem) => {
-    // Map id to category name
-    const map: Record<string, string> = {
-      basin_faucets: 'Faucets',
-      kitchen_faucets: 'Faucets',
-      showers: 'Showers',
-      shower_systems: 'Showers',
-      wash_basins: 'Wash Basins',
-      bathtubs: 'Bathtubs',
-      toilets: 'Sanitaryware',
-      accessories: 'Accessories',
-    };
-    const targetCat = map[category.id] || 'all';
-    setSelectedCategoryFilter(targetCat);
-    setCurrentView('catalogue');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    handleOpenDepartment(category.department, category.title);
   };
 
   const handleNavigateSection = (sectionId: string) => {
-    if (currentView !== 'home') {
-      setCurrentView('home');
-      setTimeout(() => {
-        scrollToSection(sectionId);
-      }, 100);
-    } else {
-      scrollToSection(sectionId);
-    }
-  };
-
-  const scrollToSection = (sectionId: string) => {
-    if (sectionId === 'about') {
-      const el = document.getElementById('about');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    } else if (sectionId === 'collections') {
-      const el = document.getElementById('collections');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    } else if (sectionId === 'curated-retreat') {
-      const el = document.getElementById('curated-retreat');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    } else if (sectionId === 'explore-range') {
-      const el = document.getElementById('explore-range');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    } else if (sectionId === 'bestsellers') {
-      const el = document.getElementById('bestsellers');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }
+    setCurrentView('home');
+    setTimeout(() => {
+      if (sectionId === 'about') {
+        const el = document.getElementById('about');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      } else if (sectionId === 'collections') {
+        const el = document.getElementById('collections');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      } else if (sectionId === 'curated-retreat') {
+        const el = document.getElementById('curated-retreat');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      } else if (sectionId === 'explore-range') {
+        const el = document.getElementById('explore-range');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      } else if (sectionId === 'bestsellers') {
+        const el = document.getElementById('bestsellers');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      } else if (sectionId === 'spaces') {
+        const el = document.getElementById('spaces');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   const totalCartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
-  const cartSubtotal = cart.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F8F6F2] text-[#24211E]">
-      {/* 1. Announcement Bar */}
-      <AnnouncementBar />
+    <div className="min-h-screen flex flex-col bg-[#FAF7F2] text-[#24211E]">
+      {/* Top Announcement Bar when viewing Tiles page as in reference design */}
+      {currentView === 'tiles' && <AnnouncementBar />}
 
-      {/* 2. Primary Navigation */}
+      {/* 1. Primary Navigation (Clean bone-white header with SMPL wordmark, Tiles, and CATALOGUE button) */}
       <Navbar
         cartCount={totalCartCount}
         wishlistCount={wishlist.length}
-        currentView={currentView}
         onOpenCart={() => setIsCartOpen(true)}
         onOpenWishlist={() => setIsWishlistOpen(true)}
         onOpenSearch={() => setIsSearchOpen(true)}
         onOpenAccount={() => setIsTradeOpen(true)}
         onNavigateSection={handleNavigateSection}
-        onSelectCategory={handleSelectCategoryFromNav}
-        onNavigateHome={() => {
+        onOpenDepartment={handleOpenDepartment}
+        onOpenTilesPage={() => {
+          setCurrentView('tiles');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+        onGoHome={() => {
           setCurrentView('home');
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
-        onNavigateCatalogue={() => {
-          setSelectedCategoryFilter('all');
-          setCurrentView('catalogue');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
-        onSelectProduct={(prod) => setSelectedProduct(prod)}
+        activeView={currentView}
       />
 
-      {/* Main Content Flow: Switchable between Luxury Home and Dedicated PLP */}
+      {/* Main Content Area: Home, Tiles Page, OR Full Product Catalog View */}
       <main className="flex-1">
-        {currentView === 'home' ? (
+        {currentView === 'catalog' ? (
+          <ProductCatalogView
+            products={ALL_PRODUCTS}
+            selectedDepartment={catalogDepartment}
+            selectedCategory={catalogCategory}
+            onSelectProduct={(prod) => setSelectedProduct(prod)}
+            onAddToCart={handleAddToCart}
+            onToggleWishlist={handleToggleWishlist}
+            isWishlisted={isWishlisted}
+            onCloseCatalog={() => setCurrentView('home')}
+            onCompareProducts={(prods) => setComparingProducts(prods)}
+          />
+        ) : currentView === 'tiles' ? (
+          <TilesPageView
+            onOpenConsultation={() => setIsTradeOpen(true)}
+            onOrderSample={(tileName) =>
+              showToast(`Added material sample swatch for "${tileName}" to your specification kit.`)
+            }
+          />
+        ) : currentView === 'sanitaryware' ? (
+          <SanitarywarePageView
+            onSelectProduct={(prod) => setSelectedProduct(prod)}
+            onAddToCart={handleAddToCart}
+            onToggleWishlist={handleToggleWishlist}
+            isWishlisted={isWishlisted}
+            onGoHome={() => {
+              setCurrentView('home');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            onOpenConsultation={() => setIsTradeOpen(true)}
+          />
+        ) : currentView === 'showers' ? (
+          <ShowersPageView
+            onSelectProduct={(prod) => setSelectedProduct(prod)}
+            onAddToCart={handleAddToCart}
+            onToggleWishlist={handleToggleWishlist}
+            isWishlisted={isWishlisted}
+            onGoHome={() => {
+              setCurrentView('home');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            onOpenConsultation={() => setIsTradeOpen(true)}
+          />
+        ) : currentView === 'faucets' ? (
+          <FaucetsPageView
+            onSelectProduct={(prod) => setSelectedProduct(prod)}
+            onAddToCart={handleAddToCart}
+            onToggleWishlist={handleToggleWishlist}
+            isWishlisted={isWishlisted}
+            onGoHome={() => {
+              setCurrentView('home');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            onOpenConsultation={() => setIsTradeOpen(true)}
+          />
+        ) : currentView === 'bathroom' ? (
+          <BathroomPageView
+            onSelectProduct={(prod) => setSelectedProduct(prod)}
+            onAddToCart={handleAddToCart}
+            onToggleWishlist={handleToggleWishlist}
+            isWishlisted={isWishlisted}
+            onGoHome={() => {
+              setCurrentView('home');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            onOpenConsultation={() => setIsTradeOpen(true)}
+          />
+        ) : (
           <>
-            {/* 3. Hero Section: Elevate the Everyday. */}
+            {/* 2. Hero Section: Architecture Meets Wellbeing (Pristine 4K background, 4 value pillars, 0 overlap) */}
             <HeroSection
-              onExploreCollections={() => {
-                setSelectedCategoryFilter('all');
-                setCurrentView('catalogue');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              onDiscoverDesign={() => handleNavigateSection('curated-retreat')}
+              onExploreCollections={() => handleOpenDepartment('All')}
+              onBookConsultation={() => setIsTradeOpen(true)}
             />
 
-            {/* 4. Find Your Space (6 spaces) */}
-            <FindYourSpace
-              onSelectSpace={handleSelectSpace}
-              onExploreAll={() => {
-                setSelectedCategoryFilter('all');
-                setCurrentView('catalogue');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
+            {/* 3. Featured Collections: Curated Spaces for Modern Living (5 exact cards directly under hero) */}
+            <CuratedSpacesPreview
+              onOpenDepartment={handleOpenDepartment}
+              onExploreAll={() => handleOpenDepartment('All')}
             />
 
-            {/* 5. Find Your Style (Collections) */}
-            <FindYourStyle
-              onSelectStyle={handleSelectStyle}
-              onExploreCollections={() => {
-                setSelectedCategoryFilter('all');
-                setCurrentView('catalogue');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-            />
-
-            {/* 6. Explore Our Range (8 category cards with HD imagery) */}
+            {/* 4. Explore Our Range (HD product silhouettes and model counts) */}
             <ExploreOurRange onSelectCategory={handleSelectCategory} />
 
-            {/* 7. Curated Spaces: The Contemporary Retreat */}
+            {/* 5. Find Your Space (6 authentic architectural bathware suite cards with crystal-clear HD photography) */}
+            <FindYourSpace
+              onSelectSpace={handleSelectSpace}
+              onExploreAll={() => handleOpenDepartment('All')}
+            />
+
+            {/* 6. Find Your Style (6 macro close-up craftsmanship cards) */}
+            <FindYourStyle
+              onSelectStyle={handleSelectStyle}
+              onExploreCollections={() => handleOpenDepartment('All')}
+            />
+
+            {/* 7. Curated Spaces: The Contemporary Retreat with Interactive Hotspots */}
             <CuratedSpaces
               onSelectProduct={(prod) => setSelectedProduct(prod)}
               onAddEnsembleToCart={handleAddEnsembleToCart}
             />
 
-            {/* 8. Customer Favourites (Bestsellers with finish swatches & visible buttons) */}
+            {/* 8. Material & Finish Studio: 6 PVD Architectural Finishes & Swatch Ordering */}
+            <MaterialFinishStudio
+              onSelectProduct={(prod) => setSelectedProduct(prod)}
+              onFilterByFinish={(finishName) => {
+                setCatalogDepartment('All');
+                setCatalogCategory(finishName);
+                setCurrentView('catalog');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+            />
+
+            {/* 9. Customer Favourites: Expanded 4-Column Luxury Architectural Grid with Swatches */}
             <CustomerFavourites
               onSelectProduct={(prod) => setSelectedProduct(prod)}
               onAddToCart={handleAddToCart}
               onToggleWishlist={handleToggleWishlist}
               isWishlisted={isWishlisted}
+              onOpenCatalog={() => handleOpenDepartment('All')}
             />
-
-            {/* 9. Trust, Verified Architect Reviews & Technical FAQ Accordion */}
-            <TrustAndFAQ />
-          </>
-        ) : (
-          /* Dedicated Premium Product Listing Page (PLP) with Advanced Filters & Sorting */
-          <>
-            <ProductListingPage
-              initialCategory={selectedCategoryFilter}
-              onSelectProduct={(prod) => setSelectedProduct(prod)}
-              onAddToCart={handleAddToCart}
-              onToggleWishlist={handleToggleWishlist}
-              isWishlisted={isWishlisted}
-              onBackToHome={() => {
-                setCurrentView('home');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-            />
-            {/* Trust and Technical FAQ on PLP too */}
-            <TrustAndFAQ />
           </>
         )}
       </main>
@@ -313,7 +362,7 @@ export default function App() {
         onOpenTrade={() => setIsTradeOpen(true)}
       />
 
-      {/* Drawers, Modals and Overlays */}
+      {/* Drawers and Overlays */}
       <CartDrawer
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
@@ -321,7 +370,6 @@ export default function App() {
         onUpdateQuantity={handleUpdateQuantity}
         onRemoveItem={handleRemoveFromCart}
         onClearCart={handleClearCart}
-        onOpenCheckout={handleOpenCheckoutFromCart}
       />
 
       <WishlistDrawer
@@ -332,29 +380,24 @@ export default function App() {
         onAddToCart={handleAddToCart}
       />
 
-      {/* Full-featured Luxury PDP Modal with 3D viewer & spec downloads */}
       <ProductModal
         product={selectedProduct}
+        allProducts={ALL_PRODUCTS}
         onClose={() => setSelectedProduct(null)}
         onAddToCart={handleAddToCart}
-        onBuyNow={handleBuyNow}
         onToggleWishlist={handleToggleWishlist}
         isWishlisted={selectedProduct ? isWishlisted(selectedProduct.id) : false}
-        onOpenTradeQuote={(prod) => {
-          setSelectedProduct(null);
-          setIsTradeOpen(true);
-        }}
+        onSelectProduct={(p) => setSelectedProduct(p)}
       />
 
-      {/* Complete Checkout Flow Modal */}
-      <CheckoutModal
-        isOpen={isCheckoutOpen}
-        onClose={() => setIsCheckoutOpen(false)}
-        items={cart}
-        subtotal={cartSubtotal}
-        discount={checkoutDiscount}
-        discountCode={checkoutDiscountCode}
-        onClearCart={handleClearCart}
+      <ProductComparisonModal
+        products={comparingProducts}
+        onClose={() => setComparingProducts([])}
+        onSelectProduct={(p) => {
+          setComparingProducts([]);
+          setSelectedProduct(p);
+        }}
+        onAddToCart={handleAddToCart}
       />
 
       <SearchModal
@@ -370,12 +413,12 @@ export default function App() {
 
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 bg-[#24211E] text-white px-4 py-2.5 rounded-xs shadow-xl flex items-center gap-2.5 text-xs animate-in fade-in slide-in-from-bottom-2 duration-200 border border-[#3E3A34]">
+        <div className="fixed bottom-6 right-6 z-50 bg-[#24211E] text-white px-4 py-3 rounded-sm shadow-2xl flex items-center gap-2.5 text-xs animate-in fade-in slide-in-from-bottom-2 duration-200 border border-[#3E3A34]">
           <Check className="w-4 h-4 text-[#C4B29E]" />
           <span>{toastMessage}</span>
           <button
             onClick={() => setToastMessage(null)}
-            className="ml-2 text-stone-400 hover:text-white cursor-pointer"
+            className="ml-2 text-stone-400 hover:text-white"
           >
             <X className="w-3.5 h-3.5" />
           </button>

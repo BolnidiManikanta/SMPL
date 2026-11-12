@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Heart, ChevronLeft, ChevronRight, Eye, Plus, Check, ShoppingBag } from 'lucide-react';
-import { BESTSELLER_PRODUCTS } from '../data/bathwareData';
+import { Heart, Eye, Plus, Check, ArrowRight, Sparkles, SlidersHorizontal } from 'lucide-react';
+import { BESTSELLER_PRODUCTS, ALL_PRODUCTS } from '../data/bathwareData';
 import { Product } from '../types';
 
 interface CustomerFavouritesProps {
@@ -8,6 +8,7 @@ interface CustomerFavouritesProps {
   onAddToCart: (product: Product, finish: string) => void;
   onToggleWishlist: (product: Product) => void;
   isWishlisted: (productId: string) => boolean;
+  onOpenCatalog?: () => void;
 }
 
 export const CustomerFavourites: React.FC<CustomerFavouritesProps> = ({
@@ -15,25 +16,30 @@ export const CustomerFavourites: React.FC<CustomerFavouritesProps> = ({
   onAddToCart,
   onToggleWishlist,
   isWishlisted,
+  onOpenCatalog,
 }) => {
-  const [activeTab, setActiveTab] = useState<'bestsellers' | 'new' | 'featured'>('bestsellers');
+  const [activeCategoryTab, setActiveCategoryTab] = useState<string>('all');
   const [selectedFinishes, setSelectedFinishes] = useState<Record<string, string>>({});
   const [addedAnimation, setAddedAnimation] = useState<Record<string, boolean>>({});
-  const [pageIndex, setPageIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState<number>(12);
 
-  const filteredProducts = BESTSELLER_PRODUCTS.filter((prod) => {
-    if (activeTab === 'bestsellers') return prod.isBestseller;
-    if (activeTab === 'new') return prod.isNew || prod.isBestseller;
-    if (activeTab === 'featured') return prod.isFeatured || prod.isBestseller;
-    return true;
-  });
+  const categoryTabs = [
+    { id: 'all', label: 'All Highlights', count: 24 },
+    { id: 'Faucets', label: 'Basin Mixers', count: 8 },
+    { id: 'Showers', label: 'Showers & Spa', count: 8 },
+    { id: 'Bathroom', label: 'Bathtubs & Basins', count: 8 },
+    { id: 'Sanitaryware', label: 'Toilets & Sanitary', count: 7 },
+    { id: 'Kitchen', label: 'Kitchen Mixers', count: 7 },
+  ];
 
-  const itemsPerPage = 4;
-  const maxPages = Math.ceil(filteredProducts.length / itemsPerPage);
-  const displayedProducts = filteredProducts.slice(
-    pageIndex * itemsPerPage,
-    (pageIndex + 1) * itemsPerPage
-  );
+  const filteredProducts = React.useMemo(() => {
+    if (activeCategoryTab === 'all') {
+      return BESTSELLER_PRODUCTS;
+    }
+    return ALL_PRODUCTS.filter((p) => p.department.toLowerCase() === activeCategoryTab.toLowerCase());
+  }, [activeCategoryTab]);
+
+  const displayedProducts = filteredProducts.slice(0, visibleCount);
 
   const handleFinishChange = (productId: string, finishName: string, e: React.MouseEvent) => {
     e.stopPropagation();
@@ -47,102 +53,71 @@ export const CustomerFavourites: React.FC<CustomerFavouritesProps> = ({
     setAddedAnimation((prev) => ({ ...prev, [product.id]: true }));
     setTimeout(() => {
       setAddedAnimation((prev) => ({ ...prev, [product.id]: false }));
-    }, 2000);
+    }, 1800);
   };
 
   return (
-    <section id="bestsellers" className="w-full bg-[#F8F6F2] py-16 sm:py-24 px-4 sm:px-6 lg:px-10 border-b border-[#E7E0D3]">
+    <section id="bestsellers" className="w-full bg-[#F8F6F2] py-20 sm:py-28 px-4 sm:px-6 lg:px-10 border-b border-[#E7E0D3]">
       <div className="max-w-[1440px] mx-auto">
-        {/* Header with Title and Tabs */}
+        {/* Editorial Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <span className="block text-[11px] sm:text-[12px] uppercase tracking-[0.24em] text-[#584636] font-semibold mb-2.5">
-              BESTSELLERS
-            </span>
-            <h2 className="font-serif text-[36px] sm:text-[46px] text-[#1C1917] font-normal tracking-tight">
-              Customer Favourites
+            <div className="flex items-center gap-2 mb-3">
+              <span className="block text-[11px] uppercase tracking-[0.24em] text-[#725C48] font-semibold">
+                ARCHITECTURAL SPECIFICATIONS
+              </span>
+              <span className="text-stone-300">·</span>
+              <span className="text-[11px] text-stone-500 uppercase tracking-widest font-mono">
+                SHOWROOM CURATION
+              </span>
+            </div>
+            <h2 className="font-serif text-[38px] sm:text-[48px] text-[#1E1B18] font-normal tracking-tight leading-tight">
+              Signature Fixtures &amp; Showpieces
             </h2>
+            <p className="text-[14.5px] sm:text-[15.5px] text-[#554E46] max-w-xl mt-2 leading-relaxed">
+              Precision-machined brassware, monolithic carved stone bathtubs, and thermostatic wellness fittings engineered for refined architectural interiors.
+            </p>
           </div>
 
-          {/* Right Navigation & Filter Tabs */}
-          <div className="flex items-center space-x-6 sm:space-x-8">
-            {/* Tabs */}
-            <div className="flex items-center space-x-6 text-[13px] sm:text-[14px] tracking-wide font-medium">
-              <button
-                onClick={() => {
-                  setActiveTab('bestsellers');
-                  setPageIndex(0);
-                }}
-                className={`pb-1 transition-colors relative cursor-pointer ${
-                  activeTab === 'bestsellers'
-                    ? 'text-[#1C1917] font-semibold'
-                    : 'text-stone-500 hover:text-stone-900'
-                }`}
-              >
-                Bestsellers
-                {activeTab === 'bestsellers' && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#1C1917]" />
-                )}
-              </button>
-
-              <button
-                onClick={() => {
-                  setActiveTab('new');
-                  setPageIndex(0);
-                }}
-                className={`pb-1 transition-colors relative cursor-pointer ${
-                  activeTab === 'new'
-                    ? 'text-[#1C1917] font-semibold'
-                    : 'text-stone-500 hover:text-stone-900'
-                }`}
-              >
-                New Arrivals
-                {activeTab === 'new' && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#1C1917]" />
-                )}
-              </button>
-
-              <button
-                onClick={() => {
-                  setActiveTab('featured');
-                  setPageIndex(0);
-                }}
-                className={`pb-1 transition-colors relative cursor-pointer ${
-                  activeTab === 'featured'
-                    ? 'text-[#1C1917] font-semibold'
-                    : 'text-stone-500 hover:text-stone-900'
-                }`}
-              >
-                Featured
-                {activeTab === 'featured' && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#1C1917]" />
-                )}
-              </button>
-            </div>
-
-            {/* Slider arrows */}
-            <div className="flex items-center space-x-2">
-              <button
-                onClick={() => setPageIndex((p) => Math.max(0, p - 1))}
-                disabled={pageIndex === 0}
-                aria-label="Previous products"
-                className="w-10 h-10 rounded-full border border-[#DDD5C8] bg-white flex items-center justify-center text-stone-800 hover:bg-[#EFEAE2] disabled:opacity-30 disabled:cursor-not-allowed transition-all cursor-pointer shadow-xs"
-              >
-                <ChevronLeft className="w-4 h-4 stroke-[2]" />
-              </button>
-              <button
-                onClick={() => setPageIndex((p) => (p + 1 < maxPages ? p + 1 : 0))}
-                aria-label="Next products"
-                className="w-10 h-10 rounded-full border border-[#DDD5C8] bg-white flex items-center justify-center text-stone-800 hover:bg-[#EFEAE2] transition-all cursor-pointer shadow-xs"
-              >
-                <ChevronRight className="w-4 h-4 stroke-[2]" />
-              </button>
-            </div>
-          </div>
+          {/* Quick Catalogue Direct Trigger */}
+          {onOpenCatalog && (
+            <button
+              onClick={onOpenCatalog}
+              className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] font-medium text-[#725C48] hover:text-[#554332] pb-1 border-b border-[#725C48]/40 hover:border-[#725C48] transition-colors cursor-pointer self-start md:self-end"
+            >
+              <span>Explore All 63 Models</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          )}
         </div>
 
-        {/* Spacious Product Cards Grid with BIG crystal-clear images and ALWAYS-VISIBLE buttons */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 lg:gap-8">
+        {/* Category Filter Pills (Functional, Segmented) */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 scrollbar-none border-b border-[#E8E2D7]">
+          {categoryTabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => {
+                setActiveCategoryTab(tab.id);
+                setVisibleCount(12);
+              }}
+              className={`px-4 py-2 text-xs uppercase tracking-wider font-medium rounded-xs whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 ${
+                activeCategoryTab === tab.id
+                  ? 'bg-[#221F1B] text-white shadow-xs'
+                  : 'bg-white/80 hover:bg-white text-stone-700 border border-[#DDD5C8]'
+              }`}
+            >
+              <span>{tab.label}</span>
+              <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-xs ${
+                activeCategoryTab === tab.id ? 'bg-white/20 text-white' : 'bg-stone-100 text-stone-500'
+              }`}>
+                {tab.count}
+              </span>
+            </button>
+          ))}
+        </div>
+
+        {/* 4-Column Luxury Architectural Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-7">
           {displayedProducts.map((prod) => {
             const activeFinish = selectedFinishes[prod.id] || prod.finishes[0]?.name || 'Standard';
             const wish = isWishlisted(prod.id);
@@ -152,15 +127,22 @@ export const CustomerFavourites: React.FC<CustomerFavouritesProps> = ({
               <div
                 key={prod.id}
                 onClick={() => onSelectProduct(prod)}
-                className="group cursor-pointer flex flex-col bg-[#FAF8F5] border border-[#E3DDD2] hover:border-[#725C48] rounded-[3px] p-5 sm:p-6 transition-all hover:shadow-xl hover:-translate-y-1"
+                className="group cursor-pointer flex flex-col bg-white border border-[#E5DFD4] hover:border-[#725C48] rounded-[3px] p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
               >
-                {/* BIG Prominent HD Image Stage (320px - 380px tall) */}
-                <div className="relative w-full h-80 sm:h-88 lg:h-96 bg-[#F4EFEA] rounded-[2px] overflow-hidden flex items-center justify-center p-6 mb-5 border border-[#EAE4D9]">
-                  {/* Crystal-clear 1024x1024 Studio Image */}
+                {/* Top Card Kicker: Model ID + Space */}
+                <div className="flex items-center justify-between text-[11px] text-stone-400 mb-2">
+                  <span className="font-mono tracking-wider">{prod.modelNumber}</span>
+                  <span className="text-[10.5px] uppercase tracking-wider text-stone-500 font-medium">
+                    {prod.space}
+                  </span>
+                </div>
+
+                {/* Big, Editorial HD Product Image Container */}
+                <div className="relative w-full aspect-[4/5] bg-[#F6F3EE] rounded-[2px] overflow-hidden flex items-center justify-center mb-4">
                   <img
                     src={prod.image}
                     alt={prod.name}
-                    className="w-full h-full object-contain filter drop-shadow-xl transition-transform duration-500 ease-out group-hover:scale-108"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-106"
                     referrerPolicy="no-referrer"
                     loading="lazy"
                   />
@@ -171,99 +153,117 @@ export const CustomerFavourites: React.FC<CustomerFavouritesProps> = ({
                       e.stopPropagation();
                       onToggleWishlist(prod);
                     }}
-                    aria-label="Save to wishlist"
-                    className={`absolute top-3.5 right-3.5 w-9 h-9 rounded-full flex items-center justify-center transition-all cursor-pointer shadow-md ${
+                    aria-label="Save to architectural board"
+                    className={`absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center transition-all cursor-pointer shadow-sm z-20 ${
                       wish
                         ? 'bg-[#725C48] text-white'
-                        : 'bg-white/95 hover:bg-white text-stone-700 hover:text-[#725C48]'
+                        : 'bg-white/90 hover:bg-white text-stone-700 hover:text-[#725C48]'
                     }`}
                   >
-                    <Heart className={`w-4 h-4 ${wish ? 'fill-white stroke-none' : 'stroke-[1.75]'}`} />
+                    <Heart className={`w-4 h-4 ${wish ? 'fill-white stroke-none' : 'stroke-[1.5]'}`} />
                   </button>
 
-                  {/* Quick View Tag in Top Left */}
-                  <div className="absolute top-3.5 left-3.5 px-2.5 py-1 bg-white/90 backdrop-blur-xs rounded-full border border-[#DDD5C8] text-[10px] uppercase tracking-wider font-semibold text-stone-700 shadow-xs">
-                    Ultra HD
+                  {/* Quick Action Overlay on hover */}
+                  <div className="absolute inset-x-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-2 z-10">
+                    <button
+                      onClick={(e) => handleAdd(prod, e)}
+                      className="flex-1 py-2.5 px-3 bg-[#1E1B18] hover:bg-[#38332E] text-white text-[11px] uppercase tracking-wider font-semibold rounded-xs transition-colors flex items-center justify-center gap-1.5 shadow-lg cursor-pointer"
+                    >
+                      {added ? (
+                        <>
+                          <Check className="w-3.5 h-3.5 stroke-[2.5]" />
+                          <span>Added to Bag</span>
+                        </>
+                      ) : (
+                        <>
+                          <Plus className="w-3.5 h-3.5" />
+                          <span>Add to Bag</span>
+                        </>
+                      )}
+                    </button>
+
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onSelectProduct(prod);
+                      }}
+                      className="p-2.5 bg-white/95 hover:bg-white text-stone-800 rounded-xs shadow-lg transition-colors cursor-pointer"
+                      title="Inspect Specifications"
+                    >
+                      <Eye className="w-3.5 h-3.5" />
+                    </button>
                   </div>
                 </div>
 
-                {/* Finish Swatches */}
-                <div className="flex items-center space-x-2 mb-3">
-                  {prod.finishes.map((f) => (
-                    <button
-                      key={f.code}
-                      onClick={(e) => handleFinishChange(prod.id, f.name, e)}
-                      title={f.name}
-                      className={`w-4 h-4 rounded-full transition-transform cursor-pointer border ${
-                        activeFinish === f.name
-                          ? 'ring-2 ring-offset-1 ring-[#725C48] scale-110 border-white'
-                          : 'border-black/25 hover:scale-105'
-                      }`}
-                      style={{ backgroundColor: f.hex }}
-                    />
-                  ))}
-                  <span className="text-[11px] text-stone-600 ml-1.5 font-medium truncate">
+                {/* Interactive Finish Swatches */}
+                <div className="flex items-center justify-between mb-3 pb-3 border-b border-[#F0EAE0]">
+                  <div className="flex items-center space-x-1.5">
+                    {prod.finishes.map((f) => (
+                      <button
+                        key={f.code}
+                        onClick={(e) => handleFinishChange(prod.id, f.name, e)}
+                        title={f.name}
+                        className={`w-4 h-4 rounded-full border transition-all cursor-pointer ${
+                          activeFinish === f.name
+                            ? 'ring-2 ring-[#725C48] ring-offset-1 scale-110 border-stone-800'
+                            : 'border-black/20 hover:scale-105'
+                        }`}
+                        style={{ backgroundColor: f.hex }}
+                      />
+                    ))}
+                  </div>
+
+                  <span className="text-[11px] text-[#725C48] font-medium tracking-tight">
                     {activeFinish}
                   </span>
                 </div>
 
-                {/* Product Title */}
-                <h3 className="text-[16px] sm:text-[17px] font-medium text-[#1C1917] group-hover:text-[#725C48] transition-colors line-clamp-1 mb-1">
-                  {prod.name}
-                </h3>
+                {/* Title & Material Specs */}
+                <div className="flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="font-serif text-[18px] sm:text-[19px] text-[#1E1B18] font-normal leading-snug group-hover:text-[#725C48] transition-colors mb-1.5 line-clamp-2">
+                      {prod.name}
+                    </h3>
+                    <p className="text-[11.5px] text-[#635B52] line-clamp-1 mb-3">
+                      {prod.specs.material} · {prod.specs.mountingType}
+                    </p>
+                  </div>
 
-                {/* Category / Collection Note */}
-                <p className="text-[12.5px] text-stone-600 line-clamp-1 mb-4 font-normal">
-                  {prod.category} · {prod.collection}
-                </p>
-
-                {/* Price */}
-                <div className="flex items-center justify-between mb-4 pt-3 border-t border-[#EAE4D9]">
-                  <span className="font-mono font-semibold text-[#1C1917] text-[17px]">
-                    ${prod.price.toLocaleString()}
-                  </span>
-                  <span className="text-[11px] text-stone-500 font-normal">
-                    Tax included
-                  </span>
-                </div>
-
-                {/* ALWAYS-VISIBLE Action Buttons: Add to Bag & Quick View */}
-                <div className="mt-auto grid grid-cols-5 gap-2 pt-1">
-                  <button
-                    onClick={(e) => handleAdd(prod, e)}
-                    className={`col-span-4 py-3 px-3 rounded-[2px] text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm active:scale-[0.99] ${
-                      added
-                        ? 'bg-emerald-800 text-white'
-                        : 'bg-[#725C48] hover:bg-[#584636] text-white hover:shadow'
-                    }`}
-                  >
-                    {added ? (
-                      <>
-                        <Check className="w-4 h-4 stroke-[2.5]" />
-                        <span>Added to Bag</span>
-                      </>
-                    ) : (
-                      <>
-                        <ShoppingBag className="w-3.5 h-3.5" />
-                        <span>Add to Bag</span>
-                      </>
-                    )}
-                  </button>
-
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onSelectProduct(prod);
-                    }}
-                    title="Quick View Details"
-                    className="col-span-1 py-3 bg-[#EFEAE2] hover:bg-[#E5DFD4] text-[#1C1917] border border-[#DDD5C8] rounded-[2px] flex items-center justify-center transition-colors cursor-pointer"
-                  >
-                    <Eye className="w-4 h-4" />
-                  </button>
+                  <div className="flex items-baseline justify-between pt-2 border-t border-[#F2ECE2]">
+                    <span className="text-base sm:text-lg font-medium text-[#1E1B18] tabular-nums tracking-tight">
+                      ${prod.price.toLocaleString()}
+                    </span>
+                    <span className="text-[11px] text-stone-500 font-medium tracking-wide group-hover:text-[#725C48] transition-colors flex items-center gap-1">
+                      <span>View Specs</span>
+                      <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                    </span>
+                  </div>
                 </div>
               </div>
             );
           })}
+        </div>
+
+        {/* Bottom Expand / View All Catalogue CTA */}
+        <div className="mt-14 text-center flex flex-col sm:flex-row items-center justify-center gap-4">
+          {visibleCount < filteredProducts.length && (
+            <button
+              onClick={() => setVisibleCount((prev) => prev + 12)}
+              className="py-3.5 px-8 bg-white border border-[#DDD5C8] hover:border-[#725C48] text-[#1E1B18] text-xs uppercase tracking-[0.16em] font-semibold rounded-[2px] transition-all hover:bg-[#F2ECE2] shadow-xs cursor-pointer"
+            >
+              Load More Fixtures ({filteredProducts.length - visibleCount} remaining)
+            </button>
+          )}
+
+          {onOpenCatalog && (
+            <button
+              onClick={onOpenCatalog}
+              className="py-3.5 px-8 bg-[#725C48] hover:bg-[#5C4938] text-white text-xs uppercase tracking-[0.16em] font-semibold rounded-[2px] transition-all shadow-sm hover:shadow-md cursor-pointer flex items-center gap-2"
+            >
+              <span>Browse Full 63-Model Catalogue</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          )}
         </div>
       </div>
     </section>

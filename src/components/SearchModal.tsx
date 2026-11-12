@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Search, X, ArrowRight } from 'lucide-react';
-import { BESTSELLER_PRODUCTS, CURATED_RETREAT_PRODUCTS } from '../data/bathwareData';
+import { ALL_PRODUCTS } from '../data/bathwareData';
 import { Product } from '../types';
 
 interface SearchModalProps {
@@ -18,19 +18,18 @@ export const SearchModal: React.FC<SearchModalProps> = ({
 
   if (!isOpen) return null;
 
-  const allProducts = [...BESTSELLER_PRODUCTS, ...CURATED_RETREAT_PRODUCTS];
-  const uniqueProducts = Array.from(new Map(allProducts.map((p) => [p.id, p])).values());
-
   const results = query.trim()
-    ? uniqueProducts.filter(
+    ? ALL_PRODUCTS.filter(
         (p) =>
           p.name.toLowerCase().includes(query.toLowerCase()) ||
           p.category.toLowerCase().includes(query.toLowerCase()) ||
+          p.department.toLowerCase().includes(query.toLowerCase()) ||
+          p.subcategory.toLowerCase().includes(query.toLowerCase()) ||
           p.collection.toLowerCase().includes(query.toLowerCase()) ||
-          p.material.toLowerCase().includes(query.toLowerCase()) ||
+          (p.specs?.material && p.specs.material.toLowerCase().includes(query.toLowerCase())) ||
           p.finishes.some((f) => f.name.toLowerCase().includes(query.toLowerCase()))
       )
-    : uniqueProducts.slice(0, 4);
+    : ALL_PRODUCTS.slice(0, 5);
 
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4">

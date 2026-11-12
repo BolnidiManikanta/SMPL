@@ -2,52 +2,65 @@ export interface ProductFinish {
   name: string;
   hex: string;
   code: string;
+  image?: string;
 }
 
-export interface TechnicalSpecs {
-  cartridge: string;
-  operatingPressure: string;
-  flowRate: string;
-  waterInlet: string;
-  certifications: string[];
-}
-
-export interface DimensionsDetail {
-  height: string;
-  width: string;
-  depth: string;
-  reach?: string;
+export interface TechnicalSpec {
+  material: string;
+  cartridge?: string;
+  flowRate?: string;
+  operatingPressure?: string;
+  mountingType: string;
+  shape?: string;
+  connectionSize?: string;
+  certifications?: string[];
+  dimensions: string;
   weight?: string;
+}
+
+export interface ReviewItem {
+  id: string;
+  author: string;
+  role: string;
+  project: string;
+  rating: number;
+  date: string;
+  comment: string;
+  verifiedArchitect: boolean;
 }
 
 export interface Product {
   id: string;
-  sku: string;
+  modelNumber: string;
   name: string;
+  department: 'Bathroom' | 'Faucets' | 'Showers' | 'Sanitaryware' | 'Kitchen' | 'Accessories';
   category: string;
-  collection: string;
-  space: string;
+  subcategory: string;
+  collection: 'Contemporary' | 'Minimalist' | 'Sculptural' | 'Timeless' | 'Modern Classic' | 'Organic Luxury';
+  space: 'Master Bathroom' | 'Guest Bathroom' | 'Powder Room' | 'Kitchen' | 'Wellness & Spa' | 'Commercial Spaces';
   price: number;
   image: string;
-  galleryImages?: string[];
+  galleryImages: string[];
+  lifestyleImage: string;
   rating: number;
   reviewCount: number;
   finishes: ProductFinish[];
-  material: string;
-  installationType: string;
-  dimensions: string;
-  dimensionsDetail?: DimensionsDetail;
+  specs: TechnicalSpec;
   description: string;
   features: string[];
-  technicalSpecs?: TechnicalSpecs;
-  warranty: string;
+  whatsInTheBox: {
+    included: string[];
+    requiredSeparately?: string[];
+  };
+  installationGuide: string;
+  cadFileUrl?: string;
   inStock: boolean;
-  leadTime?: string;
+  leadTimeDays: number;
+  compatibleProductIds?: string[];
   isBestseller?: boolean;
   isNew?: boolean;
   isFeatured?: boolean;
-  has3DModel?: boolean;
-  crossSellIds?: string[];
+  reviews?: ReviewItem[];
 }
 
 export interface CartItem {
@@ -77,15 +90,6 @@ export interface ProductCategoryItem {
   title: string;
   image: string;
   count: number;
-}
-
-export interface FilterState {
-  category: string;
-  priceRange: [number, number];
-  finishes: string[];
-  materials: string[];
-  installationTypes: string[];
-  inStockOnly: boolean;
-  searchQuery: string;
-  sortBy: 'featured' | 'newest' | 'price-asc' | 'price-desc' | 'rating';
+  department: 'Bathroom' | 'Faucets' | 'Showers' | 'Sanitaryware' | 'Kitchen' | 'Accessories';
+  subcategories: string[];
 }
