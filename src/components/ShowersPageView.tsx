@@ -48,49 +48,49 @@ export const SHOWER_CATEGORIES = [
   {
     id: 'Overhead Showers',
     title: 'Overhead Showers',
-    image: '/images/showers/categories/overhead_showers.jpg',
+    image: '/images/showers/categories/overhead_showers.webp',
     count: 128,
   },
   {
     id: 'Hand Showers',
     title: 'Hand Showers',
-    image: '/images/showers/categories/hand_showers.jpg',
+    image: '/images/showers/categories/hand_showers.webp',
     count: 94,
   },
   {
     id: 'Shower Systems',
     title: 'Shower Systems',
-    image: '/images/showers/categories/shower_systems.jpg',
+    image: '/images/showers/categories/shower_systems.webp',
     count: 76,
   },
   {
     id: 'Shower Panels',
     title: 'Shower Panels',
-    image: '/images/showers/categories/shower_panels.jpg',
+    image: '/images/showers/categories/shower_panels.webp',
     count: 18,
   },
   {
     id: 'Body Jets',
     title: 'Body Jets',
-    image: '/images/showers/categories/body_jets.jpg',
+    image: '/images/showers/categories/body_jets.webp',
     count: 24,
   },
   {
     id: 'Concealed Showers',
     title: 'Concealed Showers',
-    image: '/images/showers/categories/concealed_showers.jpg',
+    image: '/images/showers/categories/concealed_showers.webp',
     count: 36,
   },
   {
     id: 'Shower Arms',
     title: 'Shower Arms',
-    image: '/images/showers/categories/shower_arms.jpg',
+    image: '/images/showers/categories/shower_arms.webp',
     count: 32,
   },
   {
     id: 'Shower Accessories',
     title: 'Shower Accessories',
-    image: '/images/showers/categories/shower_accessories.jpg',
+    image: '/images/showers/categories/shower_accessories.webp',
     count: 28,
   },
 ];
@@ -103,7 +103,7 @@ export const SHOWER_PRODUCTS_DATA: ShowerProduct[] = [
     category: 'Overhead Showers',
     priceINR: 12900,
     formattedPrice: '₹ 12,900',
-    image: '/images/showers/products/smpl_sh_101.jpg',
+    image: '/images/showers/products/smpl_sh_101.webp',
     swatches: [
       { name: 'Chrome', hex: '#D8D8D8', code: 'CR' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -129,7 +129,7 @@ export const SHOWER_PRODUCTS_DATA: ShowerProduct[] = [
     category: 'Hand Showers',
     priceINR: 4900,
     formattedPrice: '₹ 4,900',
-    image: '/images/showers/products/smpl_hs_202.jpg',
+    image: '/images/showers/products/smpl_hs_202.webp',
     swatches: [
       { name: 'Chrome', hex: '#D8D8D8', code: 'CR' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -154,7 +154,7 @@ export const SHOWER_PRODUCTS_DATA: ShowerProduct[] = [
     category: 'Shower Systems',
     priceINR: 28500,
     formattedPrice: '₹ 28,500',
-    image: '/images/showers/products/smpl_sys_301.jpg',
+    image: '/images/showers/products/smpl_sys_301.webp',
     swatches: [
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
       { name: 'Brushed Nickel', hex: '#9E9A93', code: 'BN' },
@@ -179,7 +179,7 @@ export const SHOWER_PRODUCTS_DATA: ShowerProduct[] = [
     category: 'Shower Panels',
     priceINR: 56000,
     formattedPrice: '₹ 56,000',
-    image: '/images/showers/products/smpl_sp_401.jpg',
+    image: '/images/showers/products/smpl_sp_401.webp',
     swatches: [
       { name: 'Brushed Nickel', hex: '#9E9A93', code: 'BN' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -204,7 +204,7 @@ export const SHOWER_PRODUCTS_DATA: ShowerProduct[] = [
     category: 'Concealed Showers',
     priceINR: 17900,
     formattedPrice: '₹ 17,900',
-    image: '/images/showers/products/smpl_cs_501.jpg',
+    image: '/images/showers/products/smpl_cs_501.webp',
     swatches: [
       { name: 'Gunmetal', hex: '#3E4146', code: 'GM' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -229,7 +229,7 @@ export const SHOWER_PRODUCTS_DATA: ShowerProduct[] = [
     category: 'Overhead Showers',
     priceINR: 8900,
     formattedPrice: '₹ 8,900',
-    image: '/images/showers/products/smpl_oh_601.jpg',
+    image: '/images/showers/products/smpl_oh_601.webp',
     swatches: [
       { name: 'Chrome', hex: '#D8D8D8', code: 'CR' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -254,7 +254,7 @@ export const SHOWER_PRODUCTS_DATA: ShowerProduct[] = [
     category: 'Body Jets',
     priceINR: 9500,
     formattedPrice: '₹ 9,500',
-    image: '/images/showers/categories/body_jets.jpg',
+    image: '/images/showers/categories/body_jets.webp',
     swatches: [
       { name: 'Chrome', hex: '#D8D8D8', code: 'CR' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -279,7 +279,7 @@ export const SHOWER_PRODUCTS_DATA: ShowerProduct[] = [
     category: 'Shower Arms',
     priceINR: 4200,
     formattedPrice: '₹ 4,200',
-    image: '/images/showers/categories/shower_arms.jpg',
+    image: '/images/showers/categories/shower_arms.webp',
     swatches: [
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
       { name: 'Chrome', hex: '#D8D8D8', code: 'CR' },
@@ -304,7 +304,7 @@ export const SHOWER_PRODUCTS_DATA: ShowerProduct[] = [
     category: 'Shower Accessories',
     priceINR: 6800,
     formattedPrice: '₹ 6,800',
-    image: '/images/showers/categories/shower_accessories.jpg',
+    image: '/images/showers/categories/shower_accessories.webp',
     swatches: [
       { name: 'Chrome', hex: '#D8D8D8', code: 'CR' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -395,8 +395,8 @@ export const ShowersPageView: React.FC<ShowersPageViewProps> = ({
       space: 'Master Bathroom',
       price: Math.round(item.priceINR / 83),
       image: item.image,
-      galleryImages: [item.image, '/images/showers/hero_shower_banner.jpg'],
-      lifestyleImage: '/images/showers/hero_shower_banner.jpg',
+      galleryImages: [item.image, '/images/showers/hero_shower_banner.webp'],
+      lifestyleImage: '/images/showers/hero_shower_banner.webp',
       rating: item.rating,
       reviewCount: item.reviewsCount,
       finishes: item.swatches.map((s) => ({ name: s.name, hex: s.hex, code: s.code })),
@@ -480,8 +480,10 @@ export const ShowersPageView: React.FC<ShowersPageViewProps> = ({
           <div className="relative rounded-2xl overflow-hidden border border-[#E8E0D5] bg-[#EAE3D6] min-h-[380px] md:min-h-[440px] flex items-center shadow-xs">
             {/* Background Image: Architectural travertine bathroom with rain shower, shelf niche & black controls */}
             <img
-              src="/images/showers/hero_shower_banner.jpg"
+              src="/images/showers/hero_shower_banner.webp"
               alt="Showers Collection"
+              fetchPriority="high"
+              decoding="sync"
               className="absolute inset-0 w-full h-full object-cover object-right md:object-center"
             />
 
@@ -623,6 +625,8 @@ export const ShowersPageView: React.FC<ShowersPageViewProps> = ({
                 <img
                   src={cat.image}
                   alt={cat.title}
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-106"
                 />
 
@@ -970,6 +974,8 @@ export const ShowersPageView: React.FC<ShowersPageViewProps> = ({
                         <img
                           src={prod.image}
                           alt={prod.name}
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-104"
                         />
 

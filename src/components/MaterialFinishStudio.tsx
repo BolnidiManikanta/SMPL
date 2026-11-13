@@ -6,11 +6,13 @@ import { Product } from '../types';
 interface MaterialFinishStudioProps {
   onSelectProduct: (product: Product) => void;
   onFilterByFinish: (finishName: string) => void;
+  onRequestSwatch?: (finishName: string) => void;
 }
 
 export const MaterialFinishStudio: React.FC<MaterialFinishStudioProps> = ({
   onSelectProduct,
   onFilterByFinish,
+  onRequestSwatch,
 }) => {
   const finishes = [
     {
@@ -22,7 +24,7 @@ export const MaterialFinishStudio: React.FC<MaterialFinishStudioProps> = ({
       description:
         'Applied through physical vapour deposition at atomic scale in our Munich lab. 10x harder than standard electroplating with permanent salt spray and chemical resistance.',
       durability: 'Vickers Hardness > 2400 HV · 500h Salt-Mist Certified',
-      image: '/images/categories_hd/basin_faucets.jpg',
+      image: '/images/categories_hd/basin_faucets.webp',
     },
     {
       id: 'matte_black',
@@ -33,7 +35,7 @@ export const MaterialFinishStudio: React.FC<MaterialFinishStudioProps> = ({
       description:
         'Electro-phoretic deposition bonded directly to solid DZR brass. Formulated with microscopic ceramic beads for a velvet-soft tactile surface that resists lime deposits.',
       durability: 'Zero Fingerprint · Thermal Shock Proof · Anti-Limescale',
-      image: '/images/showcase/studio_matte_black_shower.jpg',
+      image: '/images/showers/hero_shower_banner.webp',
     },
     {
       id: 'brushed_brass',
@@ -44,7 +46,7 @@ export const MaterialFinishStudio: React.FC<MaterialFinishStudioProps> = ({
       description:
         'Forged from heavy virgin brass billets, hand-brushed with rotary brass wire brushes and protected with an ultra-thin aerospace clear coat to preserve radiant warmth.',
       durability: 'Solid DZR Heavy Brass · Non-Tarnishing Seal · 15-Yr Warranty',
-      image: '/images/showcase/studio_gold_basin_mixer.jpg',
+      image: '/images/showcase/studio_gold_basin_mixer.webp',
     },
     {
       id: 'brushed_nickel',
@@ -55,7 +57,7 @@ export const MaterialFinishStudio: React.FC<MaterialFinishStudioProps> = ({
       description:
         'Multi-layer nickel substrate providing unmatched acoustic damping and corrosion resistance, finished with an ultra-fine 320-grit linear satin polish.',
       durability: 'Corrosion Class 5 · Ultra-Durable PVD Bond · Precision Satin',
-      image: '/images/categories_hd/accessories.jpg',
+      image: '/images/faucets/products/smpl_sm_401.webp',
     },
     {
       id: 'honed_travertine',
@@ -66,7 +68,7 @@ export const MaterialFinishStudio: React.FC<MaterialFinishStudioProps> = ({
       description:
         'Quarried directly from historic Tuscan strata. Each vessel and basin is CNC-milled from a single monolithic limestone block and hand-honed by third-generation stone carvers.',
       durability: 'Monolithic Single-Block · Impregnated Hydro-Seal · Tactile Stone',
-      image: '/images/showcase/studio_stone_oval_tub.jpg',
+      image: '/images/showcase/studio_stone_oval_tub.webp',
     },
     {
       id: 'chrome',
@@ -77,7 +79,7 @@ export const MaterialFinishStudio: React.FC<MaterialFinishStudioProps> = ({
       description:
         'Hexavalent-free triple plating comprising double copper strike, semi-bright nickel, and high-purity chromium layer ensuring flawless mirror flatness.',
       durability: 'ISO 1456 Class 4 · Mirror Reflection · Easy Clean Finish',
-      image: '/images/categories_hd/showers.jpg',
+      image: '/images/categories_hd/showers.webp',
     },
   ];
 
@@ -91,37 +93,37 @@ export const MaterialFinishStudio: React.FC<MaterialFinishStudioProps> = ({
   }, [activeFinish]);
 
   return (
-    <section className="w-full bg-[#F4EFE6] py-20 sm:py-28 px-4 sm:px-6 lg:px-10 border-b border-[#DDD5C8]">
+    <section className="w-full bg-[#F4EFE6] py-14 sm:py-20 px-4 sm:px-6 lg:px-10 border-b border-[#DDD5C8]">
       <div className="max-w-[1440px] mx-auto">
         {/* Header */}
-        <div className="mb-12">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="block text-[11px] uppercase tracking-[0.24em] text-[#725C48] font-semibold">
+        <div className="mb-10">
+          <div className="flex items-center gap-2 mb-2.5">
+            <span className="block text-[11px] uppercase tracking-[0.24em] text-[#66462C] font-semibold">
               FINISH &amp; MATERIAL STUDIO
             </span>
-            <span className="text-stone-300">·</span>
-            <span className="text-[11px] text-stone-500 uppercase tracking-widest font-mono">
-              PVD ATOMIC BONDING
+            <span className="text-stone-400">·</span>
+            <span className="text-[11px] text-stone-600 uppercase tracking-widest">
+              PVD Atomic Bonding
             </span>
           </div>
-          <h2 className="font-serif text-[38px] sm:text-[48px] text-[#1E1B18] font-normal tracking-tight leading-tight">
+          <h2 className="font-serif text-[34px] sm:text-[42px] text-[#1E1915] font-normal tracking-tight leading-tight">
             Tactile Materials &amp; Architectural Finishes
           </h2>
-          <p className="text-[14.5px] sm:text-[15.5px] text-[#554E46] max-w-2xl mt-2 leading-relaxed">
+          <p className="text-[14.5px] sm:text-[15px] text-[#554E46] max-w-2xl mt-2 leading-relaxed">
             Every SMPL fixture is machined from solid virgin metals and finished in our proprietary physical vapour deposition chambers, creating permanent surface resistance against hard water and abrasion.
           </p>
         </div>
 
         {/* 6 Finish Selector Tabs */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-8">
           {finishes.map((f) => (
             <button
               key={f.id}
               onClick={() => setActiveFinish(f)}
-              className={`flex items-center gap-3 p-3.5 rounded-[2px] transition-all text-left cursor-pointer border ${
+              className={`flex items-center gap-3 p-3.5 rounded-lg transition-all text-left cursor-pointer border ${
                 activeFinish.id === f.id
                   ? 'bg-white border-[#725C48] shadow-md -translate-y-0.5'
-                  : 'bg-white/60 hover:bg-white border-[#DDD5C8] hover:border-stone-400'
+                  : 'bg-white/75 hover:bg-white border-[#DDD5C8] hover:border-stone-400'
               }`}
             >
               <div
@@ -132,7 +134,7 @@ export const MaterialFinishStudio: React.FC<MaterialFinishStudioProps> = ({
                 <span className="block text-xs font-semibold text-[#1E1B18] truncate leading-tight">
                   {f.name}
                 </span>
-                <span className="block text-[10px] text-stone-500 font-mono mt-0.5">
+                <span className="block text-[10.5px] text-stone-500 mt-0.5 truncate">
                   {f.badge}
                 </span>
               </div>
@@ -141,16 +143,18 @@ export const MaterialFinishStudio: React.FC<MaterialFinishStudioProps> = ({
         </div>
 
         {/* Active Finish Highlight Feature Box */}
-        <div className="bg-white border border-[#DDD5C8] rounded-[3px] p-6 sm:p-10 shadow-lg grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="bg-white border border-[#E5DDD0] rounded-xl p-6 sm:p-10 shadow-md grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Big HD Studio Image of Finish */}
-          <div className="lg:col-span-5 relative aspect-square rounded-[2px] overflow-hidden bg-[#FAF8F5] border border-[#E5DFD4]">
+          <div className="lg:col-span-5 relative aspect-square rounded-lg overflow-hidden bg-[#FAF8F5] border border-[#E5DFD4]">
             <img
               src={activeFinish.image}
               alt={activeFinish.name}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-xs text-white px-3 py-1 rounded-xs text-[11px] font-mono tracking-wider uppercase">
+            <div className="absolute top-4 left-4 bg-[#1E1915]/85 backdrop-blur-xs text-white px-3 py-1.5 rounded-[6px] text-[11px] tracking-wider uppercase font-medium">
               {activeFinish.name} · {activeFinish.badge}
             </div>
           </div>
@@ -200,6 +204,8 @@ export const MaterialFinishStudio: React.FC<MaterialFinishStudioProps> = ({
                         <img
                           src={p.image}
                           alt={p.name}
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover transition-transform group-hover:scale-106"
                           referrerPolicy="no-referrer"
                         />
@@ -220,15 +226,15 @@ export const MaterialFinishStudio: React.FC<MaterialFinishStudioProps> = ({
             <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-[#ECE6DC]">
               <button
                 onClick={() => onFilterByFinish(activeFinish.name)}
-                className="py-3 px-6 bg-[#725C48] hover:bg-[#5C4938] text-white text-xs uppercase tracking-[0.16em] font-semibold rounded-[2px] transition-all shadow-sm cursor-pointer flex items-center gap-2"
+                className="py-3 px-6 bg-[#725C48] hover:bg-[#5C4938] text-white text-xs uppercase tracking-[0.14em] font-semibold rounded-[6px] transition-all shadow-sm cursor-pointer flex items-center gap-2 whitespace-nowrap"
               >
                 <span>Filter Catalogue by {activeFinish.name}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
 
               <button
-                onClick={() => alert(`A physical ${activeFinish.name} material sample swatch card will be couriered to your studio address with your trade account.`)}
-                className="py-3 px-5 bg-white border border-[#DDD5C8] hover:border-[#725C48] text-[#1E1B18] text-xs uppercase tracking-[0.16em] font-semibold rounded-[2px] transition-all hover:bg-[#F2ECE2] cursor-pointer"
+                onClick={() => onRequestSwatch?.(activeFinish.name)}
+                className="py-3 px-5 bg-white border border-[#DCD2C3] hover:border-[#725C48] text-[#1E1915] text-xs uppercase tracking-[0.14em] font-semibold rounded-[6px] transition-all hover:bg-[#F2ECE2] cursor-pointer whitespace-nowrap"
               >
                 Request Material Swatch Box
               </button>

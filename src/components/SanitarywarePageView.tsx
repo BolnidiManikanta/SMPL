@@ -57,49 +57,49 @@ export const SANITARYWARE_SUBCATEGORIES = [
     id: 'Water Closets',
     title: 'Water Closets (WCs)',
     subtitle: 'One-Piece | Wall Hung | Two-Piece',
-    image: '/images/sanitaryware/wc_one_piece.jpg',
+    image: '/images/sanitaryware/wc_one_piece.webp',
     count: 128,
   },
   {
     id: 'Wash Basins',
     title: 'Wash Basins',
     subtitle: 'Countertop | Wall Hung | Pedestal',
-    image: '/images/sanitaryware/wash_basin_countertop.jpg',
+    image: '/images/sanitaryware/wash_basin_countertop.webp',
     count: 96,
   },
   {
     id: 'Vanities',
     title: 'Vanities & Basin Units',
     subtitle: 'Cabinet | Wall Mounted | Floor Standing',
-    image: '/images/sanitaryware/vanity_basin_unit.jpg',
+    image: '/images/sanitaryware/vanity_basin_unit.webp',
     count: 54,
   },
   {
     id: 'Urinals',
     title: 'Urinals',
     subtitle: 'Wall Mounted | Sensor',
-    image: '/images/sanitaryware/urinal_wall_hung.jpg',
+    image: '/images/sanitaryware/urinal_wall_hung.webp',
     count: 18,
   },
   {
     id: 'Bidets',
     title: 'Bidets',
     subtitle: 'Wall Mounted | Floor Mounted',
-    image: '/images/sanitaryware/bidet_wall_hung.jpg',
+    image: '/images/sanitaryware/bidet_wall_hung.webp',
     count: 22,
   },
   {
     id: 'Concealed Cisterns',
     title: 'Concealed Cisterns',
     subtitle: 'Frames | Flush Plates',
-    image: '/images/sanitaryware/cistern_frame.jpg',
+    image: '/images/sanitaryware/cistern_frame.webp',
     count: 28,
   },
   {
     id: 'Toilet Seats',
     title: 'Toilet Seats & Covers',
     subtitle: 'Soft Close | Quick Release',
-    image: '/images/sanitaryware/toilet_seat.jpg',
+    image: '/images/sanitaryware/toilet_seat.webp',
     count: 36,
   },
 ];
@@ -122,9 +122,9 @@ export const SANITARY_CATALOG_PRODUCTS: SanitaryProduct[] = [
     isBestseller: true,
     isFeatured: true,
     images: [
-      '/images/sanitaryware/wc_one_piece.jpg',
-      '/images/products_ultra/toilet_commode_hd.jpg',
-      '/images/sanitaryware/hero_sanitaryware.jpg',
+      '/images/sanitaryware/wc_one_piece.webp',
+      '/images/products_ultra/toilet_commode_hd.webp',
+      '/images/sanitaryware/hero_sanitaryware.webp',
       '/images/sanitaryware/schematics/cad_wc_101.svg',
     ],
     features: [
@@ -158,9 +158,9 @@ export const SANITARY_CATALOG_PRODUCTS: SanitaryProduct[] = [
     isBestseller: true,
     isFeatured: true,
     images: [
-      '/images/sanitaryware/wash_basin_countertop.jpg',
-      '/images/products_ultra/stone_basin_hd.jpg',
-      '/images/categories_hd/wash_basins.jpg',
+      '/images/sanitaryware/wash_basin_countertop.webp',
+      '/images/products_ultra/stone_basin_hd.webp',
+      '/images/categories_hd/wash_basins.webp',
       '/images/sanitaryware/schematics/cad_wb_205.svg',
     ],
     features: [
@@ -193,9 +193,9 @@ export const SANITARY_CATALOG_PRODUCTS: SanitaryProduct[] = [
     isBestseller: true,
     isFeatured: true,
     images: [
-      '/images/sanitaryware/toilet_wall_hung.jpg',
-      '/images/categories_hd/toilets.jpg',
-      '/images/sanitaryware/urinal_wall_hung.jpg',
+      '/images/sanitaryware/toilet_wall_hung.webp',
+      '/images/categories_hd/toilets.webp',
+      '/images/sanitaryware/urinal_wall_hung.webp',
       '/images/sanitaryware/schematics/cad_wh_310.svg',
     ],
     features: [
@@ -228,9 +228,9 @@ export const SANITARY_CATALOG_PRODUCTS: SanitaryProduct[] = [
     isBestseller: true,
     isFeatured: true,
     images: [
-      '/images/sanitaryware/vanity_basin_unit.jpg',
-      '/images/sanitaryware/wash_basin_countertop.jpg',
-      '/images/sanitaryware/hero_sanitaryware.jpg',
+      '/images/sanitaryware/vanity_basin_unit.webp',
+      '/images/sanitaryware/wash_basin_countertop.webp',
+      '/images/sanitaryware/hero_sanitaryware.webp',
       '/images/sanitaryware/schematics/cad_van_401.svg',
     ],
     features: [
@@ -262,9 +262,9 @@ export const SANITARY_CATALOG_PRODUCTS: SanitaryProduct[] = [
     reviewsCount: 19,
     isFeatured: false,
     images: [
-      '/images/sanitaryware/urinal_wall_hung.jpg',
-      '/images/sanitaryware/hero_sanitaryware.jpg',
-      '/images/sanitaryware/toilet_wall_hung.jpg',
+      '/images/sanitaryware/urinal_wall_hung.webp',
+      '/images/sanitaryware/hero_sanitaryware.webp',
+      '/images/sanitaryware/toilet_wall_hung.webp',
       '/images/sanitaryware/schematics/cad_wh_310.svg',
     ],
     features: [
@@ -296,9 +296,9 @@ export const SANITARY_CATALOG_PRODUCTS: SanitaryProduct[] = [
     reviewsCount: 15,
     isFeatured: false,
     images: [
-      '/images/sanitaryware/bidet_wall_hung.jpg',
-      '/images/sanitaryware/toilet_wall_hung.jpg',
-      '/images/sanitaryware/hero_sanitaryware.jpg',
+      '/images/sanitaryware/bidet_wall_hung.webp',
+      '/images/sanitaryware/toilet_wall_hung.webp',
+      '/images/sanitaryware/hero_sanitaryware.webp',
       '/images/sanitaryware/schematics/cad_wh_310.svg',
     ],
     features: [
@@ -330,9 +330,9 @@ export const SANITARY_CATALOG_PRODUCTS: SanitaryProduct[] = [
     reviewsCount: 42,
     isFeatured: false,
     images: [
-      '/images/sanitaryware/cistern_frame.jpg',
-      '/images/sanitaryware/toilet_wall_hung.jpg',
-      '/images/sanitaryware/hero_sanitaryware.jpg',
+      '/images/sanitaryware/cistern_frame.webp',
+      '/images/sanitaryware/toilet_wall_hung.webp',
+      '/images/sanitaryware/hero_sanitaryware.webp',
       '/images/sanitaryware/schematics/cad_wh_310.svg',
     ],
     features: [
@@ -364,9 +364,9 @@ export const SANITARY_CATALOG_PRODUCTS: SanitaryProduct[] = [
     reviewsCount: 31,
     isFeatured: false,
     images: [
-      '/images/sanitaryware/toilet_seat.jpg',
-      '/images/sanitaryware/wc_one_piece.jpg',
-      '/images/sanitaryware/toilet_wall_hung.jpg',
+      '/images/sanitaryware/toilet_seat.webp',
+      '/images/sanitaryware/wc_one_piece.webp',
+      '/images/sanitaryware/toilet_wall_hung.webp',
       '/images/sanitaryware/schematics/cad_wc_101.svg',
     ],
     features: [
@@ -482,7 +482,7 @@ export const SanitarywarePageView: React.FC<SanitarywarePageViewProps> = ({
     price: Math.round(item.priceINR / 83),
     image: item.images[imgIdx] || item.images[0],
     galleryImages: item.images,
-    lifestyleImage: item.images[2] || '/images/sanitaryware/hero_sanitaryware.jpg',
+    lifestyleImage: item.images[2] || '/images/sanitaryware/hero_sanitaryware.webp',
     rating: item.rating,
     reviewCount: item.reviewsCount,
     finishes: [{ name: item.finish, hex: '#FFFFFF', code: 'WHT' }],
@@ -633,8 +633,10 @@ export const SanitarywarePageView: React.FC<SanitarywarePageViewProps> = ({
         <div className="relative rounded-2xl overflow-hidden border border-[#E8E0D5] bg-[#EFE9DF] min-h-[360px] md:min-h-[420px] flex items-center shadow-xs">
           {/* Background Photography: Architectural Travertine Bathroom with Wall-Hung Toilet and Vessel Basin */}
           <img
-            src="/images/sanitaryware/hero_sanitaryware.jpg"
+            src="/images/sanitaryware/hero_sanitaryware.webp"
             alt="Sanitaryware Bathroom Interior"
+            fetchPriority="high"
+            decoding="sync"
             className="absolute inset-0 w-full h-full object-cover object-right md:object-center"
           />
 
@@ -723,6 +725,8 @@ export const SanitarywarePageView: React.FC<SanitarywarePageViewProps> = ({
                   <img
                     src={sub.image}
                     alt={sub.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   {isSelected && (
@@ -1220,6 +1224,8 @@ export const SanitarywarePageView: React.FC<SanitarywarePageViewProps> = ({
                         <img
                           src={activeImage}
                           alt={prod.name}
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-102"
                         />
 
@@ -1277,6 +1283,8 @@ export const SanitarywarePageView: React.FC<SanitarywarePageViewProps> = ({
                             <img
                               src={thumb}
                               alt={`${prod.name} thumbnail ${idx + 1}`}
+                              loading="lazy"
+                              decoding="async"
                               className="w-full h-full object-cover"
                             />
                           </div>

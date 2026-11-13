@@ -57,24 +57,24 @@ export const CustomerFavourites: React.FC<CustomerFavouritesProps> = ({
   };
 
   return (
-    <section id="bestsellers" className="w-full bg-[#F8F6F2] py-20 sm:py-28 px-4 sm:px-6 lg:px-10 border-b border-[#E7E0D3]">
+    <section id="bestsellers" className="w-full bg-[#FAF7F2] py-14 sm:py-20 px-4 sm:px-6 lg:px-10 border-b border-[#E7E0D3]">
       <div className="max-w-[1440px] mx-auto">
         {/* Editorial Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="block text-[11px] uppercase tracking-[0.24em] text-[#725C48] font-semibold">
+            <div className="flex items-center gap-2 mb-2.5">
+              <span className="block text-[11px] uppercase tracking-[0.24em] text-[#66462C] font-semibold">
                 ARCHITECTURAL SPECIFICATIONS
               </span>
-              <span className="text-stone-300">·</span>
-              <span className="text-[11px] text-stone-500 uppercase tracking-widest font-mono">
-                SHOWROOM CURATION
+              <span className="text-stone-400">·</span>
+              <span className="text-[11px] text-stone-600 uppercase tracking-widest">
+                Showroom Curation
               </span>
             </div>
-            <h2 className="font-serif text-[38px] sm:text-[48px] text-[#1E1B18] font-normal tracking-tight leading-tight">
+            <h2 className="font-serif text-[34px] sm:text-[42px] text-[#1E1915] font-normal tracking-tight leading-tight">
               Signature Fixtures &amp; Showpieces
             </h2>
-            <p className="text-[14.5px] sm:text-[15.5px] text-[#554E46] max-w-xl mt-2 leading-relaxed">
+            <p className="text-[14.5px] sm:text-[15px] text-[#554E46] max-w-xl mt-2 leading-relaxed">
               Precision-machined brassware, monolithic carved stone bathtubs, and thermostatic wellness fittings engineered for refined architectural interiors.
             </p>
           </div>
@@ -83,7 +83,7 @@ export const CustomerFavourites: React.FC<CustomerFavouritesProps> = ({
           {onOpenCatalog && (
             <button
               onClick={onOpenCatalog}
-              className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] font-medium text-[#725C48] hover:text-[#554332] pb-1 border-b border-[#725C48]/40 hover:border-[#725C48] transition-colors cursor-pointer self-start md:self-end"
+              className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#1E1915] hover:text-[#66462C] transition-colors cursor-pointer self-start md:self-end whitespace-nowrap shrink-0"
             >
               <span>Explore All 63 Models</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -91,8 +91,8 @@ export const CustomerFavourites: React.FC<CustomerFavouritesProps> = ({
           )}
         </div>
 
-        {/* Category Filter Pills (Functional, Segmented) */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 scrollbar-none border-b border-[#E8E2D7]">
+        {/* Category Filter Tabs */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none border-b border-[#E8E2D7]">
           {categoryTabs.map((tab) => (
             <button
               key={tab.id}
@@ -100,14 +100,14 @@ export const CustomerFavourites: React.FC<CustomerFavouritesProps> = ({
                 setActiveCategoryTab(tab.id);
                 setVisibleCount(12);
               }}
-              className={`px-4 py-2 text-xs uppercase tracking-wider font-medium rounded-xs whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 ${
+              className={`px-4 py-2 text-xs font-medium rounded-lg whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 shrink-0 ${
                 activeCategoryTab === tab.id
                   ? 'bg-[#221F1B] text-white shadow-xs'
-                  : 'bg-white/80 hover:bg-white text-stone-700 border border-[#DDD5C8]'
+                  : 'bg-white hover:bg-[#F3EFE8] text-stone-700 border border-[#E5DDD0]'
               }`}
             >
               <span>{tab.label}</span>
-              <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-xs ${
+              <span className={`text-[11px] tabular-nums px-1.5 py-0.5 rounded-sm ${
                 activeCategoryTab === tab.id ? 'bg-white/20 text-white' : 'bg-stone-100 text-stone-500'
               }`}>
                 {tab.count}
@@ -117,7 +117,7 @@ export const CustomerFavourites: React.FC<CustomerFavouritesProps> = ({
         </div>
 
         {/* 4-Column Luxury Architectural Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-7">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 lg:gap-6">
           {displayedProducts.map((prod) => {
             const activeFinish = selectedFinishes[prod.id] || prod.finishes[0]?.name || 'Standard';
             const wish = isWishlisted(prod.id);
@@ -127,24 +127,25 @@ export const CustomerFavourites: React.FC<CustomerFavouritesProps> = ({
               <div
                 key={prod.id}
                 onClick={() => onSelectProduct(prod)}
-                className="group cursor-pointer flex flex-col bg-white border border-[#E5DFD4] hover:border-[#725C48] rounded-[3px] p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                className="group cursor-pointer flex flex-col bg-white border border-[#E5DDD0] hover:border-[#725C48] rounded-xl p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
               >
                 {/* Top Card Kicker: Model ID + Space */}
-                <div className="flex items-center justify-between text-[11px] text-stone-400 mb-2">
+                <div className="flex items-center justify-between text-[11px] text-stone-500 mb-2">
                   <span className="font-mono tracking-wider">{prod.modelNumber}</span>
-                  <span className="text-[10.5px] uppercase tracking-wider text-stone-500 font-medium">
+                  <span className="text-[11px] text-[#665C52] font-medium">
                     {prod.space}
                   </span>
                 </div>
 
-                {/* Big, Editorial HD Product Image Container */}
-                <div className="relative w-full aspect-[4/5] bg-[#F6F3EE] rounded-[2px] overflow-hidden flex items-center justify-center mb-4">
+                {/* Crisp Editorial HD Product Image Container */}
+                <div className="relative w-full aspect-[4/5] bg-[#F6F3EE] rounded-lg overflow-hidden flex items-center justify-center mb-4">
                   <img
                     src={prod.image}
                     alt={prod.name}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-106"
-                    referrerPolicy="no-referrer"
                     loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    referrerPolicy="no-referrer"
                   />
 
                   {/* Wishlist Button in Top Right */}
@@ -245,11 +246,11 @@ export const CustomerFavourites: React.FC<CustomerFavouritesProps> = ({
         </div>
 
         {/* Bottom Expand / View All Catalogue CTA */}
-        <div className="mt-14 text-center flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="mt-12 text-center flex flex-col sm:flex-row items-center justify-center gap-4">
           {visibleCount < filteredProducts.length && (
             <button
               onClick={() => setVisibleCount((prev) => prev + 12)}
-              className="py-3.5 px-8 bg-white border border-[#DDD5C8] hover:border-[#725C48] text-[#1E1B18] text-xs uppercase tracking-[0.16em] font-semibold rounded-[2px] transition-all hover:bg-[#F2ECE2] shadow-xs cursor-pointer"
+              className="py-3 px-7 bg-white border border-[#DCD2C3] hover:border-[#725C48] text-[#1E1915] text-xs uppercase tracking-[0.14em] font-semibold rounded-[6px] transition-all hover:bg-[#F2ECE2] shadow-xs cursor-pointer"
             >
               Load More Fixtures ({filteredProducts.length - visibleCount} remaining)
             </button>
@@ -258,7 +259,7 @@ export const CustomerFavourites: React.FC<CustomerFavouritesProps> = ({
           {onOpenCatalog && (
             <button
               onClick={onOpenCatalog}
-              className="py-3.5 px-8 bg-[#725C48] hover:bg-[#5C4938] text-white text-xs uppercase tracking-[0.16em] font-semibold rounded-[2px] transition-all shadow-sm hover:shadow-md cursor-pointer flex items-center gap-2"
+              className="py-3 px-7 bg-[#725C48] hover:bg-[#5C4938] text-white text-xs uppercase tracking-[0.14em] font-semibold rounded-[6px] transition-all shadow-sm hover:shadow-md cursor-pointer flex items-center gap-2"
             >
               <span>Browse Full 63-Model Catalogue</span>
               <ArrowRight className="w-4 h-4" />

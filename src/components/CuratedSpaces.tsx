@@ -57,23 +57,23 @@ export const CuratedSpaces: React.FC<CuratedSpacesProps> = ({
   ];
 
   return (
-    <section id="curated-retreat" className="w-full bg-[#F8F6F2] py-20 sm:py-28 px-4 sm:px-6 lg:px-10 border-b border-[#E7E0D3]">
+    <section id="curated-retreat" className="w-full bg-[#F8F6F2] py-14 sm:py-20 px-4 sm:px-6 lg:px-10 border-b border-[#E7E0D3]">
       <div className="max-w-[1440px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Interactive Room Lookbook with Clickable Hotspots */}
-          <div className="lg:col-span-7 relative group overflow-hidden rounded-[3px] bg-[#E2DBD0] shadow-2xl border border-[#DDD5C8]">
+          <div className="lg:col-span-7 relative group overflow-hidden rounded-xl bg-[#E2DBD0] shadow-lg border border-[#E5DDD0]">
             <img
-              src="/images/curated_retreat_suite.jpg"
+              src="/images/curated_retreat_suite.webp"
               alt="The Contemporary Retreat"
+              loading="lazy"
+              decoding="async"
               className="w-full h-auto block transition-transform duration-700 ease-out group-hover:scale-102"
               referrerPolicy="no-referrer"
-              loading="lazy"
             />
 
             {/* Subtle banner in top left */}
-            <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-xs text-white px-3 py-1 rounded-xs text-[11px] font-mono tracking-wider uppercase flex items-center gap-2 z-20">
-              <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
-              <span>Interactive Suite Lookbook · Tap + Pins</span>
+            <div className="absolute top-4 left-4 bg-[#1E1915]/85 backdrop-blur-xs text-white px-3.5 py-1.5 rounded-[6px] text-[11px] font-medium tracking-wider uppercase z-20 shadow-xs">
+              <span>Interactive Suite Lookbook · Click Pins</span>
             </div>
 
             {/* Hotspot Pins */}
@@ -157,29 +157,31 @@ export const CuratedSpaces: React.FC<CuratedSpacesProps> = ({
               {CURATED_RETREAT_PRODUCTS.map((prod) => {
                 const isSelected = activeItem.id === prod.id;
                 return (
-                  <div
+                  <button
                     key={prod.id}
                     onClick={() => {
                       setActiveItem(prod);
                       onSelectProduct(prod);
                     }}
-                    className={`group relative cursor-pointer aspect-square rounded-[3px] bg-[#FAF8F5] border p-2 flex flex-col items-center justify-center transition-all hover:bg-white hover:shadow-lg hover:-translate-y-1 ${
+                    className={`group relative cursor-pointer aspect-square rounded-lg bg-[#FAF8F5] border p-2 flex flex-col items-center justify-center transition-all hover:bg-white hover:shadow-md hover:-translate-y-0.5 ${
                       isSelected
-                        ? 'border-[#725C48] ring-2 ring-[#725C48]/30 bg-white shadow-md'
-                        : 'border-[#DDD5C8] hover:border-[#725C48]'
+                        ? 'border-[#725C48] ring-2 ring-[#725C48]/30 bg-white shadow-sm'
+                        : 'border-[#E5DDD0] hover:border-[#725C48]'
                     }`}
                     title={`${prod.name} - $${prod.price}`}
                   >
                     <img
                       src={prod.image}
                       alt={prod.name}
-                      className="w-full h-full object-cover rounded-xs transition-transform duration-300 group-hover:scale-106"
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover rounded-md transition-transform duration-300 group-hover:scale-105"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-x-0 bottom-0 bg-black/70 backdrop-blur-xs text-white text-[9.5px] font-mono text-center py-0.5 rounded-b-xs">
+                    <div className="absolute inset-x-1.5 bottom-1.5 bg-[#1E1915]/85 backdrop-blur-xs text-white text-[10px] tabular-nums font-medium text-center py-0.5 rounded-sm">
                       ${prod.price}
                     </div>
-                  </div>
+                  </button>
                 );
               })}
             </div>
@@ -188,7 +190,7 @@ export const CuratedSpaces: React.FC<CuratedSpacesProps> = ({
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <button
                 onClick={handleAddAll}
-                className={`py-3.5 px-6 rounded-[2px] text-xs uppercase tracking-[0.14em] font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm active:scale-[0.99] ${
+                className={`py-3.5 px-6 rounded-[6px] text-xs uppercase tracking-[0.14em] font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm active:scale-[0.99] whitespace-nowrap ${
                   ensembleAdded
                     ? 'bg-emerald-800 text-white'
                     : 'bg-[#725C48] hover:bg-[#584636] text-white hover:shadow-md'
@@ -209,7 +211,7 @@ export const CuratedSpaces: React.FC<CuratedSpacesProps> = ({
 
               <button
                 onClick={() => onSelectProduct(activeItem)}
-                className="py-3.5 px-6 rounded-[2px] text-xs uppercase tracking-[0.14em] font-semibold text-[#1C1917] bg-white border border-[#DDD5C8] hover:border-[#725C48] hover:bg-[#F2ECE2] flex items-center justify-center gap-2 transition-all cursor-pointer shadow-xs"
+                className="py-3.5 px-6 rounded-[6px] text-xs uppercase tracking-[0.14em] font-semibold text-[#1E1915] bg-white border border-[#DCD2C3] hover:border-[#725C48] hover:bg-[#F2ECE2] flex items-center justify-center gap-2 transition-all cursor-pointer shadow-xs whitespace-nowrap"
               >
                 <span>Inspect Selected Piece</span>
                 <ArrowRight className="w-3.5 h-3.5" />

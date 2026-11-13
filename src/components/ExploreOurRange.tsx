@@ -1,52 +1,122 @@
 import React from 'react';
-import { CATEGORIES_DATA } from '../data/bathwareData';
+import { ArrowRight } from 'lucide-react';
 import { ProductCategoryItem } from '../types';
 
 interface ExploreOurRangeProps {
   onSelectCategory: (category: ProductCategoryItem) => void;
+  onViewAllCategories?: () => void;
 }
 
-export const ExploreOurRange: React.FC<ExploreOurRangeProps> = ({ onSelectCategory }) => {
+const HOME_SHOP_CATEGORIES: ProductCategoryItem[] = [
+  {
+    id: 'cat_sanitaryware',
+    title: 'Sanitaryware',
+    image: '/images/showcase/studio_smart_toilet_wall.webp',
+    count: 14,
+    department: 'Sanitaryware',
+    subcategories: ['Wall-Hung Toilets', 'One-Piece WCs', 'Cisterns'],
+  },
+  {
+    id: 'cat_faucets',
+    title: 'Faucets',
+    image: '/images/showcase/studio_gold_basin_mixer.webp',
+    count: 18,
+    department: 'Faucets',
+    subcategories: ['Basin Faucets', 'Bath Mixers', 'Wall Mixers'],
+  },
+  {
+    id: 'cat_showers',
+    title: 'Showers',
+    image: '/images/featured/showers.webp',
+    count: 16,
+    department: 'Showers',
+    subcategories: ['Overhead Rain', 'Thermostatic Columns', 'Hand Showers'],
+  },
+  {
+    id: 'cat_bathtubs',
+    title: 'Bathtubs',
+    image: '/images/showcase/studio_stone_oval_tub.webp',
+    count: 8,
+    department: 'Bathroom',
+    subcategories: ['Freestanding Stone', 'Oval Soaking', 'Built-In'],
+  },
+  {
+    id: 'cat_tiles',
+    title: 'Tiles',
+    image: '/images/tiles/collections/marble.webp',
+    count: 24,
+    department: 'Tiles',
+    subcategories: ['Marble Look', 'Stone Look', 'Woodlook'],
+  },
+  {
+    id: 'cat_bathroom',
+    title: 'Bathroom',
+    image: '/images/featured/bathrooms.webp',
+    count: 22,
+    department: 'Bathroom',
+    subcategories: ['Wash Basins', 'Vanities', 'Enclosures'],
+  },
+  {
+    id: 'cat_kitchen',
+    title: 'Kitchen',
+    image: '/images/featured/kitchens.webp',
+    count: 12,
+    department: 'Kitchen',
+    subcategories: ['Pull-Down Mixers', 'Workstation Sinks'],
+  },
+];
+
+export const ExploreOurRange: React.FC<ExploreOurRangeProps> = ({
+  onSelectCategory,
+  onViewAllCategories,
+}) => {
   return (
-    <section id="explore-range" className="w-full bg-[#F8F6F2] py-16 sm:py-20 px-4 sm:px-6 lg:px-10 border-b border-[#E7E0D3]">
+    <section
+      id="explore-range"
+      className="cv-auto w-full bg-[#FAF7F2] py-12 sm:py-16 px-4 sm:px-6 lg:px-10 border-b border-[#E7E0D3]"
+    >
       <div className="max-w-[1440px] mx-auto">
-        {/* Section Header */}
-        <div className="mb-10 sm:mb-12">
-          <span className="block text-[11px] uppercase tracking-[0.22em] text-[#786E64] font-medium mb-3">
-            SHOP BY PRODUCT
-          </span>
-          <h2 className="font-serif text-[34px] sm:text-[42px] text-[#221F1B] font-normal tracking-tight">
-            Explore Our Range
+        {/* Section Header matching reference */}
+        <div className="flex items-baseline justify-between gap-4 mb-7 sm:mb-9">
+          <h2 className="font-serif text-[32px] sm:text-[38px] text-[#1E1915] font-normal tracking-tight">
+            Shop by Category
           </h2>
+
+          <button
+            onClick={onViewAllCategories}
+            className="group inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#1E1915] hover:text-[#66462C] transition-colors cursor-pointer whitespace-nowrap shrink-0"
+          >
+            <span>View All Categories</span>
+            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+          </button>
         </div>
 
-        {/* 7 Product Category Icons Grid - BIG, CLEAR, HD */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-5 text-center">
-          {CATEGORIES_DATA.map((cat) => (
-            <div
+        {/* 7 Tall Portrait Architectural Category Cards */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4">
+          {HOME_SHOP_CATEGORIES.map((cat) => (
+            <button
               key={cat.id}
               onClick={() => onSelectCategory(cat)}
-              className="group cursor-pointer flex flex-col items-center p-2.5 rounded-lg hover:bg-stone-200/40 transition-all duration-200"
+              className="group relative aspect-[3/4.1] rounded-xl overflow-hidden cursor-pointer bg-[#EAE2D5] border border-[#E5DDD0] hover:border-[#725C48] shadow-xs hover:shadow-lg transition-[transform,border-color,box-shadow] duration-300 text-left"
             >
-              {/* Crisp studio product presentation */}
-              <div className="w-full aspect-square flex items-center justify-center mb-3 overflow-hidden rounded-md bg-[#FAF8F5] border border-[#E5DFD4] group-hover:border-[#8E7864] group-hover:shadow-md transition-all duration-300">
-                <img
-                  src={cat.image}
-                  alt={cat.title}
-                  className="w-full h-full object-contain p-2 group-hover:scale-106 transition-transform duration-300"
-                  referrerPolicy="no-referrer"
-                  loading="lazy"
-                />
-              </div>
+              <img
+                src={cat.image}
+                alt={cat.title}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-500 ease-out"
+                referrerPolicy="no-referrer"
+              />
 
-              {/* Title label */}
-              <h3 className="text-[13px] sm:text-[14px] font-medium text-[#24211E] group-hover:text-[#725C48] transition-colors leading-tight">
-                {cat.title}
-              </h3>
-              <span className="text-[11px] text-stone-500 font-normal mt-1">
-                {cat.count} models
-              </span>
-            </div>
+              {/* Crisp contrast scrim ensuring razor-sharp white text */}
+              <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/80 via-black/35 to-transparent pointer-events-none" />
+
+              <div className="absolute inset-x-2 bottom-3.5 text-center z-10">
+                <span className="text-[14px] sm:text-[15px] font-medium text-white tracking-wide drop-shadow-xs">
+                  {cat.title}
+                </span>
+              </div>
+            </button>
           ))}
         </div>
       </div>

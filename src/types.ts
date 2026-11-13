@@ -90,6 +90,6 @@ export interface ProductCategoryItem {
   title: string;
   image: string;
   count: number;
-  department: 'Bathroom' | 'Faucets' | 'Showers' | 'Sanitaryware' | 'Kitchen' | 'Accessories';
+  department: 'Bathroom' | 'Faucets' | 'Showers' | 'Sanitaryware' | 'Kitchen' | 'Tiles' | 'Accessories';
   subcategories: string[];
 }

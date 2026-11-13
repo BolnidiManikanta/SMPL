@@ -51,49 +51,49 @@ export const FAUCET_CATEGORIES = [
   {
     id: 'Basin Faucets',
     title: 'Basin Faucets',
-    image: '/images/faucets/categories/basin_faucets.jpg',
+    image: '/images/faucets/categories/basin_faucets.webp',
     count: 128,
   },
   {
     id: 'Bath Mixers',
     title: 'Bath Mixers',
-    image: '/images/faucets/categories/bath_mixers.jpg',
+    image: '/images/faucets/categories/bath_mixers.webp',
     count: 96,
   },
   {
     id: 'Shower Mixers',
     title: 'Shower Mixers',
-    image: '/images/faucets/categories/shower_mixers.jpg',
+    image: '/images/faucets/categories/shower_mixers.webp',
     count: 76,
   },
   {
     id: 'Kitchen Faucets',
     title: 'Kitchen Faucets',
-    image: '/images/faucets/categories/kitchen_faucets.jpg',
+    image: '/images/faucets/categories/kitchen_faucets.webp',
     count: 64,
   },
   {
     id: 'Wall Faucets',
     title: 'Wall Faucets',
-    image: '/images/faucets/categories/wall_faucets.jpg',
+    image: '/images/faucets/categories/wall_faucets.webp',
     count: 48,
   },
   {
     id: 'Angle Valves',
     title: 'Angle Valves',
-    image: '/images/faucets/categories/angle_valves.jpg',
+    image: '/images/faucets/categories/angle_valves.webp',
     count: 42,
   },
   {
     id: 'Diverters',
     title: 'Diverters',
-    image: '/images/faucets/categories/diverters.jpg',
+    image: '/images/faucets/categories/diverters.webp',
     count: 36,
   },
   {
     id: 'Sensor Faucets',
     title: 'Sensor Faucets',
-    image: '/images/faucets/categories/sensor_faucets.jpg',
+    image: '/images/faucets/categories/sensor_faucets.webp',
     count: 18,
   },
 ];
@@ -106,7 +106,7 @@ export const FAUCET_PRODUCTS_DATA: FaucetProduct[] = [
     category: 'Basin Faucets',
     priceINR: 6990,
     formattedPrice: '₹ 6,990',
-    image: '/images/faucets/products/smpl_bf_101.jpg',
+    image: '/images/faucets/products/smpl_bf_101.webp',
     swatches: [
       { name: 'Brushed Brass', hex: '#CBA167', code: 'BB' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -134,7 +134,7 @@ export const FAUCET_PRODUCTS_DATA: FaucetProduct[] = [
     category: 'Basin Faucets',
     priceINR: 7890,
     formattedPrice: '₹ 7,890',
-    image: '/images/faucets/products/smpl_bf_102.jpg',
+    image: '/images/faucets/products/smpl_bf_102.webp',
     swatches: [
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
       { name: 'Brushed Brass', hex: '#CBA167', code: 'BB' },
@@ -162,7 +162,7 @@ export const FAUCET_PRODUCTS_DATA: FaucetProduct[] = [
     category: 'Wall Faucets',
     priceINR: 8450,
     formattedPrice: '₹ 8,450',
-    image: '/images/faucets/products/smpl_wm_201.jpg',
+    image: '/images/faucets/products/smpl_wm_201.webp',
     swatches: [
       { name: 'Brushed Nickel', hex: '#9E9A93', code: 'BN' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -188,7 +188,7 @@ export const FAUCET_PRODUCTS_DATA: FaucetProduct[] = [
     category: 'Bath Mixers',
     priceINR: 14990,
     formattedPrice: '₹ 14,990',
-    image: '/images/faucets/products/smpl_bm_301.jpg',
+    image: '/images/faucets/products/smpl_bm_301.webp',
     swatches: [
       { name: 'Chrome', hex: '#D8D8D8', code: 'CR' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -216,7 +216,7 @@ export const FAUCET_PRODUCTS_DATA: FaucetProduct[] = [
     category: 'Shower Mixers',
     priceINR: 12990,
     formattedPrice: '₹ 12,990',
-    image: '/images/faucets/products/smpl_sm_401.jpg',
+    image: '/images/faucets/products/smpl_sm_401.webp',
     swatches: [
       { name: 'Gunmetal', hex: '#3E4146', code: 'GM' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -244,7 +244,7 @@ export const FAUCET_PRODUCTS_DATA: FaucetProduct[] = [
     category: 'Kitchen Faucets',
     priceINR: 11490,
     formattedPrice: '₹ 11,490',
-    image: '/images/faucets/products/smpl_kf_501.jpg',
+    image: '/images/faucets/products/smpl_kf_501.webp',
     swatches: [
       { name: 'Chrome', hex: '#D8D8D8', code: 'CR' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -272,7 +272,7 @@ export const FAUCET_PRODUCTS_DATA: FaucetProduct[] = [
     category: 'Wall Faucets',
     priceINR: 2990,
     formattedPrice: '₹ 2,990',
-    image: '/images/faucets/products/smpl_wf_601.jpg',
+    image: '/images/faucets/products/smpl_wf_601.webp',
     swatches: [
       { name: 'Chrome', hex: '#D8D8D8', code: 'CR' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -300,7 +300,7 @@ export const FAUCET_PRODUCTS_DATA: FaucetProduct[] = [
     category: 'Angle Valves',
     priceINR: 1290,
     formattedPrice: '₹ 1,290',
-    image: '/images/faucets/products/smpl_av_701.jpg',
+    image: '/images/faucets/products/smpl_av_701.webp',
     swatches: [
       { name: 'Chrome', hex: '#D8D8D8', code: 'CR' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -328,7 +328,7 @@ export const FAUCET_PRODUCTS_DATA: FaucetProduct[] = [
     category: 'Diverters',
     priceINR: 6490,
     formattedPrice: '₹ 6,490',
-    image: '/images/faucets/products/smpl_dv_801.jpg',
+    image: '/images/faucets/products/smpl_dv_801.webp',
     swatches: [
       { name: 'Brushed Brass', hex: '#CBA167', code: 'BB' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -356,7 +356,7 @@ export const FAUCET_PRODUCTS_DATA: FaucetProduct[] = [
     category: 'Sensor Faucets',
     priceINR: 18990,
     formattedPrice: '₹ 18,990',
-    image: '/images/faucets/products/smpl_sf_901.jpg',
+    image: '/images/faucets/products/smpl_sf_901.webp',
     swatches: [
       { name: 'Chrome', hex: '#D8D8D8', code: 'CR' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -384,7 +384,7 @@ export const FAUCET_PRODUCTS_DATA: FaucetProduct[] = [
     category: 'Basin Faucets',
     priceINR: 2490,
     formattedPrice: '₹ 2,490',
-    image: '/images/faucets/products/smpl_bf_103.jpg',
+    image: '/images/faucets/products/smpl_bf_103.webp',
     swatches: [
       { name: 'Chrome', hex: '#D8D8D8', code: 'CR' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -412,7 +412,7 @@ export const FAUCET_PRODUCTS_DATA: FaucetProduct[] = [
     category: 'Kitchen Faucets',
     priceINR: 6990,
     formattedPrice: '₹ 6,990',
-    image: '/images/faucets/products/smpl_kf_502.jpg',
+    image: '/images/faucets/products/smpl_kf_502.webp',
     swatches: [
       { name: 'Chrome', hex: '#D8D8D8', code: 'CR' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -512,8 +512,8 @@ export const FaucetsPageView: React.FC<FaucetsPageViewProps> = ({
       space: 'Master Bathroom',
       price: Math.round(item.priceINR / 83),
       image: item.image,
-      galleryImages: [item.image, '/images/faucets/hero_faucet_banner.jpg'],
-      lifestyleImage: '/images/faucets/hero_faucet_banner.jpg',
+      galleryImages: [item.image, '/images/faucets/hero_faucet_banner.webp'],
+      lifestyleImage: '/images/faucets/hero_faucet_banner.webp',
       rating: item.rating,
       reviewCount: item.reviewsCount,
       finishes: item.swatches.map((s) => ({ name: s.name, hex: s.hex, code: s.code })),
@@ -620,8 +620,10 @@ export const FaucetsPageView: React.FC<FaucetsPageViewProps> = ({
           <div className="relative rounded-2xl overflow-hidden border border-[#E8E0D5] bg-[#EAE3D6] min-h-[380px] md:min-h-[440px] flex items-center shadow-xs">
             {/* Background Image: Architectural travertine bathroom with round marble basin, glowing halo mirror & gold faucet */}
             <img
-              src="/images/faucets/hero_faucet_banner.jpg"
+              src="/images/faucets/hero_faucet_banner.webp"
               alt="Faucets Collection"
+              fetchPriority="high"
+              decoding="sync"
               className="absolute inset-0 w-full h-full object-cover object-right md:object-center"
             />
 
@@ -762,6 +764,8 @@ export const FaucetsPageView: React.FC<FaucetsPageViewProps> = ({
                 <img
                   src={cat.image}
                   alt={cat.title}
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-106"
                 />
 
@@ -1204,6 +1208,8 @@ export const FaucetsPageView: React.FC<FaucetsPageViewProps> = ({
                         <img
                           src={prod.image}
                           alt={prod.name}
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-104"
                         />
 

@@ -46,7 +46,7 @@ export const TILE_PRODUCTS: TileProduct[] = [
     category: 'Wall Tiles',
     dimensions: '600 × 1200 mm',
     finish: 'Glossy',
-    image: '/images/tiles_v2/products/carrara_white.jpg',
+    image: '/images/tiles_v2/products/carrara_white.webp',
     pricePerSqFt: '$6.80 / sq.ft',
     thickness: '9 mm',
     slipRating: 'R9',
@@ -60,7 +60,7 @@ export const TILE_PRODUCTS: TileProduct[] = [
     category: 'Floor Tiles',
     dimensions: '800 × 1600 mm',
     finish: 'Matt',
-    image: '/images/tiles_v2/products/armani_grey.jpg',
+    image: '/images/tiles_v2/products/armani_grey.webp',
     pricePerSqFt: '$8.40 / sq.ft',
     thickness: '10 mm',
     slipRating: 'R10',
@@ -74,7 +74,7 @@ export const TILE_PRODUCTS: TileProduct[] = [
     category: 'Wall Tiles',
     dimensions: '600 × 1200 mm',
     finish: 'Glossy',
-    image: '/images/tiles_v2/products/botticino_beige.jpg',
+    image: '/images/tiles_v2/products/botticino_beige.webp',
     pricePerSqFt: '$7.20 / sq.ft',
     thickness: '9 mm',
     slipRating: 'R9',
@@ -88,7 +88,7 @@ export const TILE_PRODUCTS: TileProduct[] = [
     category: 'Porcelain',
     dimensions: '600 × 600 mm',
     finish: 'Matt',
-    image: '/images/tiles_v2/products/terrazzo_multi.jpg',
+    image: '/images/tiles_v2/products/terrazzo_multi.webp',
     pricePerSqFt: '$6.90 / sq.ft',
     thickness: '10 mm',
     slipRating: 'R10',
@@ -102,7 +102,7 @@ export const TILE_PRODUCTS: TileProduct[] = [
     category: 'Vitrified',
     dimensions: '600 × 1200 mm',
     finish: 'Polished',
-    image: '/images/tiles_v2/products/emperador_brown.jpg',
+    image: '/images/tiles_v2/products/emperador_brown.webp',
     pricePerSqFt: '$8.90 / sq.ft',
     thickness: '9.5 mm',
     slipRating: 'R9',
@@ -116,7 +116,7 @@ export const TILE_PRODUCTS: TileProduct[] = [
     category: 'Wall Tiles',
     dimensions: '800 × 1600 mm',
     finish: 'Glossy',
-    image: '/images/tiles_v2/products/onyx_ivory.jpg',
+    image: '/images/tiles_v2/products/onyx_ivory.webp',
     pricePerSqFt: '$9.50 / sq.ft',
     thickness: '9 mm',
     slipRating: 'R9',
@@ -130,7 +130,7 @@ export const TILE_PRODUCTS: TileProduct[] = [
     category: 'Vitrified',
     dimensions: '1200 × 2400 mm',
     finish: 'Polished',
-    image: '/images/tiles_v2/products/statuario_gold.jpg',
+    image: '/images/tiles_v2/products/statuario_gold.webp',
     pricePerSqFt: '$11.80 / sq.ft',
     thickness: '9 mm',
     slipRating: 'R10',
@@ -144,7 +144,7 @@ export const TILE_PRODUCTS: TileProduct[] = [
     category: 'Floor Tiles',
     dimensions: '600 × 600 mm',
     finish: 'Matt',
-    image: '/images/tiles_v2/products/concrete_grey.jpg',
+    image: '/images/tiles_v2/products/concrete_grey.webp',
     pricePerSqFt: '$5.80 / sq.ft',
     thickness: '10 mm',
     slipRating: 'R10',
@@ -158,7 +158,7 @@ export const TILE_PRODUCTS: TileProduct[] = [
     category: 'Porcelain',
     dimensions: '200 × 1200 mm',
     finish: 'Matt',
-    image: '/images/tiles_v2/products/wood_oak.jpg',
+    image: '/images/tiles_v2/products/wood_oak.webp',
     pricePerSqFt: '$6.50 / sq.ft',
     thickness: '9.5 mm',
     slipRating: 'R10',
@@ -172,7 +172,7 @@ export const TILE_PRODUCTS: TileProduct[] = [
     category: 'Mosaic',
     dimensions: '300 × 300 mm',
     finish: 'Glossy',
-    image: '/images/tiles_v2/products/hexa_mosaic.jpg',
+    image: '/images/tiles_v2/products/hexa_mosaic.webp',
     pricePerSqFt: '$12.00 / sheet',
     thickness: '8 mm',
     slipRating: 'R9',
@@ -186,7 +186,7 @@ export const TILE_PRODUCTS: TileProduct[] = [
     category: 'Wall Tiles',
     dimensions: '600 × 1200 mm',
     finish: 'Matt',
-    image: '/images/tiles_v2/products/travertine_beige.jpg',
+    image: '/images/tiles_v2/products/travertine_beige.webp',
     pricePerSqFt: '$7.80 / sq.ft',
     thickness: '9 mm',
     slipRating: 'R10',
@@ -200,7 +200,7 @@ export const TILE_PRODUCTS: TileProduct[] = [
     category: 'Decorative',
     dimensions: '600 × 600 mm',
     finish: 'Textured',
-    image: '/images/tiles_v2/products/mint_stone.jpg',
+    image: '/images/tiles_v2/products/mint_stone.webp',
     pricePerSqFt: '$7.40 / sq.ft',
     thickness: '10 mm',
     slipRating: 'R11',
@@ -213,32 +213,32 @@ export const TILE_SPACES_V2 = [
   {
     id: 'living_room',
     title: 'Living Room',
-    image: '/images/tiles_v2/spaces/living_room.jpg',
+    image: '/images/tiles_v2/spaces/living_room.webp',
   },
   {
     id: 'bedroom',
     title: 'Bedroom',
-    image: '/images/tiles_v2/spaces/bedroom.jpg',
+    image: '/images/tiles_v2/spaces/bedroom.webp',
   },
   {
     id: 'kitchen',
     title: 'Kitchen',
-    image: '/images/tiles_v2/spaces/kitchen.jpg',
+    image: '/images/tiles_v2/spaces/kitchen.webp',
   },
   {
     id: 'dining',
     title: 'Dining',
-    image: '/images/tiles_v2/spaces/dining.jpg',
+    image: '/images/tiles_v2/spaces/dining.webp',
   },
   {
     id: 'bathroom',
     title: 'Bathroom',
-    image: '/images/tiles_v2/spaces/bathroom.jpg',
+    image: '/images/tiles_v2/spaces/bathroom.webp',
   },
   {
     id: 'commercial',
     title: 'Commercial',
-    image: '/images/tiles_v2/spaces/commercial.jpg',
+    image: '/images/tiles_v2/spaces/commercial.webp',
   },
 ];
 
@@ -247,37 +247,37 @@ export const TILE_COLLECTIONS_V2 = [
     id: 'marble_look',
     title: 'Marble Look',
     subtitle: '120+ Designs',
-    image: '/images/tiles_v2/collections/marble_look.jpg',
+    image: '/images/tiles_v2/collections/marble_look.webp',
   },
   {
     id: 'stone_look',
     title: 'Stone Look',
     subtitle: '95+ Designs',
-    image: '/images/tiles_v2/collections/stone_look.jpg',
+    image: '/images/tiles_v2/collections/stone_look.webp',
   },
   {
     id: 'terrazzo',
     title: 'Terrazzo',
     subtitle: '60+ Designs',
-    image: '/images/tiles_v2/collections/terrazzo.jpg',
+    image: '/images/tiles_v2/collections/terrazzo.webp',
   },
   {
     id: 'wood_look',
     title: 'Wood Look',
     subtitle: '80+ Designs',
-    image: '/images/tiles_v2/collections/wood_look.jpg',
+    image: '/images/tiles_v2/collections/wood_look.webp',
   },
   {
     id: 'concrete_look',
     title: 'Concrete Look',
     subtitle: '65+ Designs',
-    image: '/images/tiles_v2/collections/concrete_look.jpg',
+    image: '/images/tiles_v2/collections/concrete_look.webp',
   },
   {
     id: 'patterned',
     title: 'Patterned',
     subtitle: '70+ Designs',
-    image: '/images/tiles_v2/collections/patterned.jpg',
+    image: '/images/tiles_v2/collections/patterned.webp',
   },
 ];
 
@@ -402,8 +402,10 @@ export const TilesPageView: React.FC<TilesPageViewProps> = ({
           {/* Pristine 4K Architectural Photography Background */}
           <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
             <img
-              src="/images/tiles_v2/hero/hero_4k.jpg"
+              src="/images/tiles_v2/hero/hero_4k.webp"
               alt="Interior Tiles Collection"
+              fetchPriority="high"
+              decoding="sync"
               className="w-full h-full object-cover object-right md:object-center"
               referrerPolicy="no-referrer"
             />
@@ -882,8 +884,10 @@ export const TilesPageView: React.FC<TilesPageViewProps> = ({
             {/* Background 4K Architectural Vanity Photo */}
             <div className="absolute inset-0 z-0">
               <img
-                src="/images/tiles_v2/banner/design_with_purpose_4k.jpg"
+                src="/images/tiles_v2/banner/design_with_purpose_4k.webp"
                 alt="Design with Purpose"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover object-right sm:object-center"
                 referrerPolicy="no-referrer"
               />

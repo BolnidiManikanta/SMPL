@@ -70,56 +70,56 @@ export const BATHROOM_CATEGORIES: BathroomCategoryItem[] = [
     name: 'Toilets (WCs)',
     filterTag: 'Toilets',
     count: 128,
-    image: '/images/bathroom/categories/toilets.jpg',
+    image: '/images/bathroom/categories/toilets.webp',
   },
   {
     id: 'cat_basins',
     name: 'Wash Basins',
     filterTag: 'Wash Basins',
     count: 96,
-    image: '/images/bathroom/categories/wash_basins.jpg',
+    image: '/images/bathroom/categories/wash_basins.webp',
   },
   {
     id: 'cat_vanities',
     name: 'Vanities & Units',
     filterTag: 'Vanities',
     count: 54,
-    image: '/images/bathroom/categories/vanities.jpg',
+    image: '/images/bathroom/categories/vanities.webp',
   },
   {
     id: 'cat_bathtubs',
     name: 'Bathtubs',
     filterTag: 'Bathtubs',
     count: 28,
-    image: '/images/bathroom/categories/bathtubs.jpg',
+    image: '/images/bathroom/categories/bathtubs.webp',
   },
   {
     id: 'cat_shower_enclosures',
     name: 'Shower Enclosures',
     filterTag: 'Shower Enclosures',
     count: 42,
-    image: '/images/bathroom/categories/shower_enclosures.jpg',
+    image: '/images/bathroom/categories/shower_enclosures.webp',
   },
   {
     id: 'cat_showers',
     name: 'Showers',
     filterTag: 'Showers',
     count: 76,
-    image: '/images/bathroom/categories/showers.jpg',
+    image: '/images/bathroom/categories/showers.webp',
   },
   {
     id: 'cat_accessories',
     name: 'Bathroom Accessories',
     filterTag: 'Accessories',
     count: 118,
-    image: '/images/bathroom/categories/accessories.jpg',
+    image: '/images/bathroom/categories/accessories.webp',
   },
   {
     id: 'cat_drains',
     name: 'Drains & Channels',
     filterTag: 'Drains & Channels',
     count: 32,
-    image: '/images/bathroom/categories/drains.jpg',
+    image: '/images/bathroom/categories/drains.webp',
   },
 ];
 
@@ -132,7 +132,7 @@ export const BATHROOM_PRODUCTS_DATA: BathroomProduct[] = [
     category: 'Toilets',
     priceINR: 34900,
     formattedPrice: '₹ 34,900',
-    image: '/images/bathroom/products/smpl_wc_101.jpg',
+    image: '/images/bathroom/products/smpl_wc_101.webp',
     swatches: [
       { name: 'Pure Alpine White', hex: '#FFFFFF', code: 'WH' },
       { name: 'Matte Charcoal Black', hex: '#1D1D1B', code: 'MB' },
@@ -161,7 +161,7 @@ export const BATHROOM_PRODUCTS_DATA: BathroomProduct[] = [
     category: 'Wash Basins',
     priceINR: 8900,
     formattedPrice: '₹ 8,900',
-    image: '/images/bathroom/products/smpl_wb_205.jpg',
+    image: '/images/bathroom/products/smpl_wb_205.webp',
     swatches: [
       { name: 'Pure Alpine White', hex: '#FFFFFF', code: 'WH' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -191,7 +191,7 @@ export const BATHROOM_PRODUCTS_DATA: BathroomProduct[] = [
     category: 'Vanities',
     priceINR: 42000,
     formattedPrice: '₹ 42,000',
-    image: '/images/bathroom/products/smpl_van_401.jpg',
+    image: '/images/bathroom/products/smpl_van_401.webp',
     swatches: [
       { name: 'Matte Shadow Grey', hex: '#8E8D8A', code: 'SG' },
       { name: 'Midnight Charcoal', hex: '#1D1D1B', code: 'MC' },
@@ -220,7 +220,7 @@ export const BATHROOM_PRODUCTS_DATA: BathroomProduct[] = [
     category: 'Bathtubs',
     priceINR: 124900,
     formattedPrice: '₹ 1,24,900',
-    image: '/images/bathroom/products/smpl_bt_301.jpg',
+    image: '/images/bathroom/products/smpl_bt_301.webp',
     swatches: [
       { name: 'Pure Alpine White', hex: '#FFFFFF', code: 'WH' },
       { name: 'Matte Charcoal Black Exterior', hex: '#1D1D1B', code: 'MB' },
@@ -249,7 +249,7 @@ export const BATHROOM_PRODUCTS_DATA: BathroomProduct[] = [
     category: 'Shower Enclosures',
     priceINR: 56900,
     formattedPrice: '₹ 56,900',
-    image: '/images/bathroom/products/smpl_se_201.jpg',
+    image: '/images/bathroom/products/smpl_se_201.webp',
     swatches: [
       { name: 'Matte Black Anodized', hex: '#1D1D1B', code: 'MB' },
       { name: 'Brushed Brass PVD', hex: '#CBA167', code: 'BB' },
@@ -278,7 +278,7 @@ export const BATHROOM_PRODUCTS_DATA: BathroomProduct[] = [
     category: 'Showers',
     priceINR: 28500,
     formattedPrice: '₹ 28,500',
-    image: '/images/bathroom/products/smpl_sh_401.jpg',
+    image: '/images/bathroom/products/smpl_sh_401.webp',
     swatches: [
       { name: 'Polished Chrome', hex: '#D8D8D8', code: 'CR' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -309,7 +309,7 @@ export const BATHROOM_PRODUCTS_DATA: BathroomProduct[] = [
     category: 'Wash Basins',
     priceINR: 7990,
     formattedPrice: '₹ 7,990',
-    image: '/images/bathroom/products/smpl_bf_301.jpg',
+    image: '/images/bathroom/products/smpl_bf_301.webp',
     swatches: [
       { name: 'Brushed Gold', hex: '#CBA167', code: 'BG' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -339,7 +339,7 @@ export const BATHROOM_PRODUCTS_DATA: BathroomProduct[] = [
     category: 'Showers',
     priceINR: 4290,
     formattedPrice: '₹ 4,290',
-    image: '/images/bathroom/products/smpl_hs_102.jpg',
+    image: '/images/bathroom/products/smpl_hs_102.webp',
     swatches: [
       { name: 'Polished Chrome', hex: '#D8D8D8', code: 'CR' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -368,7 +368,7 @@ export const BATHROOM_PRODUCTS_DATA: BathroomProduct[] = [
     category: 'Accessories',
     priceINR: 3490,
     formattedPrice: '₹ 3,490',
-    image: '/images/bathroom/products/smpl_acc_201.jpg',
+    image: '/images/bathroom/products/smpl_acc_201.webp',
     swatches: [
       { name: 'Polished Chrome', hex: '#D8D8D8', code: 'CR' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -397,7 +397,7 @@ export const BATHROOM_PRODUCTS_DATA: BathroomProduct[] = [
     category: 'Accessories',
     priceINR: 1990,
     formattedPrice: '₹ 1,990',
-    image: '/images/bathroom/products/smpl_acc_305.jpg',
+    image: '/images/bathroom/products/smpl_acc_305.webp',
     swatches: [
       { name: 'Polished Chrome', hex: '#D8D8D8', code: 'CR' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -426,7 +426,7 @@ export const BATHROOM_PRODUCTS_DATA: BathroomProduct[] = [
     category: 'Drains & Channels',
     priceINR: 1290,
     formattedPrice: '₹ 1,290',
-    image: '/images/bathroom/products/smpl_dr_101.jpg',
+    image: '/images/bathroom/products/smpl_dr_101.webp',
     swatches: [
       { name: 'Polished Stainless Steel', hex: '#D8D8D8', code: 'SS' },
       { name: 'Matte Black', hex: '#1D1D1B', code: 'MB' },
@@ -455,7 +455,7 @@ export const BATHROOM_PRODUCTS_DATA: BathroomProduct[] = [
     category: 'Toilets',
     priceINR: 12900,
     formattedPrice: '₹ 12,900',
-    image: '/images/bathroom/products/smpl_cc_201.jpg',
+    image: '/images/bathroom/products/smpl_cc_201.webp',
     swatches: [
       { name: 'Alpine White Flush Plate', hex: '#FFFFFF', code: 'WH' },
       { name: 'Matte Black Flush Plate', hex: '#1D1D1B', code: 'MB' },
@@ -584,8 +584,8 @@ export const BathroomPageView: React.FC<BathroomPageViewProps> = ({
       space: 'Master Bathroom',
       price: Math.round(item.priceINR / 83),
       image: item.image,
-      galleryImages: [item.image, '/images/bathroom/hero_bathroom_banner.jpg'],
-      lifestyleImage: '/images/bathroom/hero_bathroom_banner.jpg',
+      galleryImages: [item.image, '/images/bathroom/hero_bathroom_banner.webp'],
+      lifestyleImage: '/images/bathroom/hero_bathroom_banner.webp',
       rating: item.rating,
       reviewCount: item.reviewsCount,
       finishes: item.swatches.map((s) => ({ name: s.name, hex: s.hex, code: s.code })),
@@ -702,8 +702,10 @@ export const BathroomPageView: React.FC<BathroomPageViewProps> = ({
           <div className="relative min-h-[250px] sm:min-h-[280px] md:min-h-[300px] w-full flex items-center">
             {/* Background Image */}
             <img
-              src="/images/bathroom/hero_bathroom_banner.jpg"
+              src="/images/bathroom/hero_bathroom_banner.webp"
               alt="Complete Bathroom Solutions Suite"
+              fetchPriority="high"
+              decoding="sync"
               className="absolute inset-0 w-full h-full object-cover object-right pointer-events-none"
             />
 
@@ -852,6 +854,8 @@ export const BathroomPageView: React.FC<BathroomPageViewProps> = ({
                   <img
                     src={cat.image}
                     alt={cat.name}
+                    loading="lazy"
+                    decoding="async"
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   {/* Subtle dark gradient overlay for crystal-clear readability */}
@@ -1261,6 +1265,8 @@ export const BathroomPageView: React.FC<BathroomPageViewProps> = ({
                           <img
                             src={item.image}
                             alt={item.name}
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           />
                         </div>
@@ -1341,6 +1347,8 @@ export const BathroomPageView: React.FC<BathroomPageViewProps> = ({
                           <img
                             src={item.image}
                             alt={item.name}
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                           />
 

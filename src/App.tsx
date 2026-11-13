@@ -1,43 +1,56 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { AnnouncementBar } from './components/AnnouncementBar';
 import { Navbar } from './components/Navbar';
+import { Footer } from './components/Footer';
+import { Product, CartItem, SpaceCategory, StyleCollection, ProductCategoryItem } from './types';
+import { Check, X } from 'lucide-react';
+
 import { HeroSection } from './components/HeroSection';
 import { CuratedSpacesPreview } from './components/CuratedSpacesPreview';
 import { ExploreOurRange } from './components/ExploreOurRange';
 import { FindYourSpace } from './components/FindYourSpace';
 import { FindYourStyle } from './components/FindYourStyle';
-import { CuratedSpaces } from './components/CuratedSpaces';
-import { CustomerFavourites } from './components/CustomerFavourites';
-import { MaterialFinishStudio } from './components/MaterialFinishStudio';
-import { TilesPageView } from './components/TilesPageView';
-import { SanitarywarePageView } from './components/SanitarywarePageView';
-import { ShowersPageView } from './components/ShowersPageView';
-import { FaucetsPageView } from './components/FaucetsPageView';
-import { BathroomPageView } from './components/BathroomPageView';
-import { ProductCatalogView } from './components/ProductCatalogView';
-import { ProductComparisonModal } from './components/ProductComparisonModal';
-import { CartDrawer } from './components/CartDrawer';
-import { WishlistDrawer } from './components/WishlistDrawer';
-import { ProductModal } from './components/ProductModal';
-import { SearchModal } from './components/SearchModal';
-import { TradeModal } from './components/TradeModal';
-import { Footer } from './components/Footer';
-import { Product, CartItem, SpaceCategory, StyleCollection, ProductCategoryItem } from './types';
-import { ALL_PRODUCTS } from './data/bathwareData';
-import { Check, X } from 'lucide-react';
+import { BottomFeaturedCollections } from './components/BottomFeaturedCollections';
+import { SelectedExceptionalSpaces } from './components/SelectedExceptionalSpaces';
+import { SpacesThatInspire } from './components/SpacesThatInspire';
+import { ShopByFinish } from './components/ShopByFinish';
+import { ConsultationBanner } from './components/ConsultationBanner';
+import { WhyChooseSMPL } from './components/WhyChooseSMPL';
+
+const TilesPageView = lazy(() => import('./components/TilesPageView').then((m) => ({ default: m.TilesPageView })));
+const SanitarywarePageView = lazy(() => import('./components/SanitarywarePageView').then((m) => ({ default: m.SanitarywarePageView })));
+const ShowersPageView = lazy(() => import('./components/ShowersPageView').then((m) => ({ default: m.ShowersPageView })));
+const FaucetsPageView = lazy(() => import('./components/FaucetsPageView').then((m) => ({ default: m.FaucetsPageView })));
+const BathroomPageView = lazy(() => import('./components/BathroomPageView').then((m) => ({ default: m.BathroomPageView })));
+const ProductCatalogView = lazy(() => import('./components/ProductCatalogView').then((m) => ({ default: m.ProductCatalogView })));
+const ProductComparisonModal = lazy(() => import('./components/ProductComparisonModal').then((m) => ({ default: m.ProductComparisonModal })));
+const CartDrawer = lazy(() => import('./components/CartDrawer').then((m) => ({ default: m.CartDrawer })));
+const WishlistDrawer = lazy(() => import('./components/WishlistDrawer').then((m) => ({ default: m.WishlistDrawer })));
+const ProductModal = lazy(() => import('./components/ProductModal').then((m) => ({ default: m.ProductModal })));
+const SearchModal = lazy(() => import('./components/SearchModal').then((m) => ({ default: m.SearchModal })));
+const TradeModal = lazy(() => import('./components/TradeModal').then((m) => ({ default: m.TradeModal })));
+
+const PageLoader = () => (
+  <div className="min-h-[60vh] flex items-center justify-center bg-[#FAF7F2]">
+    <div className="w-7 h-7 rounded-full border-2 border-[#D5CCC0] border-t-[#2E2722] animate-spin" />
+  </div>
+);
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'catalog' | 'tiles' | 'sanitaryware' | 'showers' | 'faucets' | 'bathroom'>('bathroom');
+  const [currentView, setCurrentView] = useState<'home' | 'catalog' | 'tiles' | 'sanitaryware' | 'showers' | 'faucets' | 'bathroom'>('home');
 
-  const [cart, setCart] = useState<CartItem[]>([
-    {
-      product: ALL_PRODUCTS[0],
-      selectedFinish: 'Brushed Brass',
-      quantity: 1,
-    },
-  ]);
-  const [wishlist, setWishlist] = useState<Product[]>([ALL_PRODUCTS[4]]);
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [wishlist, setWishlist] = useState<Product[]>([]);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [catalogProducts, setCatalogProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    if ((currentView === 'catalog' || selectedProduct !== null) && catalogProducts.length === 0) {
+      import('./data/bathwareData').then((m) => {
+        setCatalogProducts(m.ALL_PRODUCTS);
+      });
+    }
+  }, [currentView, selectedProduct, catalogProducts.length]);
 
   // Catalog View state (when browsing full catalogue by department or filters)
   const [catalogDepartment, setCatalogDepartment] = useState<string>('All');
@@ -76,13 +89,6 @@ export default function App() {
       return [...prev, { product, selectedFinish: finish, quantity: 1 }];
     });
     showToast(`Added "${product.name}" (${finish}) to bag.`);
-  };
-
-  const handleAddEnsembleToCart = (products: Product[]) => {
-    products.forEach((prod) => {
-      handleAddToCart(prod, prod.finishes[0]?.name || 'Standard');
-    });
-    setIsCartOpen(true);
   };
 
   const handleUpdateQuantity = (productId: string, finish: string, delta: number) => {
@@ -231,18 +237,19 @@ export default function App() {
 
       {/* Main Content Area: Home, Tiles Page, OR Full Product Catalog View */}
       <main className="flex-1">
-        {currentView === 'catalog' ? (
-          <ProductCatalogView
-            products={ALL_PRODUCTS}
-            selectedDepartment={catalogDepartment}
-            selectedCategory={catalogCategory}
-            onSelectProduct={(prod) => setSelectedProduct(prod)}
-            onAddToCart={handleAddToCart}
-            onToggleWishlist={handleToggleWishlist}
-            isWishlisted={isWishlisted}
-            onCloseCatalog={() => setCurrentView('home')}
-            onCompareProducts={(prods) => setComparingProducts(prods)}
-          />
+        <Suspense fallback={<PageLoader />}>
+          {currentView === 'catalog' ? (
+            <ProductCatalogView
+              products={catalogProducts}
+              selectedDepartment={catalogDepartment}
+              selectedCategory={catalogCategory}
+              onSelectProduct={(prod) => setSelectedProduct(prod)}
+              onAddToCart={handleAddToCart}
+              onToggleWishlist={handleToggleWishlist}
+              isWishlisted={isWishlisted}
+              onCloseCatalog={() => setCurrentView('home')}
+              onCompareProducts={(prods) => setComparingProducts(prods)}
+            />
         ) : currentView === 'tiles' ? (
           <TilesPageView
             onOpenConsultation={() => setIsTradeOpen(true)}
@@ -300,42 +307,61 @@ export default function App() {
           />
         ) : (
           <>
-            {/* 2. Hero Section: Architecture Meets Wellbeing (Pristine 4K background, 4 value pillars, 0 overlap) */}
+            {/* 1. Hero Section + 5 Value Pillars Bar */}
             <HeroSection
-              onExploreCollections={() => handleOpenDepartment('All')}
+              onExploreCollections={(dept) => handleOpenDepartment(dept || 'All')}
               onBookConsultation={() => setIsTradeOpen(true)}
             />
 
-            {/* 3. Featured Collections: Curated Spaces for Modern Living (5 exact cards directly under hero) */}
+            {/* 2. Shop by Category (7 Portrait Editorial Cards) */}
+            <ExploreOurRange
+              onSelectCategory={handleSelectCategory}
+              onViewAllCategories={() => handleOpenDepartment('All')}
+            />
+
+            {/* 3. Featured Collections (4 Landscape Signature Series) */}
             <CuratedSpacesPreview
               onOpenDepartment={handleOpenDepartment}
               onExploreAll={() => handleOpenDepartment('All')}
             />
 
-            {/* 4. Explore Our Range (HD product silhouettes and model counts) */}
-            <ExploreOurRange onSelectCategory={handleSelectCategory} />
-
-            {/* 5. Find Your Space (6 authentic architectural bathware suite cards with crystal-clear HD photography) */}
+            {/* 4. Find Your Space (6 Architectural Suite Cards) */}
             <FindYourSpace
               onSelectSpace={handleSelectSpace}
               onExploreAll={() => handleOpenDepartment('All')}
             />
 
-            {/* 6. Find Your Style (6 macro close-up craftsmanship cards) */}
+            {/* 5. Find Your Style (6 Macro Craftsmanship Cards) */}
             <FindYourStyle
               onSelectStyle={handleSelectStyle}
               onExploreCollections={() => handleOpenDepartment('All')}
             />
 
-            {/* 7. Curated Spaces: The Contemporary Retreat with Interactive Hotspots */}
-            <CuratedSpaces
-              onSelectProduct={(prod) => setSelectedProduct(prod)}
-              onAddEnsembleToCart={handleAddEnsembleToCart}
+            {/* 6. Featured Product Collections (8 Curated Disciplines) */}
+            <BottomFeaturedCollections
+              onOpenDepartment={handleOpenDepartment}
             />
 
-            {/* 8. Material & Finish Studio: 6 PVD Architectural Finishes & Swatch Ordering */}
-            <MaterialFinishStudio
+            {/* 7. Premium Product Showcase: Selected for Exceptional Spaces (12 Unique Products) */}
+            <SelectedExceptionalSpaces
               onSelectProduct={(prod) => setSelectedProduct(prod)}
+              onAddToCart={handleAddToCart}
+              onToggleWishlist={handleToggleWishlist}
+              isWishlisted={isWishlisted}
+              onExploreCatalogue={() => handleOpenDepartment('All')}
+            />
+
+            {/* 8. Architectural Inspiration: Spaces That Inspire */}
+            <SpacesThatInspire
+              onOpenDepartment={handleOpenDepartment}
+              onOpenTilesPage={() => {
+                setCurrentView('tiles');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+            />
+
+            {/* 9. Shop by Finish (7 Architectural Finishes) */}
+            <ShopByFinish
               onFilterByFinish={(finishName) => {
                 setCatalogDepartment('All');
                 setCatalogCategory(finishName);
@@ -344,16 +370,17 @@ export default function App() {
               }}
             />
 
-            {/* 9. Customer Favourites: Expanded 4-Column Luxury Architectural Grid with Swatches */}
-            <CustomerFavourites
-              onSelectProduct={(prod) => setSelectedProduct(prod)}
-              onAddToCart={handleAddToCart}
-              onToggleWishlist={handleToggleWishlist}
-              isWishlisted={isWishlisted}
-              onOpenCatalog={() => handleOpenDepartment('All')}
+            {/* 10. Design Consultation Banner */}
+            <ConsultationBanner
+              onBookConsultation={() => setIsTradeOpen(true)}
+              onExploreCollections={() => handleOpenDepartment('All')}
             />
+
+            {/* 11. Why Choose SMPL */}
+            <WhyChooseSMPL />
           </>
         )}
+        </Suspense>
       </main>
 
       {/* Architectural Footer */}
@@ -362,54 +389,68 @@ export default function App() {
         onOpenTrade={() => setIsTradeOpen(true)}
       />
 
-      {/* Drawers and Overlays */}
-      <CartDrawer
-        isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
-        items={cart}
-        onUpdateQuantity={handleUpdateQuantity}
-        onRemoveItem={handleRemoveFromCart}
-        onClearCart={handleClearCart}
-      />
+      {/* Drawers and Overlays (Lazy loaded only when opened) */}
+      <Suspense fallback={null}>
+        {isCartOpen && (
+          <CartDrawer
+            isOpen={isCartOpen}
+            onClose={() => setIsCartOpen(false)}
+            items={cart}
+            onUpdateQuantity={handleUpdateQuantity}
+            onRemoveItem={handleRemoveFromCart}
+            onClearCart={handleClearCart}
+          />
+        )}
 
-      <WishlistDrawer
-        isOpen={isWishlistOpen}
-        onClose={() => setIsWishlistOpen(false)}
-        wishlist={wishlist}
-        onRemoveFromWishlist={(id) => setWishlist((w) => w.filter((p) => p.id !== id))}
-        onAddToCart={handleAddToCart}
-      />
+        {isWishlistOpen && (
+          <WishlistDrawer
+            isOpen={isWishlistOpen}
+            onClose={() => setIsWishlistOpen(false)}
+            wishlist={wishlist}
+            onRemoveFromWishlist={(id) => setWishlist((w) => w.filter((p) => p.id !== id))}
+            onAddToCart={handleAddToCart}
+          />
+        )}
 
-      <ProductModal
-        product={selectedProduct}
-        allProducts={ALL_PRODUCTS}
-        onClose={() => setSelectedProduct(null)}
-        onAddToCart={handleAddToCart}
-        onToggleWishlist={handleToggleWishlist}
-        isWishlisted={selectedProduct ? isWishlisted(selectedProduct.id) : false}
-        onSelectProduct={(p) => setSelectedProduct(p)}
-      />
+        {selectedProduct && (
+          <ProductModal
+            product={selectedProduct}
+            allProducts={catalogProducts}
+            onClose={() => setSelectedProduct(null)}
+            onAddToCart={handleAddToCart}
+            onToggleWishlist={handleToggleWishlist}
+            isWishlisted={isWishlisted(selectedProduct.id)}
+            onSelectProduct={(p) => setSelectedProduct(p)}
+          />
+        )}
 
-      <ProductComparisonModal
-        products={comparingProducts}
-        onClose={() => setComparingProducts([])}
-        onSelectProduct={(p) => {
-          setComparingProducts([]);
-          setSelectedProduct(p);
-        }}
-        onAddToCart={handleAddToCart}
-      />
+        {comparingProducts.length > 0 && (
+          <ProductComparisonModal
+            products={comparingProducts}
+            onClose={() => setComparingProducts([])}
+            onSelectProduct={(p) => {
+              setComparingProducts([]);
+              setSelectedProduct(p);
+            }}
+            onAddToCart={handleAddToCart}
+          />
+        )}
 
-      <SearchModal
-        isOpen={isSearchOpen}
-        onClose={() => setIsSearchOpen(false)}
-        onSelectProduct={(prod) => setSelectedProduct(prod)}
-      />
+        {isSearchOpen && (
+          <SearchModal
+            isOpen={isSearchOpen}
+            onClose={() => setIsSearchOpen(false)}
+            onSelectProduct={(prod) => setSelectedProduct(prod)}
+          />
+        )}
 
-      <TradeModal
-        isOpen={isTradeOpen}
-        onClose={() => setIsTradeOpen(false)}
-      />
+        {isTradeOpen && (
+          <TradeModal
+            isOpen={isTradeOpen}
+            onClose={() => setIsTradeOpen(false)}
+          />
+        )}
+      </Suspense>
 
       {/* Toast Notification */}
       {toastMessage && (

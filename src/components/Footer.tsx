@@ -22,7 +22,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection, onOpenTrade }
   };
 
   return (
-    <footer id="about" className="w-full bg-[#1A1816] text-[#D8D2C6] pt-16 pb-12 px-4 sm:px-6 lg:px-10 border-t border-[#2D2A26]">
+    <footer id="about" className="cv-auto w-full bg-[#1A1816] text-[#D8D2C6] pt-16 pb-12 px-4 sm:px-6 lg:px-10 border-t border-[#2D2A26]">
       <div className="max-w-[1440px] mx-auto">
         {/* Top Manifesto & Newsletter Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-14 border-b border-[#2C2925]">

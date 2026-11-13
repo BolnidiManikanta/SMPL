@@ -53,3 +53,9 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #b5aba0;
 }
+
+/* Defer offscreen layout, paint, and image decode on below-the-fold sections */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 560px;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import { SPACES_DATA } from '../data/bathwareData';
+import { HOME_SPACES_DATA as SPACES_DATA } from '../data/homeData';
 import { SpaceCategory } from '../types';
 
 interface FindYourSpaceProps {
@@ -13,21 +13,19 @@ export const FindYourSpace: React.FC<FindYourSpaceProps> = ({
   onExploreAll,
 }) => {
   return (
-    <section id="spaces" className="w-full bg-[#F8F6F2] py-16 sm:py-20 px-4 sm:px-6 lg:px-10 border-b border-[#E7E0D3]">
+    <section id="spaces" className="cv-auto w-full bg-[#F8F6F2] py-14 sm:py-18 px-4 sm:px-6 lg:px-10 border-b border-[#E7E0D3]">
       <div className="max-w-[1440px] mx-auto">
         {/* Section Header */}
-        <div className="flex items-baseline justify-between mb-8 sm:mb-10">
-          <h2 className="font-serif text-[32px] sm:text-[42px] text-[#221F1B] font-normal tracking-tight">
+        <div className="flex items-baseline justify-between gap-4 mb-7 sm:mb-9">
+          <h2 className="font-serif text-[32px] sm:text-[38px] text-[#1E1915] font-normal tracking-tight">
             Find Your Space
           </h2>
 
           <button
             onClick={onExploreAll}
-            className="group inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-[#221F1B] hover:text-[#725C48] transition-colors cursor-pointer"
+            className="group inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#1E1915] hover:text-[#66462C] transition-colors cursor-pointer whitespace-nowrap shrink-0"
           >
-            <span className="underline underline-offset-4 decoration-[#B8AEA0] group-hover:decoration-[#725C48]">
-              Explore All Spaces
-            </span>
+            <span>Explore All Spaces</span>
             <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
           </button>
         </div>
@@ -35,34 +33,28 @@ export const FindYourSpace: React.FC<FindYourSpaceProps> = ({
         {/* 6 Space Cards Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3.5 sm:gap-4">
           {SPACES_DATA.map((space) => (
-            <div
+            <button
               key={space.id}
               onClick={() => onSelectSpace(space)}
-              className="group relative cursor-pointer overflow-hidden rounded-[2px] bg-[#E3DDD2] shadow-xs hover:shadow-lg transition-all border border-[#DDD5C8] hover:border-[#725C48] aspect-[3/4]"
+              className="group relative cursor-pointer overflow-hidden rounded-xl bg-[#E3DDD2] shadow-xs hover:shadow-lg transition-[transform,border-color,box-shadow] duration-300 border border-[#E5DDD0] hover:border-[#725C48] aspect-[3/4] text-left"
             >
               {/* Crisp HD Space Image */}
               <img
                 src={space.image}
                 alt={space.title}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                 referrerPolicy="no-referrer"
-                loading="lazy"
               />
 
-              {/* Crisp title bar at bottom matching reference design */}
-              <div className="absolute inset-x-0 bottom-0 p-3 sm:p-3.5 bg-gradient-to-t from-black/85 via-black/40 to-transparent flex items-end">
-                <h3 className="text-white font-serif text-[13px] sm:text-[15px] font-normal tracking-wide drop-shadow-sm">
+              {/* Crisp contrast gradient scrim */}
+              <div className="absolute inset-x-0 bottom-0 h-2/5 p-3.5 bg-gradient-to-t from-black/80 via-black/35 to-transparent flex items-end">
+                <h3 className="text-white font-serif text-[14.5px] sm:text-[15.5px] font-normal tracking-wide drop-shadow-xs">
                   {space.title}
                 </h3>
               </div>
-
-              {/* Accessible hover indicator */}
-              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
-                <span className="bg-white/95 text-[#221F1B] text-[10px] uppercase tracking-wider font-semibold px-3 py-1.5 rounded-xs shadow-sm backdrop-blur-xs">
-                  Browse Space
-                </span>
-              </div>
-            </div>
+            </button>
           ))}
         </div>
       </div>

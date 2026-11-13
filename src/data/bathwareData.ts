@@ -4,42 +4,42 @@ export const SPACES_DATA: SpaceCategory[] = [
   {
     "id": "master_bathroom",
     "title": "Master Bathroom",
-    "image": "/images/spaces/master_bathroom.jpg",
+    "image": "/images/spaces/master_bathroom.webp",
     "description": "Generous sanctuaries balancing sculpted freestanding baths, double vanities, and natural ambient light.",
     "itemCount": 42
   },
   {
     "id": "guest_bathroom",
     "title": "Guest Bathroom",
-    "image": "/images/spaces/guest_bathroom.jpg",
+    "image": "/images/spaces/guest_bathroom.webp",
     "description": "Compact refinement with tactile stone surfaces, circular mirrors, and integrated brassware.",
     "itemCount": 28
   },
   {
     "id": "powder_room",
     "title": "Powder Room",
-    "image": "/images/spaces/powder_room.jpg",
+    "image": "/images/spaces/powder_room.webp",
     "description": "Dramatic architectural powder rooms combining dark fluted stonework and wall-mounted brass spouts.",
     "itemCount": 19
   },
   {
     "id": "kitchen",
     "title": "Kitchen",
-    "image": "/images/spaces/kitchen.jpg",
+    "image": "/images/spaces/kitchen.webp",
     "description": "Sculptural gooseneck mixers and workstation fittings engineered for culinary precision.",
     "itemCount": 24
   },
   {
     "id": "wellness_spa",
     "title": "Wellness & Spa",
-    "image": "/images/spaces/wellness_spa.jpg",
+    "image": "/images/spaces/wellness_spa.webp",
     "description": "Sensory shower rain ceilings, waterfall cascades, and hydrotherapeutic wellness controls.",
     "itemCount": 31
   },
   {
     "id": "commercial_spaces",
     "title": "Commercial Spaces",
-    "image": "/images/spaces/commercial_spaces.jpg",
+    "image": "/images/spaces/commercial_spaces.webp",
     "description": "Heavy-traffic luxury fittings designed for boutique hospitality, private members clubs, and lounges.",
     "itemCount": 36
   }
@@ -49,42 +49,42 @@ export const STYLES_DATA: StyleCollection[] = [
   {
     "id": "contemporary",
     "title": "Contemporary",
-    "image": "/images/styles/contemporary.jpg",
+    "image": "/images/styles/contemporary.webp",
     "tagline": "Clean architectural profiles with tactile precision knurling.",
     "aesthetic": "Brushed Bronze & Warm Travertine"
   },
   {
     "id": "minimalist",
     "title": "Minimalist",
-    "image": "/images/styles/minimalist.jpg",
+    "image": "/images/styles/minimalist.webp",
     "tagline": "Pared-back geometry stripped of all ornamental excess.",
     "aesthetic": "Matte Black & Pure Ceramic"
   },
   {
     "id": "sculptural",
     "title": "Sculptural",
-    "image": "/images/styles/sculptural.jpg",
+    "image": "/images/styles/sculptural.webp",
     "tagline": "Flowing continuous curves and dramatic monolithic forms.",
     "aesthetic": "Hand-Polished Brass & Cast Bronze"
   },
   {
     "id": "timeless",
     "title": "Timeless",
-    "image": "/images/styles/timeless.jpg",
+    "image": "/images/styles/timeless.webp",
     "tagline": "Crosshead handles and proportions inspired by heritage estates.",
     "aesthetic": "Aged Brass & Carrara Marble"
   },
   {
     "id": "modern_classic",
     "title": "Modern Classic",
-    "image": "/images/styles/modern_classic.jpg",
+    "image": "/images/styles/modern_classic.webp",
     "tagline": "Fluted textures meeting modern high-precision ceramic cartridges.",
     "aesthetic": "Brushed Nickel & Fluted Glass"
   },
   {
     "id": "organic_luxury",
     "title": "Organic Luxury",
-    "image": "/images/styles/organic_luxury.jpg",
+    "image": "/images/styles/organic_luxury.webp",
     "tagline": "Raw honed limestone, earthen terrazzo, and tactile earth tones.",
     "aesthetic": "Honed Sandstone & Raw Bronze"
   }
@@ -94,7 +94,7 @@ export const CATEGORIES_DATA: ProductCategoryItem[] = [
   {
     "id": "basin_faucets",
     "title": "Basin Faucets",
-    "image": "/images/categories_hd/basin_faucets.jpg",
+    "image": "/images/categories_hd/basin_faucets.webp",
     "count": 8,
     "department": "Faucets",
     "subcategories": [
@@ -107,7 +107,7 @@ export const CATEGORIES_DATA: ProductCategoryItem[] = [
   {
     "id": "kitchen_faucets",
     "title": "Kitchen Faucets",
-    "image": "/images/categories_hd/kitchen_faucets.jpg",
+    "image": "/images/categories_hd/kitchen_faucets.webp",
     "count": 7,
     "department": "Kitchen",
     "subcategories": [
@@ -120,7 +120,7 @@ export const CATEGORIES_DATA: ProductCategoryItem[] = [
   {
     "id": "showers",
     "title": "Showers",
-    "image": "/images/categories_hd/showers.jpg",
+    "image": "/images/categories_hd/showers.webp",
     "count": 8,
     "department": "Showers",
     "subcategories": [
@@ -133,7 +133,7 @@ export const CATEGORIES_DATA: ProductCategoryItem[] = [
   {
     "id": "shower_systems",
     "title": "Shower Systems",
-    "image": "/images/categories_hd/shower_systems.jpg",
+    "image": "/images/categories_hd/shower_systems.webp",
     "count": 5,
     "department": "Showers",
     "subcategories": [
@@ -146,7 +146,7 @@ export const CATEGORIES_DATA: ProductCategoryItem[] = [
   {
     "id": "wash_basins",
     "title": "Wash Basins",
-    "image": "/images/categories_hd/wash_basins.jpg",
+    "image": "/images/categories_hd/wash_basins.webp",
     "count": 7,
     "department": "Bathroom",
     "subcategories": [
@@ -159,7 +159,7 @@ export const CATEGORIES_DATA: ProductCategoryItem[] = [
   {
     "id": "bathtubs",
     "title": "Bathtubs",
-    "image": "/images/categories_hd/bathtubs.jpg",
+    "image": "/images/categories_hd/bathtubs.webp",
     "count": 8,
     "department": "Bathroom",
     "subcategories": [
@@ -172,7 +172,7 @@ export const CATEGORIES_DATA: ProductCategoryItem[] = [
   {
     "id": "toilets",
     "title": "Toilets",
-    "image": "/images/categories_hd/toilets.jpg",
+    "image": "/images/categories_hd/toilets.webp",
     "count": 7,
     "department": "Sanitaryware",
     "subcategories": [
@@ -195,13 +195,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Master Bathroom",
     "price": 680,
-    "image": "/images/showcase/studio_gold_basin_mixer.jpg",
+    "image": "/images/showcase/studio_gold_basin_mixer.webp",
     "galleryImages": [
-      "/images/categories_hd/basin_faucets.jpg",
-      "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?auto=format&fit=crop&w=1000&q=85",
-      "/images/curated_retreat_suite.jpg"
+      "/images/showcase/studio_gold_basin_mixer.webp",
+      "/images/faucets/hero_faucet_banner.webp"
     ],
-    "lifestyleImage": "/images/curated_retreat_suite.jpg",
+    "lifestyleImage": "/images/faucets/hero_faucet_banner.webp",
     "rating": 4.9,
     "reviewCount": 64,
     "finishes": [
@@ -229,6 +228,11 @@ export const ALL_PRODUCTS: Product[] = [
         "name": "Chrome",
         "hex": "#d4d8db",
         "code": "CR"
+      },
+      {
+        "name": "Rose Gold",
+        "hex": "#B76E79",
+        "code": "RG"
       }
     ],
     "specs": {
@@ -280,12 +284,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Sculptural",
     "space": "Powder Room",
     "price": 790,
-    "image": "/images/categories_hd/basin_faucets.jpg",
+    "image": "/images/products_ultra/basin_mixer_hd.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1000&q=85",
-      "/images/categories_hd/basin_faucets.jpg"
+      "/images/products_ultra/basin_mixer_hd.webp",
+      "/images/faucets/hero_faucet_banner.webp"
     ],
-    "lifestyleImage": "/images/hero_luxury_bathware.jpg",
+    "lifestyleImage": "/images/faucets/hero_faucet_banner.webp",
     "rating": 4.8,
     "reviewCount": 42,
     "finishes": [
@@ -303,6 +307,11 @@ export const ALL_PRODUCTS: Product[] = [
         "name": "Brushed Nickel",
         "hex": "#8a8885",
         "code": "BN"
+      },
+      {
+        "name": "Rose Gold",
+        "hex": "#B76E79",
+        "code": "RG"
       }
     ],
     "specs": {
@@ -343,11 +352,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Timeless",
     "space": "Powder Room",
     "price": 1120,
-    "image": "/images/showcase/studio_gold_basin_mixer.jpg",
+    "image": "/images/featured/faucets.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85"
+      "/images/featured/faucets.webp",
+      "/images/hero_architectural_suite.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 5,
     "reviewCount": 38,
     "finishes": [
@@ -365,6 +375,11 @@ export const ALL_PRODUCTS: Product[] = [
         "name": "Chrome",
         "hex": "#d4d8db",
         "code": "CR"
+      },
+      {
+        "name": "Rose Gold",
+        "hex": "#B76E79",
+        "code": "RG"
       }
     ],
     "specs": {
@@ -405,11 +420,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Commercial Spaces",
     "price": 890,
-    "image": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85&v=prod_faucet_04",
+    "image": "/images/sanitaryware/wash_basin_countertop.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=85"
+      "/images/sanitaryware/wash_basin_countertop.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.8,
     "reviewCount": 33,
     "finishes": [
@@ -458,11 +473,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Guest Bathroom",
     "price": 940,
-    "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=85&v=prod_faucet_05",
+    "image": "/images/sanitaryware/wash_basin_countertop.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=85"
+      "/images/sanitaryware/wash_basin_countertop.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.9,
     "reviewCount": 27,
     "finishes": [
@@ -516,11 +531,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Sculptural",
     "space": "Master Bathroom",
     "price": 820,
-    "image": "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=85&v=prod_faucet_06",
+    "image": "/images/sanitaryware/wash_basin_countertop.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1000&q=85"
+      "/images/sanitaryware/wash_basin_countertop.webp"
     ],
-    "lifestyleImage": "/images/curated_retreat_suite.jpg",
+    "lifestyleImage": "/images/curated_retreat_suite.webp",
     "rating": 4.8,
     "reviewCount": 31,
     "finishes": [
@@ -568,11 +583,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Timeless",
     "space": "Guest Bathroom",
     "price": 520,
-    "image": "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?auto=format&fit=crop&w=1200&q=85&v=prod_faucet_07",
+    "image": "/images/sanitaryware/wash_basin_countertop.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=85"
+      "/images/sanitaryware/wash_basin_countertop.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.7,
     "reviewCount": 22,
     "finishes": [
@@ -620,11 +635,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Master Bathroom",
     "price": 740,
-    "image": "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=85&v=prod_faucet_08",
+    "image": "/images/categories_hd/basin_faucets.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=1000&q=85"
+      "/images/categories_hd/basin_faucets.webp",
+      "/images/sanitaryware/wash_basin_countertop.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/sanitaryware/wash_basin_countertop.webp",
     "rating": 4.8,
     "reviewCount": 29,
     "finishes": [
@@ -672,12 +688,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Master Bathroom",
     "price": 1480,
-    "image": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1200&q=85&v=prod_faucet_09",
+    "image": "/images/faucets/hero_faucet_banner.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
-      "/images/hero_luxury_bathware.jpg"
+      "/images/faucets/hero_faucet_banner.webp",
+      "/images/hero_luxury_bathware.webp"
     ],
-    "lifestyleImage": "/images/hero_luxury_bathware.jpg",
+    "lifestyleImage": "/images/hero_luxury_bathware.webp",
     "rating": 4.9,
     "reviewCount": 51,
     "finishes": [
@@ -732,11 +748,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Master Bathroom",
     "price": 880,
-    "image": "https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=1200&q=85&v=prod_faucet_10",
+    "image": "/images/products_ultra/thermostatic_mixer_hd.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1000&q=85"
+      "/images/products_ultra/thermostatic_mixer_hd.webp",
+      "/images/featured/showers.webp"
     ],
-    "lifestyleImage": "/images/curated_retreat_suite.jpg",
+    "lifestyleImage": "/images/featured/showers.webp",
     "rating": 4.8,
     "reviewCount": 36,
     "finishes": [
@@ -789,11 +806,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Wellness & Spa",
     "price": 640,
-    "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=85&v=prod_faucet_11",
+    "image": "/images/categories_hd/shower_systems.webp",
     "galleryImages": [
-      "/images/categories_hd/shower_systems.jpg"
+      "/images/categories_hd/shower_systems.webp",
+      "/images/showers/hero_shower_banner.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/showers/hero_shower_banner.webp",
     "rating": 4.9,
     "reviewCount": 19,
     "finishes": [
@@ -841,11 +859,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Sculptural",
     "space": "Master Bathroom",
     "price": 720,
-    "image": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=85&v=prod_faucet_12",
+    "image": "/images/faucets/hero_faucet_banner.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=85"
+      "/images/faucets/hero_faucet_banner.webp"
     ],
-    "lifestyleImage": "/images/hero_luxury_bathware.jpg",
+    "lifestyleImage": "/images/hero_luxury_bathware.webp",
     "rating": 4.9,
     "reviewCount": 24,
     "finishes": [
@@ -894,11 +912,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Timeless",
     "space": "Master Bathroom",
     "price": 1560,
-    "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85&v=prod_faucet_13",
+    "image": "/images/faucets/hero_faucet_banner.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85"
+      "/images/faucets/hero_faucet_banner.webp"
     ],
-    "lifestyleImage": "/images/hero_luxury_bathware.jpg",
+    "lifestyleImage": "/images/hero_luxury_bathware.webp",
     "rating": 5,
     "reviewCount": 31,
     "finishes": [
@@ -946,13 +964,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Wellness & Spa",
     "price": 890,
-    "image": "/images/categories_hd/showers.jpg",
+    "image": "/images/products_ultra/shower_rose_hd.webp",
     "galleryImages": [
-      "/images/categories_hd/showers.jpg",
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85",
-      "/images/curated_retreat_suite.jpg"
+      "/images/products_ultra/shower_rose_hd.webp",
+      "/images/featured/showers.webp"
     ],
-    "lifestyleImage": "/images/curated_retreat_suite.jpg",
+    "lifestyleImage": "/images/featured/showers.webp",
     "rating": 5,
     "reviewCount": 89,
     "finishes": [
@@ -970,6 +987,11 @@ export const ALL_PRODUCTS: Product[] = [
         "name": "Brushed Nickel",
         "hex": "#8a8885",
         "code": "BN"
+      },
+      {
+        "name": "Rose Gold",
+        "hex": "#B76E79",
+        "code": "RG"
       }
     ],
     "specs": {
@@ -1009,13 +1031,13 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Sculptural",
     "space": "Master Bathroom",
     "price": 1240,
-    "image": "https://images.unsplash.com/photo-1604709177225-055f99402ea3?auto=format&fit=crop&w=1200&q=85&v=prod_shower_02",
+    "image": "/images/categories_hd/shower_systems.webp",
     "galleryImages": [
-      "/images/categories_hd/shower_systems.jpg",
-      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1000&q=85",
-      "/images/curated_retreat_suite.jpg"
+      "/images/categories_hd/shower_systems.webp",
+      "/images/categories_hd/shower_systems.webp",
+      "/images/curated_retreat_suite.webp"
     ],
-    "lifestyleImage": "/images/curated_retreat_suite.jpg",
+    "lifestyleImage": "/images/curated_retreat_suite.webp",
     "rating": 4.9,
     "reviewCount": 57,
     "finishes": [
@@ -1070,11 +1092,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Wellness & Spa",
     "price": 980,
-    "image": "https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?auto=format&fit=crop&w=1200&q=85&v=prod_shower_03",
+    "image": "/images/categories_hd/showers.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=85"
+      "/images/categories_hd/showers.webp",
+      "/images/showers/hero_shower_banner.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/showers/hero_shower_banner.webp",
     "rating": 4.8,
     "reviewCount": 31,
     "finishes": [
@@ -1124,11 +1147,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Wellness & Spa",
     "price": 760,
-    "image": "https://images.unsplash.com/photo-1563298723-dcfebaa392e3?auto=format&fit=crop&w=1200&q=85&v=prod_shower_04",
+    "image": "/images/categories_hd/shower_systems.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1000&q=85"
+      "/images/categories_hd/shower_systems.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.9,
     "reviewCount": 18,
     "finishes": [
@@ -1175,11 +1198,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Timeless",
     "space": "Master Bathroom",
     "price": 1850,
-    "image": "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1200&q=85&v=prod_shower_05",
+    "image": "/images/categories_hd/shower_systems.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1000&q=85"
+      "/images/categories_hd/shower_systems.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 5,
     "reviewCount": 34,
     "finishes": [
@@ -1229,11 +1252,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Guest Bathroom",
     "price": 360,
-    "image": "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1200&q=85&v=prod_shower_06",
+    "image": "/images/categories_hd/shower_systems.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?auto=format&fit=crop&w=1000&q=85"
+      "/images/categories_hd/shower_systems.webp"
     ],
-    "lifestyleImage": "/images/curated_retreat_suite.jpg",
+    "lifestyleImage": "/images/curated_retreat_suite.webp",
     "rating": 4.8,
     "reviewCount": 47,
     "finishes": [
@@ -1286,11 +1309,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Sculptural",
     "space": "Wellness & Spa",
     "price": 1390,
-    "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85&v=prod_shower_07",
+    "image": "/images/categories_hd/shower_systems.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1604709177225-055f99402ea3?auto=format&fit=crop&w=1000&q=85"
+      "/images/categories_hd/shower_systems.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 5,
     "reviewCount": 21,
     "finishes": [
@@ -1338,11 +1361,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Wellness & Spa",
     "price": 2100,
-    "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85&v=prod_shower_08",
+    "image": "/images/categories_hd/shower_systems.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85"
+      "/images/categories_hd/shower_systems.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 5,
     "reviewCount": 16,
     "finishes": [
@@ -1391,13 +1414,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Organic Luxury",
     "space": "Master Bathroom",
     "price": 4200,
-    "image": "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?auto=format&fit=crop&w=1200&q=85&v=prod_bath_01",
+    "image": "/images/products_ultra/stone_bathtub_hd.webp",
     "galleryImages": [
-      "/images/categories_hd/bathtubs.jpg",
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
-      "/images/hero_luxury_bathware.jpg"
+      "/images/products_ultra/stone_bathtub_hd.webp",
+      "/images/hero_sanctuary_4k.webp"
     ],
-    "lifestyleImage": "/images/hero_luxury_bathware.jpg",
+    "lifestyleImage": "/images/hero_sanctuary_4k.webp",
     "rating": 5,
     "reviewCount": 44,
     "finishes": [
@@ -1451,11 +1473,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Wellness & Spa",
     "price": 3650,
-    "image": "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=85&v=prod_bath_02",
+    "image": "/images/showcase/studio_stone_oval_tub.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1000&q=85"
+      "/images/showcase/studio_stone_oval_tub.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.9,
     "reviewCount": 28,
     "finishes": [
@@ -1504,11 +1526,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Master Bathroom",
     "price": 3890,
-    "image": "https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=1200&q=85&v=prod_bath_03",
+    "image": "/images/showcase/studio_stone_oval_tub.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1000&q=85"
+      "/images/showcase/studio_stone_oval_tub.webp"
     ],
-    "lifestyleImage": "/images/curated_retreat_suite.jpg",
+    "lifestyleImage": "/images/curated_retreat_suite.webp",
     "rating": 4.8,
     "reviewCount": 19,
     "finishes": [
@@ -1550,11 +1572,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Organic Luxury",
     "space": "Master Bathroom",
     "price": 3450,
-    "image": "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1200&q=85&v=prod_bath_04",
+    "image": "/images/showcase/studio_stone_oval_tub.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?auto=format&fit=crop&w=1000&q=85"
+      "/images/showcase/studio_stone_oval_tub.webp",
+      "/images/hero_luxury_bathware.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_luxury_bathware.webp",
     "rating": 4.9,
     "reviewCount": 22,
     "finishes": [
@@ -1601,11 +1624,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Timeless",
     "space": "Master Bathroom",
     "price": 4600,
-    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85&v=prod_bath_05",
+    "image": "/images/showcase/studio_stone_oval_tub.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1527030280862-64139fba04ca?auto=format&fit=crop&w=1000&q=85"
+      "/images/showcase/studio_stone_oval_tub.webp"
     ],
-    "lifestyleImage": "/images/hero_luxury_bathware.jpg",
+    "lifestyleImage": "/images/hero_luxury_bathware.webp",
     "rating": 5,
     "reviewCount": 15,
     "finishes": [
@@ -1652,11 +1675,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Wellness & Spa",
     "price": 3200,
-    "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85&v=prod_bath_06",
+    "image": "/images/showcase/studio_stone_oval_tub.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1563298723-dcfebaa392e3?auto=format&fit=crop&w=1000&q=85"
+      "/images/showcase/studio_stone_oval_tub.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.7,
     "reviewCount": 14,
     "finishes": [
@@ -1698,13 +1721,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Organic Luxury",
     "space": "Master Bathroom",
     "price": 1380,
-    "image": "/images/categories_hd/wash_basins.jpg",
+    "image": "/images/products_ultra/stone_basin_hd.webp",
     "galleryImages": [
-      "/images/categories_hd/wash_basins.jpg",
-      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=85",
-      "/images/curated_retreat_suite.jpg"
+      "/images/products_ultra/stone_basin_hd.webp",
+      "/images/sanitaryware/wash_basin_countertop.webp"
     ],
-    "lifestyleImage": "/images/curated_retreat_suite.jpg",
+    "lifestyleImage": "/images/sanitaryware/wash_basin_countertop.webp",
     "rating": 5,
     "reviewCount": 73,
     "finishes": [
@@ -1722,6 +1744,11 @@ export const ALL_PRODUCTS: Product[] = [
         "name": "Nero Marble",
         "hex": "#242322",
         "code": "NM"
+      },
+      {
+        "name": "Rose Gold",
+        "hex": "#B76E79",
+        "code": "RG"
       }
     ],
     "specs": {
@@ -1758,11 +1785,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Guest Bathroom",
     "price": 780,
-    "image": "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?auto=format&fit=crop&w=1200&q=85&v=prod_basin_02",
+    "image": "/images/sanitaryware/wash_basin_countertop.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1000&q=85"
+      "/images/sanitaryware/wash_basin_countertop.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.8,
     "reviewCount": 46,
     "finishes": [
@@ -1815,11 +1842,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Master Bathroom",
     "price": 540,
-    "image": "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?auto=format&fit=crop&w=1200&q=85&v=prod_basin_03",
+    "image": "/images/sanitaryware/wash_basin_countertop.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85"
+      "/images/sanitaryware/wash_basin_countertop.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.9,
     "reviewCount": 38,
     "finishes": [
@@ -1867,11 +1894,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Sculptural",
     "space": "Powder Room",
     "price": 2150,
-    "image": "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&w=1200&q=85&v=prod_basin_04",
+    "image": "/images/sanitaryware/wash_basin_countertop.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=85"
+      "/images/sanitaryware/wash_basin_countertop.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 5,
     "reviewCount": 17,
     "finishes": [
@@ -1920,11 +1947,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Master Bathroom",
     "price": 860,
-    "image": "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?auto=format&fit=crop&w=1200&q=85&v=prod_basin_05",
+    "image": "/images/categories_hd/wash_basins.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=85"
+      "/images/categories_hd/wash_basins.webp",
+      "/images/featured/bathrooms.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/featured/bathrooms.webp",
     "rating": 4.8,
     "reviewCount": 33,
     "finishes": [
@@ -1971,11 +1999,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Organic Luxury",
     "space": "Powder Room",
     "price": 1890,
-    "image": "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&w=1200&q=85&v=prod_basin_06",
+    "image": "/images/sanitaryware/wash_basin_countertop.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=1000&q=85"
+      "/images/sanitaryware/wash_basin_countertop.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 5,
     "reviewCount": 20,
     "finishes": [
@@ -2023,11 +2051,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Guest Bathroom",
     "price": 620,
-    "image": "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1200&q=85&v=prod_basin_07",
+    "image": "/images/sanitaryware/wash_basin_countertop.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=1000&q=85"
+      "/images/sanitaryware/wash_basin_countertop.webp",
+      "/images/featured/bathrooms.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/featured/bathrooms.webp",
     "rating": 4.8,
     "reviewCount": 26,
     "finishes": [
@@ -2070,12 +2099,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Guest Bathroom",
     "price": 1650,
-    "image": "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=1200&q=85&v=prod_toilet_01",
+    "image": "/images/products_ultra/toilet_commode_hd.webp",
     "galleryImages": [
-      "/images/categories_hd/toilets.jpg",
-      "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1000&q=85"
+      "/images/products_ultra/toilet_commode_hd.webp",
+      "/images/sanitaryware/hero_sanitaryware.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/sanitaryware/hero_sanitaryware.webp",
     "rating": 4.9,
     "reviewCount": 62,
     "finishes": [
@@ -2133,11 +2162,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Master Bathroom",
     "price": 2850,
-    "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=85&v=prod_toilet_02",
+    "image": "/images/sanitaryware/toilet_wall_hung.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?auto=format&fit=crop&w=1000&q=85"
+      "/images/sanitaryware/toilet_wall_hung.webp",
+      "/images/sanitaryware/hero_sanitaryware.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/sanitaryware/hero_sanitaryware.webp",
     "rating": 5,
     "reviewCount": 39,
     "finishes": [
@@ -2186,11 +2216,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Guest Bathroom",
     "price": 1350,
-    "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85&v=prod_toilet_03",
+    "image": "/images/sanitaryware/wc_one_piece.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1000&q=85"
+      "/images/sanitaryware/wc_one_piece.webp",
+      "/images/sanitaryware/hero_sanitaryware.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/sanitaryware/hero_sanitaryware.webp",
     "rating": 4.8,
     "reviewCount": 27,
     "finishes": [
@@ -2233,11 +2264,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Guest Bathroom",
     "price": 620,
-    "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=85&v=prod_cistern_01",
+    "image": "/images/showcase/studio_smart_toilet_wall.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1000&q=85"
+      "/images/showcase/studio_smart_toilet_wall.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.8,
     "reviewCount": 35,
     "finishes": [
@@ -2280,11 +2311,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Master Bathroom",
     "price": 340,
-    "image": "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1200&q=85&v=prod_flush_01",
+    "image": "/images/showcase/studio_smart_toilet_wall.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1000&q=85"
+      "/images/showcase/studio_smart_toilet_wall.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.9,
     "reviewCount": 43,
     "finishes": [
@@ -2337,11 +2368,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Guest Bathroom",
     "price": 290,
-    "image": "https://images.unsplash.com/photo-1600566753104-685f4f24cb4d?auto=format&fit=crop&w=1200&q=85&v=prod_flush_02",
+    "image": "/images/showcase/studio_smart_toilet_wall.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=1000&q=85"
+      "/images/showcase/studio_smart_toilet_wall.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.8,
     "reviewCount": 25,
     "finishes": [
@@ -2388,11 +2419,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Master Bathroom",
     "price": 1190,
-    "image": "/images/categories_hd/basin_faucets.jpg",
+    "image": "/images/sanitaryware/bidet_wall_hung.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1000&q=85"
+      "/images/sanitaryware/bidet_wall_hung.webp",
+      "/images/sanitaryware/hero_sanitaryware.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/sanitaryware/hero_sanitaryware.webp",
     "rating": 4.9,
     "reviewCount": 18,
     "finishes": [
@@ -2435,13 +2467,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Kitchen",
     "price": 890,
-    "image": "/images/categories_hd/kitchen_faucets.jpg",
+    "image": "/images/products_ultra/kitchen_faucet_hd.webp",
     "galleryImages": [
-      "/images/categories_hd/kitchen_faucets.jpg",
-      "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=85",
-      "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=1000&q=85"
+      "/images/products_ultra/kitchen_faucet_hd.webp",
+      "/images/featured/kitchens.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/featured/kitchens.webp",
     "rating": 4.9,
     "reviewCount": 82,
     "finishes": [
@@ -2459,6 +2490,11 @@ export const ALL_PRODUCTS: Product[] = [
         "name": "Brushed Stainless",
         "hex": "#9e9c98",
         "code": "BS"
+      },
+      {
+        "name": "Rose Gold",
+        "hex": "#B76E79",
+        "code": "RG"
       }
     ],
     "specs": {
@@ -2499,11 +2535,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Timeless",
     "space": "Kitchen",
     "price": 1150,
-    "image": "/images/categories_hd/showers.jpg",
+    "image": "/images/categories_hd/showers.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=85"
+      "/images/categories_hd/showers.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.8,
     "reviewCount": 29,
     "finishes": [
@@ -2552,11 +2588,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Kitchen",
     "price": 480,
-    "image": "/images/categories_hd/shower_systems.jpg",
+    "image": "/images/categories_hd/shower_systems.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=85"
+      "/images/categories_hd/shower_systems.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.9,
     "reviewCount": 37,
     "finishes": [
@@ -2604,11 +2640,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Kitchen",
     "price": 1280,
-    "image": "/images/categories_hd/wash_basins.jpg",
+    "image": "/images/categories_hd/wash_basins.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=1000&q=85"
+      "/images/categories_hd/wash_basins.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 5,
     "reviewCount": 42,
     "finishes": [
@@ -2656,11 +2692,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Kitchen",
     "price": 920,
-    "image": "/images/categories_hd/bathtubs.jpg",
+    "image": "/images/categories_hd/kitchen_faucets.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1000&q=85"
+      "/images/categories_hd/kitchen_faucets.webp",
+      "/images/featured/kitchens.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/featured/kitchens.webp",
     "rating": 4.8,
     "reviewCount": 31,
     "finishes": [
@@ -2708,12 +2745,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Guest Bathroom",
     "price": 220,
-    "image": "/images/categories_hd/accessories.jpg",
+    "image": "/images/products_ultra/soap_dispenser_hd.webp",
     "galleryImages": [
-      "/images/categories_hd/accessories.jpg",
-      "https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=1000&q=85"
+      "/images/products_ultra/soap_dispenser_hd.webp",
+      "/images/featured/bathrooms.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/featured/bathrooms.webp",
     "rating": 4.8,
     "reviewCount": 37,
     "finishes": [
@@ -2768,11 +2805,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Master Bathroom",
     "price": 290,
-    "image": "/images/categories_hd/accessories.jpg",
+    "image": "/images/categories_hd/accessories.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1604709177225-055f99402ea3?auto=format&fit=crop&w=1000&q=85"
+      "/images/categories_hd/accessories.webp",
+      "/images/featured/bathrooms.webp"
     ],
-    "lifestyleImage": "/images/curated_retreat_suite.jpg",
+    "lifestyleImage": "/images/featured/bathrooms.webp",
     "rating": 4.9,
     "reviewCount": 53,
     "finishes": [
@@ -2826,11 +2864,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Master Bathroom",
     "price": 380,
-    "image": "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=85&v=prod_acc_03",
+    "image": "/images/products_ultra/soap_dispenser_hd.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=1000&q=85"
+      "/images/products_ultra/soap_dispenser_hd.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.9,
     "reviewCount": 31,
     "finishes": [
@@ -2877,11 +2915,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Wellness & Spa",
     "price": 380,
-    "image": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=85&v=prod_acc_04",
+    "image": "/images/products_ultra/soap_dispenser_hd.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?auto=format&fit=crop&w=1000&q=85"
+      "/images/products_ultra/soap_dispenser_hd.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.9,
     "reviewCount": 41,
     "finishes": [
@@ -2935,11 +2973,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Guest Bathroom",
     "price": 260,
-    "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85&v=prod_acc_05",
+    "image": "/images/products_ultra/soap_dispenser_hd.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1563298723-dcfebaa392e3?auto=format&fit=crop&w=1000&q=85"
+      "/images/products_ultra/soap_dispenser_hd.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.8,
     "reviewCount": 54,
     "finishes": [
@@ -2993,11 +3031,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Timeless",
     "space": "Guest Bathroom",
     "price": 140,
-    "image": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1200&q=85&v=prod_acc_06",
+    "image": "/images/products_ultra/soap_dispenser_hd.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1000&q=85"
+      "/images/products_ultra/soap_dispenser_hd.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.9,
     "reviewCount": 39,
     "finishes": [
@@ -3045,11 +3083,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Master Bathroom",
     "price": 240,
-    "image": "https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=1200&q=85&v=prod_acc_07",
+    "image": "/images/products_ultra/soap_dispenser_hd.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=85"
+      "/images/products_ultra/soap_dispenser_hd.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.8,
     "reviewCount": 45,
     "finishes": [
@@ -3096,11 +3134,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Master Bathroom",
     "price": 890,
-    "image": "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=1200&q=85&v=prod_acc_08",
+    "image": "/images/products_ultra/soap_dispenser_hd.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1000&q=85"
+      "/images/products_ultra/soap_dispenser_hd.webp"
     ],
-    "lifestyleImage": "/images/curated_retreat_suite.jpg",
+    "lifestyleImage": "/images/curated_retreat_suite.webp",
     "rating": 5,
     "reviewCount": 52,
     "finishes": [
@@ -3150,12 +3188,12 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Wellness & Spa",
     "price": 1450,
-    "image": "https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?auto=format&fit=crop&w=1200&q=85&v=prod_shower_09",
+    "image": "/images/categories_hd/shower_systems.webp",
     "galleryImages": [
-      "/images/categories_hd/showers.jpg",
-      "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?auto=format&fit=crop&w=1200&q=85"
+      "/images/categories_hd/showers.webp",
+      "/images/categories_hd/shower_systems.webp"
     ],
-    "lifestyleImage": "/images/curated_retreat_suite.jpg",
+    "lifestyleImage": "/images/curated_retreat_suite.webp",
     "rating": 4.9,
     "reviewCount": 16,
     "finishes": [
@@ -3215,11 +3253,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Guest Bathroom",
     "price": 340,
-    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85&v=prod_shower_10",
+    "image": "/images/categories_hd/shower_systems.webp",
     "galleryImages": [
-      "/images/categories_hd/shower_systems.jpg"
+      "/images/categories_hd/shower_systems.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.8,
     "reviewCount": 22,
     "finishes": [
@@ -3274,11 +3312,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Timeless",
     "space": "Master Bathroom",
     "price": 760,
-    "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85&v=prod_shower_11",
+    "image": "/images/categories_hd/shower_systems.webp",
     "galleryImages": [
-      "/images/categories_hd/shower_systems.jpg"
+      "/images/categories_hd/shower_systems.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.9,
     "reviewCount": 14,
     "finishes": [
@@ -3334,11 +3372,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Sculptural",
     "space": "Master Bathroom",
     "price": 2150,
-    "image": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85&v=prod_shsys_04",
+    "image": "/images/categories_hd/shower_systems.webp",
     "galleryImages": [
-      "/images/categories_hd/shower_systems.jpg"
+      "/images/categories_hd/shower_systems.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 5,
     "reviewCount": 9,
     "finishes": [
@@ -3393,11 +3431,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Wellness & Spa",
     "price": 2850,
-    "image": "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?auto=format&fit=crop&w=1200&q=85&v=prod_shsys_05",
+    "image": "/images/categories_hd/shower_systems.webp",
     "galleryImages": [
-      "/images/categories_hd/shower_systems.jpg"
+      "/images/categories_hd/shower_systems.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.9,
     "reviewCount": 11,
     "finishes": [
@@ -3448,11 +3486,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Kitchen",
     "price": 890,
-    "image": "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?auto=format&fit=crop&w=1200&q=85&v=prod_kitchen_06",
+    "image": "/images/featured/kitchens.webp",
     "galleryImages": [
-      "/images/categories_hd/kitchen_faucets.jpg"
+      "/images/categories_hd/kitchen_faucets.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.9,
     "reviewCount": 29,
     "finishes": [
@@ -3509,11 +3547,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Kitchen",
     "price": 1350,
-    "image": "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&w=1200&q=85&v=prod_kitchen_07",
+    "image": "/images/featured/kitchens.webp",
     "galleryImages": [
-      "/images/categories_hd/kitchen_faucets.jpg"
+      "/images/categories_hd/kitchen_faucets.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.8,
     "reviewCount": 18,
     "finishes": [
@@ -3563,11 +3601,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Modern Classic",
     "space": "Master Bathroom",
     "price": 3850,
-    "image": "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?auto=format&fit=crop&w=1200&q=85&v=prod_tub_07",
+    "image": "/images/showcase/studio_stone_oval_tub.webp",
     "galleryImages": [
-      "/images/categories_hd/bathtubs.jpg"
+      "/images/categories_hd/bathtubs.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 5,
     "reviewCount": 8,
     "finishes": [
@@ -3621,11 +3659,11 @@ export const ALL_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Master Bathroom",
     "price": 2450,
-    "image": "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&w=1200&q=85&v=prod_tub_08",
+    "image": "/images/showcase/studio_stone_oval_tub.webp",
     "galleryImages": [
-      "/images/categories_hd/bathtubs.jpg"
+      "/images/categories_hd/bathtubs.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.8,
     "reviewCount": 15,
     "finishes": [
@@ -3676,13 +3714,12 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Master Bathroom",
     "price": 680,
-    "image": "/images/showcase/studio_gold_basin_mixer.jpg",
+    "image": "/images/showcase/studio_gold_basin_mixer.webp",
     "galleryImages": [
-      "/images/categories_hd/basin_faucets.jpg",
-      "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?auto=format&fit=crop&w=1000&q=85",
-      "/images/curated_retreat_suite.jpg"
+      "/images/showcase/studio_gold_basin_mixer.webp",
+      "/images/faucets/hero_faucet_banner.webp"
     ],
-    "lifestyleImage": "/images/curated_retreat_suite.jpg",
+    "lifestyleImage": "/images/faucets/hero_faucet_banner.webp",
     "rating": 4.9,
     "reviewCount": 64,
     "finishes": [
@@ -3710,6 +3747,11 @@ export const BESTSELLER_PRODUCTS: Product[] = [
         "name": "Chrome",
         "hex": "#d4d8db",
         "code": "CR"
+      },
+      {
+        "name": "Rose Gold",
+        "hex": "#B76E79",
+        "code": "RG"
       }
     ],
     "specs": {
@@ -3761,12 +3803,12 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Sculptural",
     "space": "Powder Room",
     "price": 790,
-    "image": "/images/categories_hd/basin_faucets.jpg",
+    "image": "/images/products_ultra/basin_mixer_hd.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1000&q=85",
-      "/images/categories_hd/basin_faucets.jpg"
+      "/images/products_ultra/basin_mixer_hd.webp",
+      "/images/faucets/hero_faucet_banner.webp"
     ],
-    "lifestyleImage": "/images/hero_luxury_bathware.jpg",
+    "lifestyleImage": "/images/faucets/hero_faucet_banner.webp",
     "rating": 4.8,
     "reviewCount": 42,
     "finishes": [
@@ -3784,6 +3826,11 @@ export const BESTSELLER_PRODUCTS: Product[] = [
         "name": "Brushed Nickel",
         "hex": "#8a8885",
         "code": "BN"
+      },
+      {
+        "name": "Rose Gold",
+        "hex": "#B76E79",
+        "code": "RG"
       }
     ],
     "specs": {
@@ -3824,11 +3871,12 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Timeless",
     "space": "Powder Room",
     "price": 1120,
-    "image": "/images/showcase/studio_gold_basin_mixer.jpg",
+    "image": "/images/featured/faucets.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85"
+      "/images/featured/faucets.webp",
+      "/images/hero_architectural_suite.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 5,
     "reviewCount": 38,
     "finishes": [
@@ -3846,6 +3894,11 @@ export const BESTSELLER_PRODUCTS: Product[] = [
         "name": "Chrome",
         "hex": "#d4d8db",
         "code": "CR"
+      },
+      {
+        "name": "Rose Gold",
+        "hex": "#B76E79",
+        "code": "RG"
       }
     ],
     "specs": {
@@ -3886,11 +3939,11 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Commercial Spaces",
     "price": 890,
-    "image": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85&v=prod_faucet_04",
+    "image": "/images/sanitaryware/wash_basin_countertop.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=85"
+      "/images/sanitaryware/wash_basin_countertop.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.8,
     "reviewCount": 33,
     "finishes": [
@@ -3939,11 +3992,11 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Guest Bathroom",
     "price": 940,
-    "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=85&v=prod_faucet_05",
+    "image": "/images/sanitaryware/wash_basin_countertop.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=85"
+      "/images/sanitaryware/wash_basin_countertop.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.9,
     "reviewCount": 27,
     "finishes": [
@@ -3997,11 +4050,11 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Sculptural",
     "space": "Master Bathroom",
     "price": 820,
-    "image": "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=85&v=prod_faucet_06",
+    "image": "/images/sanitaryware/wash_basin_countertop.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1000&q=85"
+      "/images/sanitaryware/wash_basin_countertop.webp"
     ],
-    "lifestyleImage": "/images/curated_retreat_suite.jpg",
+    "lifestyleImage": "/images/curated_retreat_suite.webp",
     "rating": 4.8,
     "reviewCount": 31,
     "finishes": [
@@ -4049,11 +4102,12 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Master Bathroom",
     "price": 740,
-    "image": "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=85&v=prod_faucet_08",
+    "image": "/images/categories_hd/basin_faucets.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=1000&q=85"
+      "/images/categories_hd/basin_faucets.webp",
+      "/images/sanitaryware/wash_basin_countertop.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/sanitaryware/wash_basin_countertop.webp",
     "rating": 4.8,
     "reviewCount": 29,
     "finishes": [
@@ -4101,12 +4155,12 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Master Bathroom",
     "price": 1480,
-    "image": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1200&q=85&v=prod_faucet_09",
+    "image": "/images/faucets/hero_faucet_banner.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
-      "/images/hero_luxury_bathware.jpg"
+      "/images/faucets/hero_faucet_banner.webp",
+      "/images/hero_luxury_bathware.webp"
     ],
-    "lifestyleImage": "/images/hero_luxury_bathware.jpg",
+    "lifestyleImage": "/images/hero_luxury_bathware.webp",
     "rating": 4.9,
     "reviewCount": 51,
     "finishes": [
@@ -4161,11 +4215,12 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Master Bathroom",
     "price": 880,
-    "image": "https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=1200&q=85&v=prod_faucet_10",
+    "image": "/images/products_ultra/thermostatic_mixer_hd.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1000&q=85"
+      "/images/products_ultra/thermostatic_mixer_hd.webp",
+      "/images/featured/showers.webp"
     ],
-    "lifestyleImage": "/images/curated_retreat_suite.jpg",
+    "lifestyleImage": "/images/featured/showers.webp",
     "rating": 4.8,
     "reviewCount": 36,
     "finishes": [
@@ -4218,11 +4273,12 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Wellness & Spa",
     "price": 640,
-    "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=85&v=prod_faucet_11",
+    "image": "/images/categories_hd/shower_systems.webp",
     "galleryImages": [
-      "/images/categories_hd/shower_systems.jpg"
+      "/images/categories_hd/shower_systems.webp",
+      "/images/showers/hero_shower_banner.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/showers/hero_shower_banner.webp",
     "rating": 4.9,
     "reviewCount": 19,
     "finishes": [
@@ -4270,11 +4326,11 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Sculptural",
     "space": "Master Bathroom",
     "price": 720,
-    "image": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=85&v=prod_faucet_12",
+    "image": "/images/faucets/hero_faucet_banner.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=85"
+      "/images/faucets/hero_faucet_banner.webp"
     ],
-    "lifestyleImage": "/images/hero_luxury_bathware.jpg",
+    "lifestyleImage": "/images/hero_luxury_bathware.webp",
     "rating": 4.9,
     "reviewCount": 24,
     "finishes": [
@@ -4323,11 +4379,11 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Timeless",
     "space": "Master Bathroom",
     "price": 1560,
-    "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85&v=prod_faucet_13",
+    "image": "/images/faucets/hero_faucet_banner.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85"
+      "/images/faucets/hero_faucet_banner.webp"
     ],
-    "lifestyleImage": "/images/hero_luxury_bathware.jpg",
+    "lifestyleImage": "/images/hero_luxury_bathware.webp",
     "rating": 5,
     "reviewCount": 31,
     "finishes": [
@@ -4375,13 +4431,12 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Wellness & Spa",
     "price": 890,
-    "image": "/images/categories_hd/showers.jpg",
+    "image": "/images/products_ultra/shower_rose_hd.webp",
     "galleryImages": [
-      "/images/categories_hd/showers.jpg",
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85",
-      "/images/curated_retreat_suite.jpg"
+      "/images/products_ultra/shower_rose_hd.webp",
+      "/images/featured/showers.webp"
     ],
-    "lifestyleImage": "/images/curated_retreat_suite.jpg",
+    "lifestyleImage": "/images/featured/showers.webp",
     "rating": 5,
     "reviewCount": 89,
     "finishes": [
@@ -4399,6 +4454,11 @@ export const BESTSELLER_PRODUCTS: Product[] = [
         "name": "Brushed Nickel",
         "hex": "#8a8885",
         "code": "BN"
+      },
+      {
+        "name": "Rose Gold",
+        "hex": "#B76E79",
+        "code": "RG"
       }
     ],
     "specs": {
@@ -4438,13 +4498,13 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Sculptural",
     "space": "Master Bathroom",
     "price": 1240,
-    "image": "https://images.unsplash.com/photo-1604709177225-055f99402ea3?auto=format&fit=crop&w=1200&q=85&v=prod_shower_02",
+    "image": "/images/categories_hd/shower_systems.webp",
     "galleryImages": [
-      "/images/categories_hd/shower_systems.jpg",
-      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1000&q=85",
-      "/images/curated_retreat_suite.jpg"
+      "/images/categories_hd/shower_systems.webp",
+      "/images/categories_hd/shower_systems.webp",
+      "/images/curated_retreat_suite.webp"
     ],
-    "lifestyleImage": "/images/curated_retreat_suite.jpg",
+    "lifestyleImage": "/images/curated_retreat_suite.webp",
     "rating": 4.9,
     "reviewCount": 57,
     "finishes": [
@@ -4499,11 +4559,12 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Wellness & Spa",
     "price": 980,
-    "image": "https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?auto=format&fit=crop&w=1200&q=85&v=prod_shower_03",
+    "image": "/images/categories_hd/showers.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=85"
+      "/images/categories_hd/showers.webp",
+      "/images/showers/hero_shower_banner.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/showers/hero_shower_banner.webp",
     "rating": 4.8,
     "reviewCount": 31,
     "finishes": [
@@ -4553,11 +4614,11 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Wellness & Spa",
     "price": 760,
-    "image": "https://images.unsplash.com/photo-1563298723-dcfebaa392e3?auto=format&fit=crop&w=1200&q=85&v=prod_shower_04",
+    "image": "/images/categories_hd/shower_systems.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1000&q=85"
+      "/images/categories_hd/shower_systems.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.9,
     "reviewCount": 18,
     "finishes": [
@@ -4604,11 +4665,11 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Timeless",
     "space": "Master Bathroom",
     "price": 1850,
-    "image": "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1200&q=85&v=prod_shower_05",
+    "image": "/images/categories_hd/shower_systems.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1000&q=85"
+      "/images/categories_hd/shower_systems.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 5,
     "reviewCount": 34,
     "finishes": [
@@ -4658,11 +4719,11 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Sculptural",
     "space": "Wellness & Spa",
     "price": 1390,
-    "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85&v=prod_shower_07",
+    "image": "/images/categories_hd/shower_systems.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1604709177225-055f99402ea3?auto=format&fit=crop&w=1000&q=85"
+      "/images/categories_hd/shower_systems.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 5,
     "reviewCount": 21,
     "finishes": [
@@ -4710,11 +4771,11 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Wellness & Spa",
     "price": 2100,
-    "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85&v=prod_shower_08",
+    "image": "/images/categories_hd/shower_systems.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85"
+      "/images/categories_hd/shower_systems.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 5,
     "reviewCount": 16,
     "finishes": [
@@ -4763,13 +4824,12 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Organic Luxury",
     "space": "Master Bathroom",
     "price": 4200,
-    "image": "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?auto=format&fit=crop&w=1200&q=85&v=prod_bath_01",
+    "image": "/images/products_ultra/stone_bathtub_hd.webp",
     "galleryImages": [
-      "/images/categories_hd/bathtubs.jpg",
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
-      "/images/hero_luxury_bathware.jpg"
+      "/images/products_ultra/stone_bathtub_hd.webp",
+      "/images/hero_sanctuary_4k.webp"
     ],
-    "lifestyleImage": "/images/hero_luxury_bathware.jpg",
+    "lifestyleImage": "/images/hero_sanctuary_4k.webp",
     "rating": 5,
     "reviewCount": 44,
     "finishes": [
@@ -4823,11 +4883,11 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Minimalist",
     "space": "Wellness & Spa",
     "price": 3650,
-    "image": "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=85&v=prod_bath_02",
+    "image": "/images/showcase/studio_stone_oval_tub.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1000&q=85"
+      "/images/showcase/studio_stone_oval_tub.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_architectural_suite.webp",
     "rating": 4.9,
     "reviewCount": 28,
     "finishes": [
@@ -4876,11 +4936,11 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Contemporary",
     "space": "Master Bathroom",
     "price": 3890,
-    "image": "https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=1200&q=85&v=prod_bath_03",
+    "image": "/images/showcase/studio_stone_oval_tub.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1000&q=85"
+      "/images/showcase/studio_stone_oval_tub.webp"
     ],
-    "lifestyleImage": "/images/curated_retreat_suite.jpg",
+    "lifestyleImage": "/images/curated_retreat_suite.webp",
     "rating": 4.8,
     "reviewCount": 19,
     "finishes": [
@@ -4922,11 +4982,12 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Organic Luxury",
     "space": "Master Bathroom",
     "price": 3450,
-    "image": "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1200&q=85&v=prod_bath_04",
+    "image": "/images/showcase/studio_stone_oval_tub.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?auto=format&fit=crop&w=1000&q=85"
+      "/images/showcase/studio_stone_oval_tub.webp",
+      "/images/hero_luxury_bathware.webp"
     ],
-    "lifestyleImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
+    "lifestyleImage": "/images/hero_luxury_bathware.webp",
     "rating": 4.9,
     "reviewCount": 22,
     "finishes": [
@@ -4973,11 +5034,11 @@ export const BESTSELLER_PRODUCTS: Product[] = [
     "collection": "Timeless",
     "space": "Master Bathroom",
     "price": 4600,
-    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85&v=prod_bath_05",
+    "image": "/images/showcase/studio_stone_oval_tub.webp",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1527030280862-64139fba04ca?auto=format&fit=crop&w=1000&q=85"
+      "/images/showcase/studio_stone_oval_tub.webp"
     ],
-    "lifestyleImage": "/images/hero_luxury_bathware.jpg",
+    "lifestyleImage": "/images/hero_luxury_bathware.webp",
     "rating": 5,
     "reviewCount": 15,
     "finishes": [
