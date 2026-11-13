@@ -221,7 +221,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection, onOpenTrade }
 
         {/* Bottom Sub-bar */}
         <div className="pt-8 border-t border-[#282522] flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#787166]">
-          <p>© 2026 SMPL Architectural Bathware. All rights reserved.</p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+            <p>© 2026 SMPL Architectural Bathware. All rights reserved.</p>
+            <span className="hidden sm:inline text-[#4E473E]">·</span>
+            <p className="text-[#A69E92]">Website designed by Manikanta</p>
+          </div>
           <div className="flex items-center space-x-6">
             <span className="hover:text-stone-400 cursor-pointer">Privacy Charter</span>
             <span className="hover:text-stone-400 cursor-pointer">Terms of Specification</span>
